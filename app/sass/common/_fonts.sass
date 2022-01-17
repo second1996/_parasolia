@@ -1,0 +1,25 @@
+@mixin font($fname, $fstyle, $fweight, $furl)
+	@font-face
+		font-family: $fname
+		font-style: $fstyle
+		font-weight: $fweight
+		src: url($furl) format('woff2')
+
+// 100 - Extra Light or Ultra Light
+// 200 - Light or Thin
+// 300 - Book or Demi
+// 400 - Regular or Normal
+// 500 - Medium
+// 600 - Semibold or Demibold
+// 700 - Bold
+// 800 - Black or Extra Bold or Heavy
+// 900 - Extra Black or Fat or Ultra Blac
+
+@include font('Stolzl', normal, 300, '../fonts/Stolzl-Book.woff2')
+@include font('Stolzl', normal, 400, '../fonts/Stolzl-Regular.woff2')
+@include font('Stolzl', normal, 500, '../fonts/Stolzl-Medium.woff2')
+@include font('Stolzl', normal, 700, '../fonts/Stolzl-Bold.woff2')
+@include font('Stolzl Display', normal, 300, '../fonts/StolzlDisplay-Normal.woff2')
+@include font('Stolzl Display', normal, 400, '../fonts/StolzlDisplay-Regular.woff2')
+@include font('Stolzl Display', normal, 500, '../fonts/StolzlDisplay-Medium.woff2')
+@include font('Stolzl Display', normal, 700, '../fonts/StolzlDisplay-Bold.woff2')
