@@ -1,2 +1,94 @@
 .header
+	padding-top: 40px
+	padding-bottom: 40px
 	position: relative
+	&-inner
+		display: flex
+		align-items: center
+	&-logo
+		flex: 0 0 auto
+		margin-right: 48px
+		+media-breakpoint-down(xxl)
+			margin-right: 32px
+		+media-breakpoint-down(lg)
+			order: 1
+			flex: 0 0 60%
+			text-align: center
+			margin-right: 0
+		&-link
+			display: inline-block
+	&-menu
+		flex: 1 1 auto
+		display: flex
+		align-items: center
+		+media-breakpoint-down(lg)
+			order: 0
+			flex: 0 0 20%
+		&-burger
+			+media-breakpoint-down(lg)
+				margin-right: 16px
+		&-nav
+			display: flex
+			+media-breakpoint-down(xxl)
+				display: none
+			&-link
+				font-size: 15px
+				&:not(:last-child)
+					margin-right: 32px
+	&-contacts
+		flex: 0 0 auto
+		display: flex
+		align-items: center
+		+media-breakpoint-down(lg)
+			order: 2
+			flex: 0 0 20%
+			justify-content: flex-end
+		.phone
+			display: inline-flex
+			flex-direction: column
+			+media-breakpoint-down(lg)
+				display: none
+			&-number
+				color: $purple
+				font-size: 18px
+				font-weight: $w-medium
+				+media-breakpoint-down(xxl)
+					font-size: 16px
+				&:hover
+					color: $dark
+			&-hours
+				color: $text
+				font-size: 14px
+		.social
+			display: inline-flex
+			align-items: center
+			margin-left: 32px
+			+media-breakpoint-down(xxl)
+				margin-left: 24px
+			+media-breakpoint-down(lg)
+				margin-left: 16px
+			&-link
+				display: inline-flex
+				align-items: center
+				justify-content: center
+				width: 48px
+				height: 48px
+				color: $purple
+				+media-breakpoint-down(lg)
+					width: 32px
+					height: 32px
+				.icon
+					width: 20px
+					height: 20px
+				&:hover
+					color: $dark
+		.callback
+			margin-left: 32px
+			+media-breakpoint-down(xxl)
+				margin-left: 24px
+			+media-breakpoint-down(lg)
+				display: none
+			&-btn
+				height: 64px
+				padding-left: 32px
+				padding-right: 32px

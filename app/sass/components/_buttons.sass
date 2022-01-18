@@ -1,19 +1,49 @@
+// Base customize
 .btn, button
-	display: inline-flex
-	align-items: center
-	padding: 26px 52px
 	border-radius: 0
-	border: 2px solid $purple
-	color: $purple
+	border: 0
+	background-color: $white
+	color: $dark
 	font-family: inherit
-	font-size: 15px
-	font-weight: $w-bold
+	font-size: 14px
+	font-weight: $w-regular
 	line-height: 1
 	text-align: center
-	text-transform: lowercase
 	white-space: nowrap
 	outline: none!important
 	user-select: none
 	transition: $trs
 	&:hover
 		color: inherit
+	> svg ~ span
+		margin-left: 10px
+	> span ~ svg
+		margin-right: 10px
+
+// Customize buttons
+.btn
+	display: inline-flex
+	align-items: center
+	height: 78px
+	padding: 12px 48px
+
+	// Burger button
+	&.btn-burger
+		flex-direction: column
+		justify-content: space-between
+		width: 32px
+		height: 32px
+		padding: 4px 0
+		span
+			width: 100%
+			height: 2px
+			background-color: $purple
+
+	// Purple outline button
+	&.btn-outline-purple
+		border: 2px solid $purple
+		background-color: $trsp
+		color: $purple
+		&:hover
+			border-color: $dark
+			color: $dark
