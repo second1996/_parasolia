@@ -17,15 +17,16 @@
 				background-color: $purple
 
 ::selection
-	background-color: rgba($purple, 0.05)
-	color: $black
+	background-color: $purple
+	color: $white
 
 body
 	position: relative
 	min-width: 320px
-	color: $black
+	color: $text
 	font-family: $font-main
 	font-size: 16px
+	font-weight: $w-book
 	line-height: 1.5
 	&.lock-scroll
 		overflow: hidden
@@ -58,12 +59,9 @@ img
 	height: auto
 
 h1, h2, h3, h4, h5, h6
-	color: $black
+	color: $dark
 	font-weight: $w-bold
 	line-height: 1.25
-	> span
-		-webkit-text-fill-color: $trsp
-		-webkit-text-stroke: 1px $purple
 
 hr
 	display: block

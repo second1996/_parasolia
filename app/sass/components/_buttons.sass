@@ -34,6 +34,9 @@
 		width: 32px
 		height: 32px
 		padding: 4px 0
+		+media-breakpoint-down(xs)
+			width: 28px
+			height: 28px
 		span
 			width: 100%
 			height: 2px
@@ -41,9 +44,18 @@
 
 	// Purple outline button
 	&.btn-outline-purple
-		border: 2px solid $purple
+		border: 1px solid $purple
 		background-color: $trsp
 		color: $purple
 		&:hover
 			border-color: $dark
 			color: $dark
+
+	// Dark outline button
+	&.btn-outline-dark
+		border: 1px solid $dark
+		background-color: $trsp
+		color: $dark
+		&:hover
+			border-color: $purple
+			color: $purple

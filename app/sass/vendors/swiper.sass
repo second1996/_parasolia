@@ -1,0 +1,24 @@
+@import 'node_modules/swiper/swiper.scss'
+@import 'node_modules/swiper/modules/pagination/pagination.scss'
+@import 'node_modules/swiper/modules/navigation/navigation.scss'
+@import 'node_modules/swiper/modules/effect-fade/effect-fade.scss'
+
+// Base customize for Swiper
+.swiper-slider
+	position: relative
+
+// Vertical pagination
+.swiper-pagination
+	&-bullet
+		width: 12px
+		height: 12px
+		border-radius: 0
+		background-color: $dark
+		opacity: 0.1
+		transition: $trs
+		&:hover:not(.swiper-pagination-bullet-active)
+			opacity: 0.25
+		&-active
+			pointer-events: none
+			background-color: $purple
+			opacity: 1

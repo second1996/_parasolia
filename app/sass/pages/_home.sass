@@ -1,0 +1,116 @@
+// Section: Heroes
+.h-heroes
+	display: flex
+	flex-direction: column
+	height: 100vh
+	background-color: $yellow
+	&::before
+		content: ''
+		position: absolute
+		top: 0
+		left: 0
+		right: 0
+		bottom: 0
+		background-image: url('../images/pattern-purple.svg')
+		opacity: 0.1
+	// .header
+	// 	position: absolute
+	// 	top: 0
+	// 	left: 0
+	// 	right: 0
+	// 	z-index: 10
+	> .container
+		flex-grow: 1
+	&-inner,
+	&-slider
+		height: 100%
+	&-slide
+		display: flex
+		align-items: center
+	&-content
+		max-width: 880px
+		margin-left: 75px
+		.title
+			margin-bottom: 24px
+			color: $purple
+			font-family: $font-secondary
+			font-size: 64px
+			line-height: 1.15
+			> span
+				color: $white
+		.description
+			max-width: 720px
+			margin-bottom: 0
+			color: $dark
+		.btn
+			margin-top: 48px
+			background-color: $yellow
+
+	// Slider pagination
+	&-slider-pagination
+		top: 50%
+		text-align: left
+		transform: translateY(-50%)
+		&.swiper-pagination-bullets.swiper-pagination-horizontal
+			bottom: auto
+			width: auto
+		&.swiper-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet,
+		&.swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet
+			display: block
+			margin: 16px 0
+
+	// Slider navigation
+	&-slider-nav
+		counter-reset: slider-index
+		position: absolute
+		bottom: 60px
+		z-index: 10
+		display: flex
+		align-items: flex-end
+		&-item
+			display: flex
+			flex-direction: column
+			color: rgba($dark, 0.5)
+			font-family: $font-secondary
+			font-size: 14px
+			font-weight: $w-regular
+			line-height: 1
+			text-transform: lowercase
+			transition: $trs
+			&:not(:last-child)
+				margin-right: 48px
+			&::before
+				content: counter(slider-index, decimal-leading-zero) " "
+				counter-increment: slider-index
+			&:hover
+				cursor: pointer
+				color: $dark
+			.title
+				margin-top: 10px
+			.progress
+				position: relative
+				height: 2px
+				margin-top: 12px
+				background-color: rgba($dark, 0.2)
+				&-line
+					position: absolute
+					top: 0
+					left: 0
+					width: 100%
+					height: 100%
+					background-color: $purple
+					transform: scaleX(0)
+					transform-origin: left center
+			&._is-active
+				color: $purple
+				.progress-line
+					animation-name: slide-progress
+					animation-timing-function: linear
+					animation-fill-mode: both
+
+// Animation keyframes
+@keyframes slide-progress
+	from
+		transform: scaleX(0)
+	to
+		transform: scaleX(1)

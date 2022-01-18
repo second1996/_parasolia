@@ -7,5 +7,6 @@
 // require('~/app/libs/mmenu/dist/mmenu.js')
 
 document.addEventListener('DOMContentLoaded', () => {
-	// JS code...
-})
+  // Import Swiper
+  require('./_swiper.js');
+});
