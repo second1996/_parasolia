@@ -1,8 +1,11 @@
 // Section: Heroes
 .h-heroes
+	overflow: hidden
+	z-index: 1
 	display: flex
 	flex-direction: column
 	height: 100vh
+	min-height: 760px
 	background-color: $yellow
 	&::before
 		content: ''
@@ -13,44 +16,58 @@
 		bottom: 0
 		background-image: url('../images/pattern-purple.svg')
 		opacity: 0.1
-	// .header
-	// 	position: absolute
-	// 	top: 0
-	// 	left: 0
-	// 	right: 0
-	// 	z-index: 10
 	> .container
 		flex-grow: 1
 	&-inner,
 	&-slider
+		position: relative
+		z-index: 1
 		height: 100%
+	&-slider
+		transform: translateY(-50px)
 	&-slide
 		display: flex
 		align-items: center
 	&-content
 		max-width: 880px
 		margin-left: 75px
+		+media-breakpoint-down(xl)
+			max-width: 640px
+		+media-breakpoint-down(md)
+			margin-left: 0
 		.title
 			margin-bottom: 24px
 			color: $purple
 			font-family: $font-secondary
 			font-size: 64px
 			line-height: 1.15
+			+media-breakpoint-down(xxl)
+				font-size: 52px
+			+media-breakpoint-down(xl)
+				font-size: 46px
 			> span
 				color: $white
 		.description
 			max-width: 720px
 			margin-bottom: 0
 			color: $dark
+			+media-breakpoint-down(xl)
+				max-width: 560px
 		.btn
 			margin-top: 48px
 			background-color: $yellow
+			+media-breakpoint-down(md)
+				margin-top: 32px
+			&:hover
+				background-color: $white
 
 	// Slider pagination
 	&-slider-pagination
 		top: 50%
 		text-align: left
 		transform: translateY(-50%)
+		+media-breakpoint-down(md)
+			display: none
 		&.swiper-pagination-bullets.swiper-pagination-horizontal
 			bottom: auto
 			width: auto
@@ -58,6 +75,86 @@
 		&.swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet
 			display: block
 			margin: 16px 0
+
+	// Heroes symbol in corner
+	&-symbol
+		position: absolute
+		left: -3%
+		bottom: -8%
+		+media-breakpoint-down(md)
+			bottom: -6%
+		&._is-hidden,
+		&._is-shown
+			animation-duration: 0.5s
+			animation-timing-function: ease-in-out
+			animation-fill-mode: both
+		&._is-hidden
+			animation-name: symbol-rotate-forward
+		&._is-shown
+			animation-name: symbol-rotate-backward
+		.icon-symbol
+			width: 250px
+			height: 250px
+			fill: $white
+			+media-breakpoint-down(xxl)
+				width: 200px
+				height: 200px
+			+media-breakpoint-down(md)
+				width: 120px
+				height: 120px
+
+	// Slider symbols
+	&-slider-symbols
+		position: absolute
+		top: 0
+		right: 0
+		bottom: 0
+		z-index: -1
+		.icon-symbol
+			width: 250px
+			height: 250px
+			fill: $purple
+			transform: rotate(-55deg)
+			+media-breakpoint-down(xxl)
+				width: 200px
+				height: 200px
+			+media-breakpoint-down(md)
+				width: 120px
+				height: 120px
+				fill: $white
+		.symbol
+			position: absolute
+			&._is-hidden,
+			&._is-shown
+				animation-duration: 0.5s
+				animation-timing-function: ease-in-out
+				animation-fill-mode: both
+			&._is-hidden
+				animation-name: symbol-hidden
+			&._is-shown
+				animation-name: symbol-shown
+		.symbol-1
+			top: 15%
+			right: -80px
+			+media-breakpoint-down(xxl)
+				right: -120px
+		.symbol-2
+			top: 46%
+			left: -640px
+			+media-breakpoint-down(xxl)
+				left: -320px
+			+media-breakpoint-down(md)
+				top: 56%
+				left: auto
+				right: 0
+		.symbol-3
+			top: 68%
+			right: 0
+			+media-breakpoint-down(xxl)
+				top: 80%
+				right: -80px
+			+media-breakpoint-down(md)
+				right: -100px
 
 	// Slider navigation
 	&-slider-nav
@@ -67,6 +164,9 @@
 		z-index: 10
 		display: flex
 		align-items: flex-end
+		margin-left: 75px
+		+media-breakpoint-down(md)
+			margin-left: 0
 		&-item
 			display: flex
 			flex-direction: column
@@ -79,6 +179,8 @@
 			transition: $trs
 			&:not(:last-child)
 				margin-right: 48px
+				+media-breakpoint-down(xl)
+					margin-right: 32px
 			&::before
 				content: counter(slider-index, decimal-leading-zero) " "
 				counter-increment: slider-index
@@ -87,6 +189,11 @@
 				color: $dark
 			.title
 				margin-top: 10px
+				+media-breakpoint-down(lg)
+					overflow: hidden
+					max-width: 130px
+					white-space: nowrap
+					text-overflow: ellipsis
 			.progress
 				position: relative
 				height: 2px
@@ -114,3 +221,27 @@
 		transform: scaleX(0)
 	to
 		transform: scaleX(1)
+
+@keyframes symbol-hidden
+	from
+		transform: scale(1) rotate(0)
+	to
+		transform: scale(0) rotate(-45deg)
+
+@keyframes symbol-shown
+	from
+		transform: scale(0) rotate(-45deg)
+	to
+		transform: scale(1) rotate(0)
+
+@keyframes symbol-rotate-backward
+	from
+		transform: rotate(90deg)
+	to
+		transform: rotate(0)
+
+@keyframes symbol-rotate-forward
+	from
+		transform: rotate(0)
+	to
+		transform: rotate(90deg)
