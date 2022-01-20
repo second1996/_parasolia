@@ -539,3 +539,114 @@
 			+media-breakpoint-down(md)
 				width: 240px
 				height: 192px
+
+// Section: Packages
+.h-packages
+	&-heading
+		position: relative
+		padding-right: 60px
+		+media-breakpoint-down(xl)
+			padding-right: 0
+		&::before
+			content: ''
+			pointer-events: none
+			user-select: none
+			position: absolute
+			top: -56px
+			left: 0
+			z-index: -1
+			width: 175px
+			height: 180px
+			background: url('../images/thumbs-up.svg') no-repeat center/contain
+	&-list
+		display: flex
+		flex-wrap: wrap
+	&-item
+		flex: 0 0 25%
+		display: flex
+		flex-direction: column
+		max-width: 25%
+		margin-left: -1px
+		margin-bottom: -1px
+		padding: 48px 32px
+		border: 1px solid $border
+		background-color: $white
+		+media-breakpoint-down(xxl)
+			flex-basis: 50%
+			max-width: 50%
+		+media-breakpoint-down(md)
+			padding: 24px
+		+media-breakpoint-down(sm)
+			flex-basis: 100%
+			max-width: 100%
+			margin-bottom: 32px
+		&.h-packages-item--individual
+			position: relative
+			z-index: 1
+			&::before
+				pointer-events: none
+				user-select: none
+				content: ''
+				position: absolute
+				top: 0
+				left: 0
+				right: 0
+				bottom: 0
+				z-index: -1
+				background-image: url('../images/pattern-purple.svg')
+				opacity: 0.1
+			.includes-item > .icon
+				fill: $purple
+			.order
+				&-price
+					color: $dark
+				&-btn
+					border-color: $dark
+					color: $dark
+					&:hover
+						border-color: $purple
+						color: $purple
+		.heading
+			margin-bottom: 48px
+			text-align: center
+			&-suptitle
+				display: block
+				margin-bottom: 8px
+				color: #B2B2B2
+				font-family: $font-secondary
+				font-size: 14px
+				font-weight: $w-book
+				line-height: 1.75
+				text-transform: lowercase
+			&-title
+				display: block
+		.includes
+			&-item
+				display: flex
+				&:not(:last-child)
+					margin-bottom: 16px
+				> .icon
+					flex: 0 0 auto
+					width: 24px
+					height: 24px
+					fill: $yellow
+				> span
+					align-self: center
+					margin-left: 16px
+					font-size: 14px
+		.order
+			margin-top: auto
+			padding-top: 48px
+			text-align: center
+			&-price
+				color: $purple
+				font-size: 12px
+				font-weight: $w-regular
+				text-transform: uppercase
+				> span
+					font-family: $font-secondary
+					font-size: 28px
+					font-weight: $w-bold
+			&-btn
+				margin-top: 24px
+				background-color: $white

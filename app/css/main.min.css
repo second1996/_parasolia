@@ -3181,6 +3181,144 @@ textarea:required:valid {
   -o-transition: fill .3s ease;
   transition: fill .3s ease
 }
+.h-packages-heading {
+  position: relative;
+  padding-right: 60px
+}
+.h-packages-heading::before {
+  content: "";
+  pointer-events: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  position: absolute;
+  top: -56px;
+  left: 0;
+  z-index: -1;
+  width: 175px;
+  height: 180px;
+  background: url(../images/thumbs-up.svg) no-repeat center/contain
+}
+.h-packages-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap
+}
+.h-packages-item {
+  -webkit-box-flex: 0;
+  -ms-flex: 0 0 25%;
+  flex: 0 0 25%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  max-width: 25%;
+  margin-left: -1px;
+  margin-bottom: -1px;
+  padding: 48px 32px;
+  border: 1px solid #e0e0e0;
+  background-color: #fff
+}
+.h-packages-item.h-packages-item--individual {
+  position: relative;
+  z-index: 1
+}
+.h-packages-item.h-packages-item--individual::before {
+  pointer-events: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  background-image: url(../images/pattern-purple.svg);
+  opacity: .1
+}
+.h-packages-item.h-packages-item--individual .includes-item > .icon {
+  fill: #654ea3
+}
+.h-packages-item.h-packages-item--individual .order-price {
+  color: #1d1d1b
+}
+.h-packages-item.h-packages-item--individual .order-btn {
+  border-color: #1d1d1b;
+  color: #1d1d1b
+}
+.h-packages-item.h-packages-item--individual .order-btn:hover {
+  border-color: #654ea3;
+  color: #654ea3
+}
+.h-packages-item .heading {
+  margin-bottom: 48px;
+  text-align: center
+}
+.h-packages-item .heading-suptitle {
+  display: block;
+  margin-bottom: 8px;
+  color: #b2b2b2;
+  font-family: "Stolzl Display",sans-serif;
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 1.75;
+  text-transform: lowercase
+}
+.h-packages-item .heading-title {
+  display: block
+}
+.h-packages-item .includes-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex
+}
+.h-packages-item .includes-item:not(:last-child) {
+  margin-bottom: 16px
+}
+.h-packages-item .includes-item > .icon {
+  -webkit-box-flex: 0;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #ffc640
+}
+.h-packages-item .includes-item > span {
+  -ms-flex-item-align: center;
+  -ms-grid-row-align: center;
+  align-self: center;
+  margin-left: 16px;
+  font-size: 14px
+}
+.h-packages-item .order {
+  margin-top: auto;
+  padding-top: 48px;
+  text-align: center
+}
+.h-packages-item .order-price {
+  color: #654ea3;
+  font-size: 12px;
+  font-weight: 400;
+  text-transform: uppercase
+}
+.h-packages-item .order-price > span {
+  font-family: "Stolzl Display",sans-serif;
+  font-size: 28px;
+  font-weight: 700
+}
+.h-packages-item .order-btn {
+  margin-top: 24px;
+  background-color: #fff
+}
 @media (min-width:375px) {
   .col-xs {
     -webkit-box-flex: 1;
@@ -7842,6 +7980,11 @@ textarea:required:valid {
     width: 240px;
     height: 192px
   }
+  .h-packages-item {
+    -ms-flex-preferred-size: 50%;
+    flex-basis: 50%;
+    max-width: 50%
+  }
 }
 @media (max-width:1199.98px) {
   .modal-fullscreen-xl-down {
@@ -7903,6 +8046,9 @@ textarea:required:valid {
   .h-experience-item-main .icon-heart {
     width: 280px;
     height: 224px
+  }
+  .h-packages-heading {
+    padding-right: 0
   }
 }
 @media (max-width:991.98px) {
@@ -8154,6 +8300,9 @@ textarea:required:valid {
     width: 240px;
     height: 192px
   }
+  .h-packages-item {
+    padding: 24px
+  }
 }
 @media (max-width:575.98px) {
   .modal-fullscreen-sm-down {
@@ -8215,6 +8364,12 @@ textarea:required:valid {
   }
   .h-experience-item-main {
     min-height: 280px
+  }
+  .h-packages-item {
+    -ms-flex-preferred-size: 100%;
+    flex-basis: 100%;
+    max-width: 100%;
+    margin-bottom: 32px
   }
 }
 @media (max-width:374.98px) {
