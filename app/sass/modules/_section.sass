@@ -2,6 +2,12 @@
 	position: relative
 
 	&-heading
+		max-width: 880px
+		&.section-heading--light
+			.suptitle,
+			.title,
+			.description
+				color: $white
 		.suptitle
 			margin-bottom: 0
 			color: #B2B2B2
@@ -14,6 +20,14 @@
 			margin-bottom: 0
 			font-size: 48px
 			line-height: 1.3
+			+media-breakpoint-down(xxl)
+				font-size: 42px
+			+media-breakpoint-down(xl)
+				font-size: 36px
+			+media-breakpoint-down(lg)
+				font-size: 32px
+			+media-breakpoint-down(xs)
+				font-size: 24px
 		.description
 			margin-top: 24px
 			margin-bottom: 0

@@ -2,6 +2,8 @@
 	position: relative
 	z-index: 10
 	padding-top: 40px
+	+media-breakpoint-down(md)
+		padding-top: 24px
 	&-inner
 		display: flex
 		align-items: center
@@ -81,6 +83,7 @@
 				+media-breakpoint-down(lg)
 					width: auto
 					height: auto
+					color: $dark
 					&:not(:last-child)
 						margin-right: 12px
 				.icon
@@ -91,6 +94,8 @@
 						height: 16px
 				&:hover
 					color: $dark
+					+media-breakpoint-down(lg)
+						color: $purple
 		.callback
 			margin-left: 32px
 			+media-breakpoint-down(xxl)

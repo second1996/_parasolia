@@ -8,13 +8,18 @@
 	min-height: 760px
 	max-height: 1200px
 	background-color: $yellow
+	+media-breakpoint-down(sm)
+		min-height: 640px
 	&::before
+		pointer-events: none
+		user-select: none
 		content: ''
 		position: absolute
 		top: 0
 		left: 0
 		right: 0
 		bottom: 0
+		z-index: -1
 		background-image: url('../images/pattern-purple.svg')
 		opacity: 0.1
 	> .container
@@ -34,8 +39,12 @@
 		margin-left: 75px
 		+media-breakpoint-down(xl)
 			max-width: 640px
+		+media-breakpoint-down(lg)
+			max-width: 80%
 		+media-breakpoint-down(md)
 			margin-left: 0
+		+media-breakpoint-down(sm)
+			max-width: 100%
 		.title
 			margin-bottom: 24px
 			color: $purple
@@ -46,6 +55,13 @@
 				font-size: 52px
 			+media-breakpoint-down(xl)
 				font-size: 46px
+			+media-breakpoint-down(lg)
+				font-size: 42px
+			+media-breakpoint-down(md)
+				margin-bottom: 16px
+				font-size: 36px
+			+media-breakpoint-down(sm)
+				font-size: 32px
 			> span
 				color: $white
 		.description
@@ -59,6 +75,8 @@
 			background-color: $yellow
 			+media-breakpoint-down(lg)
 				margin-top: 32px
+			+media-breakpoint-down(md)
+				margin-top: 24px
 			&:hover
 				background-color: $white
 
@@ -199,6 +217,8 @@
 					max-width: 130px
 					white-space: nowrap
 					text-overflow: ellipsis
+				+media-breakpoint-down(md)
+					display: none
 			.progress
 				position: relative
 				height: 2px
@@ -254,35 +274,72 @@
 // Section: About
 .h-about
 	&-advantages
-		.number
-			position: relative
-			margin-bottom: 12px
-			font-family: $font-secondary
-			font-size: 48px
-			line-height: 1.3
-			&::before
-				content: ''
-				pointer-events: none
-				user-select: none
-				position: absolute
-				top: -38px
-				left: -50px
-				z-index: -1
-				width: 135px
-				height: 135px
-				background: url('../images/advantages-icon.svg') no-repeat center/contain
-		.description
-			margin-bottom: 0
+		+media-breakpoint-down(sm)
+			margin-top: 48px
+		.row > [class*="col"]
+			margin-bottom: 48px
+		&-item
+			+media-breakpoint-down(md)
+				text-align: center
+			.number
+				position: relative
+				margin-bottom: 12px
+				font-family: $font-secondary
+				font-size: 48px
+				line-height: 1.3
+				+media-breakpoint-down(xxl)
+					font-size: 42px
+				+media-breakpoint-down(xl)
+					font-size: 36px
+				+media-breakpoint-down(lg)
+					font-size: 32px
+				&::before
+					content: ''
+					pointer-events: none
+					user-select: none
+					position: absolute
+					top: -38px
+					left: -50px
+					z-index: -1
+					width: 135px
+					height: 135px
+					background: url('../images/advantages-icon.svg') no-repeat center/contain
+					+media-breakpoint-down(xl)
+						top: -36px
+						left: -46px
+						width: 120px
+						height: 120px
+					+media-breakpoint-down(md)
+						top: -26px
+						left: 2px
+						right: 0
+						width: 100px
+						height: 100px
+						margin-left: auto
+						margin-right: auto
+			.description
+				margin-bottom: 0
 	&-photo
 		overflow: hidden
 		height: 600px
+		margin-top: 16px
 		border-radius: 6px
+		+media-breakpoint-down(xl)
+			height: 540px
+		+media-breakpoint-down(lg)
+			height: 420px
+		+media-breakpoint-down(md)
+			height: 360px
+		+media-breakpoint-down(sm)
+			height: 280px
 
 // Section: Solve
 .h-solve
 	&-heading
 		position: relative
 		padding-right: 60px
+		+media-breakpoint-down(xl)
+			padding-right: 0
 		&::before
 			content: ''
 			pointer-events: none
@@ -310,10 +367,175 @@
 				flex: 1 1 auto
 				align-self: center
 				margin-left: 16px
-				font-size: 24px
+				margin-bottom: 0
 				font-weight: $w-medium
 		&-descr
 			margin-top: 24px
 			padding-left: 46px
 			> p:last-child
 				margin-bottom: 0
+
+// Section: Experience
+.h-experience
+	z-index: 1
+	background-color: $purple
+	&::before
+		pointer-events: none
+		user-select: none
+		content: ''
+		position: absolute
+		top: 0
+		left: 0
+		right: 0
+		bottom: 0
+		z-index: -1
+		background-image: url('../images/pattern-white.svg')
+		opacity: 0.1
+	&-list
+		counter-reset: experience-list
+		display: flex
+		flex-wrap: wrap
+	&-item,
+	&-item-main
+		flex: 0 0 25%
+		position: relative
+		z-index: 1
+		display: flex
+		flex-direction: column
+		justify-content: space-between
+		max-width: 25%
+		margin-left: -1px
+		margin-bottom: -1px
+		min-height: 356px
+		padding: 32px
+		border: 1px solid rgba($white, 0.2)
+		background-color: $purple
+		transition: background-color $trs
+		+media-breakpoint-down(xxl)
+			min-height: 324px
+		+media-breakpoint-down(xl)
+			flex-basis: 33.33333%
+			max-width: 33.33333%
+		+media-breakpoint-down(lg)
+			flex-basis: 50%
+			max-width: 50%
+		+media-breakpoint-down(md)
+			padding: 24px
+		+media-breakpoint-down(sm)
+			flex-basis: 100%
+			max-width: 100%
+			min-height: auto
+		&::after
+			content: counter(experience-list, decimal-leading-zero) " "
+			counter-increment: experience-list
+			position: absolute
+			right: 32px
+			bottom: 32px
+			color: $white
+			font-weight: $w-book
+			transition: color $trs
+			+media-breakpoint-down(md)
+				right: 24px
+				bottom: 24px
+		&:hover
+			background-color: $yellow
+			&::after
+				color: $dark
+			.heading
+				&-title,
+				&-list > li
+					color: $dark
+			.order
+				visibility: visible
+				opacity: 1
+				&-btn
+					+media-breakpoint-down(md)
+						color: $dark
+						&:hover
+							color: $purple
+						.icon-arrow-corner
+							will-change: transform
+		.heading
+			&-title
+				margin-bottom: 24px
+				color: $yellow
+				transition: color $trs
+			&-list
+				> li
+					color: $white
+					font-size: 14px
+					font-weight: $w-book
+					transition: color $trs
+					&:not(:last-child)
+						margin-bottom: 4px
+		.order
+			margin-top: 32px
+			visibility: hidden
+			opacity: 0
+			transition: $trs
+			+media-breakpoint-down(md)
+				visibility: visible
+				opacity: 1
+			&-btn
+				padding: 0
+				background-color: $trsp
+				+media-breakpoint-down(md)
+					color: $white
+				.icon-arrow-corner
+					transition: transform $trs
+				&:hover
+					color: $purple
+					.icon-arrow-corner
+						transform: rotate(-45deg)
+
+	&-item-main
+		align-items: center
+		justify-content: center
+		background-color: $trsp
+		text-align: center
+		padding: 24px
+		+media-breakpoint-down(sm)
+			min-height: 280px
+		&::after
+			display: none
+		&:hover
+			.title
+				color: $purple
+			.leave-request
+				color: $dark
+			.icon-heart
+				fill: rgba($dark, 0.05)
+		.title
+			margin-bottom: 24px
+			color: $yellow
+			transition: color $trs
+		.leave-request
+			padding: 0
+			background-color: $trsp
+			color: $white
+			font-family: $font-secondary
+			font-weight: $w-book
+			transition: color $trs
+			&:hover
+				color: $purple
+		.icon-heart
+			position: absolute
+			top: 0
+			left: 0
+			right: 0
+			bottom: 0
+			z-index: -1
+			width: 280px
+			height: 224px
+			margin: auto
+			fill: $yellow
+			transition: fill $trs
+			+media-breakpoint-down(xxl)
+				width: 240px
+				height: 192px
+			+media-breakpoint-down(xl)
+				width: 280px
+				height: 224px
+			+media-breakpoint-down(md)
+				width: 240px
+				height: 192px
