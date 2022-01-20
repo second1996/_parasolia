@@ -2276,6 +2276,63 @@ article a:hover {
 .section-description > p:last-child {
   margin-bottom: 0
 }
+.s-cta-inner {
+  overflow: hidden;
+  position: relative;
+  z-index: 1;
+  padding: 64px 16px;
+  background-color: #654ea3;
+  text-align: center
+}
+.s-cta-inner::before {
+  pointer-events: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  background-image: url(../images/pattern-white.svg);
+  opacity: .1
+}
+.s-cta-title {
+  margin-bottom: 20px;
+  font-size: 36px
+}
+.s-cta-descr {
+  margin-bottom: 0
+}
+.s-cta-btn {
+  margin-top: 32px
+}
+.s-cta-symbols .icon {
+  position: absolute;
+  z-index: -1;
+  fill: #ffc640
+}
+.s-cta-symbols .icon-hryvna {
+  top: 8%;
+  right: 14%;
+  width: 82px;
+  height: 125px
+}
+.s-cta-symbols .icon-dollar {
+  right: 28%;
+  bottom: 9%;
+  width: 118px;
+  height: 125px
+}
+.s-cta-symbols .icon-euro {
+  top: 28%;
+  left: 16%;
+  width: 146px;
+  height: 125px
+}
 .breadcrumbs {
   margin-top: 8px
 }
@@ -2409,6 +2466,16 @@ button > svg ~ span {
 }
 .btn.btn-outline-dark:hover {
   border-color: #654ea3;
+  color: #654ea3
+}
+.btn.btn-solid-yellow {
+  border-color: #ffc640;
+  background-color: #ffc640;
+  color: #1d1d1b
+}
+.btn.btn-solid-yellow:hover {
+  border-color: #654ea3;
+  background-color: #fff;
   color: #654ea3
 }
 .card {
@@ -7948,6 +8015,15 @@ textarea:required:valid {
   .section-heading .title {
     font-size: 42px
   }
+  .s-cta-symbols .icon-hryvna {
+    right: 10%
+  }
+  .s-cta-symbols .icon-dollar {
+    right: 25%
+  }
+  .s-cta-symbols .icon-euro {
+    left: 10%
+  }
   .h-heroes-content .title {
     font-size: 52px
   }
@@ -8009,6 +8085,15 @@ textarea:required:valid {
   }
   .section-heading .title {
     font-size: 36px
+  }
+  .s-cta-symbols .icon-hryvna {
+    right: 4%
+  }
+  .s-cta-symbols .icon-dollar {
+    right: 20%
+  }
+  .s-cta-symbols .icon-euro {
+    left: 3%
   }
   .h-heroes-content {
     max-width: 640px
@@ -8142,6 +8227,12 @@ textarea:required:valid {
   .section-heading .title {
     font-size: 32px
   }
+  .s-cta-title {
+    font-size: 32px
+  }
+  .s-cta-symbols .icon {
+    opacity: .25
+  }
   .btn {
     height: 72px;
     padding: 12px 36px
@@ -8227,6 +8318,24 @@ textarea:required:valid {
   }
   .header {
     padding-top: 24px
+  }
+  .s-cta-inner {
+    padding: 48px 16px
+  }
+  .s-cta-title {
+    font-size: 26px
+  }
+  .s-cta-symbols .icon-hryvna {
+    width: 53px;
+    height: 80px
+  }
+  .s-cta-symbols .icon-dollar {
+    width: 75px;
+    height: 80px
+  }
+  .s-cta-symbols .icon-euro {
+    width: 94px;
+    height: 80px
   }
   .btn {
     height: 64px;
@@ -8325,6 +8434,12 @@ textarea:required:valid {
   .modal-fullscreen-sm-down .modal-footer {
     border-radius: 0
   }
+  .mt-96 {
+    margin-top: 64px
+  }
+  .mb-96 {
+    margin-bottom: 64px
+  }
   .mt-120 {
     margin-top: 80px
   }
@@ -8336,6 +8451,14 @@ textarea:required:valid {
   }
   .pb-120 {
     padding-bottom: 80px
+  }
+  .s-cta-symbols .icon-dollar {
+    top: 45%;
+    right: 25%;
+    bottom: auto
+  }
+  .s-cta-symbols .icon-euro {
+    top: 25%
   }
   .btn {
     padding: 12px 24px
@@ -8368,7 +8491,9 @@ textarea:required:valid {
   .h-packages-item {
     -ms-flex-preferred-size: 100%;
     flex-basis: 100%;
-    max-width: 100%;
+    max-width: 100%
+  }
+  .h-packages-item:not(:last-child) {
     margin-bottom: 32px
   }
 }

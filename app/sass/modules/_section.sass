@@ -37,3 +37,87 @@
 		padding-top: 24px
 		> p:last-child
 			margin-bottom: 0
+
+// Section: CTA
+.s-cta
+	&-inner
+		overflow: hidden
+		position: relative
+		z-index: 1
+		padding: 64px 16px
+		background-color: $purple
+		text-align: center
+		+media-breakpoint-down(md)
+			padding: 48px 16px
+		&::before
+			pointer-events: none
+			user-select: none
+			content: ''
+			position: absolute
+			top: 0
+			left: 0
+			right: 0
+			bottom: 0
+			z-index: -1
+			background-image: url('../images/pattern-white.svg')
+			opacity: 0.1
+	&-title
+		margin-bottom: 20px
+		font-size: 36px
+		+media-breakpoint-down(lg)
+			font-size: 32px
+		+media-breakpoint-down(md)
+			font-size: 26px
+	&-descr
+		margin-bottom: 0
+	&-btn
+		margin-top: 32px
+	&-symbols
+		.icon
+			position: absolute
+			z-index: -1
+			fill: $yellow
+			+media-breakpoint-down(lg)
+				opacity: 0.25
+		.icon-hryvna
+			top: 8%
+			right: 14%
+			width: 82px
+			height: 125px
+			+media-breakpoint-down(xxl)
+				right: 10%
+			+media-breakpoint-down(xl)
+				right: 4%
+			+media-breakpoint-down(md)
+				width: 53px
+				height: 80px
+		.icon-dollar
+			right: 28%
+			bottom: 9%
+			width: 118px
+			height: 125px
+			+media-breakpoint-down(xxl)
+				right: 25%
+			+media-breakpoint-down(xl)
+				right: 20%
+			+media-breakpoint-down(md)
+				width: 75px
+				height: 80px
+			+media-breakpoint-down(sm)
+				top: 45%
+				right: 25%
+				bottom: auto
+		.icon-euro
+			top: 28%
+			left: 16%
+			width: 146px
+			height: 125px
+			+media-breakpoint-down(xxl)
+				left: 10%
+			+media-breakpoint-down(xl)
+				left: 3%
+			+media-breakpoint-down(md)
+				width: 94px
+				height: 80px
+			+media-breakpoint-down(sm)
+				top: 25%
