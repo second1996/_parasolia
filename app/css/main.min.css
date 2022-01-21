@@ -2062,6 +2062,9 @@ hr {
 .text-main {
   color: #454545
 }
+.text-md {
+  font-size: 36px
+}
 .text-sm {
   font-size: 24px
 }
@@ -2116,7 +2119,152 @@ article a:hover {
   color: #654ea3
 }
 .footer {
-  position: relative
+  position: relative;
+  margin-top: 80px
+}
+.footer-top {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  padding-bottom: 32px
+}
+.footer-nav-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap
+}
+.footer-nav-list-link {
+  font-size: 16px;
+  font-weight: 500
+}
+.footer-nav-list-link:not(:last-child) {
+  margin-right: 32px
+}
+.footer-contacts {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center
+}
+.footer-contacts .email {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  margin-left: 32px
+}
+.footer-contacts .email-link {
+  font-size: 18px;
+  font-weight: 500;
+  white-space: nowrap
+}
+.footer-contacts .email-descr {
+  color: #858585;
+  font-size: 14px;
+  text-align: right
+}
+.footer-contacts .phone {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  margin-left: 32px
+}
+.footer-contacts .phone-number {
+  color: #654ea3;
+  font-size: 18px;
+  font-weight: 500;
+  white-space: nowrap
+}
+.footer-contacts .phone-number:hover {
+  color: #1d1d1b
+}
+.footer-contacts .phone-hours {
+  color: #858585;
+  font-size: 14px;
+  text-align: right
+}
+.footer-contacts .social {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  margin-left: 32px
+}
+.footer-contacts .social-link {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  background-color: #654ea3;
+  color: #fff
+}
+.footer-contacts .social-link:not(:last-child) {
+  margin-right: 12px
+}
+.footer-contacts .social-link .icon {
+  width: 20px;
+  height: 20px
+}
+.footer-contacts .social-link:hover {
+  background-color: #ffc640;
+  color: #1d1d1b
+}
+.footer-bottom {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  padding-top: 32px;
+  padding-bottom: 32px;
+  border-top: 1px solid #cecece
+}
+.footer-bottom .copyright {
+  font-size: 14px
+}
+.footer-bottom .copyright a {
+  color: #654ea3
+}
+.footer-bottom .copyright a:hover {
+  color: #1d1d1b
+}
+.footer-bottom .madeby {
+  font-size: 14px
+}
+.footer-bottom .madeby a > span {
+  color: red
 }
 .header {
   position: relative;
@@ -2301,8 +2449,7 @@ article a:hover {
   opacity: .1
 }
 .s-cta-title {
-  margin-bottom: 20px;
-  font-size: 36px
+  margin-bottom: 20px
 }
 .s-cta-descr {
   margin-bottom: 0
@@ -2332,6 +2479,10 @@ article a:hover {
   left: 16%;
   width: 146px;
   height: 125px
+}
+.s-callback-form .descr {
+  max-width: 720px;
+  margin-bottom: 30px
 }
 .breadcrumbs {
   margin-top: 8px
@@ -2483,24 +2634,19 @@ button > svg ~ span {
   height: 100%
 }
 ::-webkit-input-placeholder {
-  color: #000;
-  text-transform: lowercase
+  color: #454545
 }
 ::-moz-placeholder {
-  color: #000;
-  text-transform: lowercase
+  color: #454545
 }
 :-ms-input-placeholder {
-  color: #000;
-  text-transform: lowercase
+  color: #454545
 }
 ::-ms-input-placeholder {
-  color: #000;
-  text-transform: lowercase
+  color: #454545
 }
 ::placeholder {
-  color: #000;
-  text-transform: lowercase
+  color: #454545
 }
 input,
 textarea {
@@ -2509,11 +2655,11 @@ textarea {
 }
 input:focus:required:invalid,
 textarea:focus:required:invalid {
-  border-color: red
+  border-color: #654ea3
 }
 input:required:valid,
 textarea:required:valid {
-  border-color: accent
+  border-color: #654ea3
 }
 .form {
   position: relative
@@ -2532,14 +2678,14 @@ textarea:required:valid {
   display: block;
   width: 100%;
   margin-bottom: 20px;
-  color: #000;
-  font-size: 16px;
+  color: #654ea3;
+  font-family: "Stolzl Display",sans-serif;
+  font-size: 14px;
   font-weight: 400;
   border-radius: 0;
-  border: 1px solid #6a6a6a;
-  background-color: transparent;
+  border: 1px solid #e0e0e0;
+  background-color: #fff;
   background-clip: padding-box;
-  color: #000;
   -webkit-transition: border-color .3s ease-in-out,background-color .3s ease-in-out,-webkit-box-shadow .3s ease-in-out;
   transition: border-color .3s ease-in-out,background-color .3s ease-in-out,-webkit-box-shadow .3s ease-in-out;
   -o-transition: border-color .3s ease-in-out,box-shadow .3s ease-in-out,background-color .3s ease-in-out;
@@ -2548,15 +2694,13 @@ textarea:required:valid {
 }
 .form-control:focus,
 .form-textarea:focus {
-  -webkit-box-shadow: 0 0 0 1px #654ea3;
-  box-shadow: 0 0 0 1px #654ea3;
   border-color: #654ea3;
   background-color: #fff
 }
 .form-control {
-  height: 60px;
-  padding: 0 32px;
-  line-height: 60px
+  height: 64px;
+  padding: 0 24px;
+  line-height: 64px
 }
 .form-control--number {
   -moz-appearance: textfield
@@ -2569,6 +2713,9 @@ textarea:required:valid {
 .form-textarea {
   resize: none;
   padding: 8px 16px
+}
+.form-submit {
+  margin-top: 10px
 }
 .img-cover,
 .img-scale {
@@ -7989,6 +8136,24 @@ textarea:required:valid {
   .modal-fullscreen-xxl-down .modal-footer {
     border-radius: 0
   }
+  .footer-nav-list-link:not(:last-child) {
+    margin-right: 24px
+  }
+  .footer-contacts .email {
+    margin-left: 24px
+  }
+  .footer-contacts .email-link {
+    font-size: 16px
+  }
+  .footer-contacts .phone {
+    margin-left: 24px
+  }
+  .footer-contacts .phone-number {
+    font-size: 16px
+  }
+  .footer-contacts .social {
+    margin-left: 24px
+  }
   .header-logo {
     margin-right: 32px
   }
@@ -8175,6 +8340,47 @@ textarea:required:valid {
   .pb-120 {
     padding-bottom: 100px
   }
+  .text-md {
+    font-size: 32px
+  }
+  .footer-top {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column
+  }
+  .footer-nav {
+    margin-bottom: 32px
+  }
+  .footer-nav-list {
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center
+  }
+  .footer-nav-list-link:not(:last-child) {
+    margin-left: 12px;
+    margin-right: 12px
+  }
+  .footer-contacts .email {
+    margin-left: 0
+  }
+  .footer-contacts .social-link {
+    width: 40px;
+    height: 40px
+  }
+  .footer-bottom {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    text-align: center
+  }
+  .footer-bottom .madeby {
+    margin-top: 24px
+  }
   .header-logo {
     -webkit-box-ordinal-group: 2;
     -ms-flex-order: 1;
@@ -8225,9 +8431,6 @@ textarea:required:valid {
     display: none
   }
   .section-heading .title {
-    font-size: 32px
-  }
-  .s-cta-title {
     font-size: 32px
   }
   .s-cta-symbols .icon {
@@ -8313,6 +8516,9 @@ textarea:required:valid {
   .mb-64 {
     margin-bottom: 32px
   }
+  .text-md {
+    font-size: 26px
+  }
   .text-sm {
     font-size: 20px
   }
@@ -8321,9 +8527,6 @@ textarea:required:valid {
   }
   .s-cta-inner {
     padding: 48px 16px
-  }
-  .s-cta-title {
-    font-size: 26px
   }
   .s-cta-symbols .icon-hryvna {
     width: 53px;
@@ -8452,6 +8655,22 @@ textarea:required:valid {
   .pb-120 {
     padding-bottom: 80px
   }
+  .footer-contacts {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column
+  }
+  .footer-contacts .email {
+    margin-bottom: 16px
+  }
+  .footer-contacts .phone {
+    margin-left: 0
+  }
+  .footer-contacts .social {
+    margin-top: 24px;
+    margin-left: 0
+  }
   .s-cta-symbols .icon-dollar {
     top: 45%;
     right: 25%;
@@ -8522,6 +8741,10 @@ textarea:required:valid {
   article ul > li,
   article ul > li > a {
     font-size: 15px
+  }
+  .footer-contacts .social-link .icon {
+    width: 16px;
+    height: 16px
   }
   .header-contacts .social-link .icon {
     width: 16px;

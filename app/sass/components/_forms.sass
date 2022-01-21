@@ -2,16 +2,15 @@
 
 // Base customize for forms
 ::placeholder
-	color: #000
-	text-transform: lowercase
+	color: $text
 
 input, textarea
 	outline: none
 	font-family: $font-main
 	&:focus:required:invalid
-		border-color: red
+		border-color: $purple
 	&:required:valid
-		border-color: accent
+		border-color: $purple
 
 .form
 	position: relative
@@ -26,23 +25,22 @@ input, textarea
 		display: block
 		width: 100%
 		margin-bottom: 20px
-		color: $black
-		font-size: 16px
+		color: $purple
+		font-family: $font-secondary
+		font-size: 14px
 		font-weight: $w-regular
 		border-radius: 0
-		border: 1px solid #6A6A6A
-		background-color: $trsp
+		border: 1px solid $border
+		background-color: $white
 		background-clip: padding-box
-		color: $black
 		transition: border-color .3s ease-in-out, box-shadow .3s ease-in-out, background-color .3s ease-in-out
 		&:focus
-			box-shadow: 0 0 0 1px $purple
 			border-color: $purple
 			background-color: $white
 	&-control
-		height: 60px
-		padding: 0 32px
-		line-height: 60px
+		height: 64px
+		padding: 0 24px
+		line-height: 64px
 		&--number
 			-moz-appearance: textfield
 			&::-webkit-outer-spin-button,
@@ -52,3 +50,5 @@ input, textarea
 	&-textarea
 		resize: none
 		padding: 8px 16px
+	&-submit
+		margin-top: 10px

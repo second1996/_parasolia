@@ -1,2 +1,129 @@
 .footer
 	position: relative
+	margin-top: 80px
+	&-top
+		display: flex
+		align-items: center
+		justify-content: space-between
+		padding-bottom: 32px
+		+media-breakpoint-down(lg)
+			flex-direction: column
+	&-nav
+		+media-breakpoint-down(lg)
+			margin-bottom: 32px
+		&-list
+			display: flex
+			flex-wrap: wrap
+			+media-breakpoint-down(lg)
+				justify-content: center
+			&-link
+				font-size: 16px
+				font-weight: $w-medium
+				&:not(:last-child)
+					margin-right: 32px
+					+media-breakpoint-down(xxl)
+						margin-right: 24px
+					+media-breakpoint-down(lg)
+						margin-left: 12px
+						margin-right: 12px
+	&-contacts
+		display: flex
+		flex-wrap: wrap
+		align-items: center
+		justify-content: center
+		+media-breakpoint-down(sm)
+			flex-direction: column
+		.email
+			display: inline-flex
+			flex-direction: column
+			margin-left: 32px
+			+media-breakpoint-down(xxl)
+				margin-left: 24px
+			+media-breakpoint-down(lg)
+				margin-left: 0
+			+media-breakpoint-down(sm)
+				margin-bottom: 16px
+			&-link
+				font-size: 18px
+				font-weight: $w-medium
+				white-space: nowrap
+				+media-breakpoint-down(xxl)
+					font-size: 16px
+			&-descr
+				color: #858585
+				font-size: 14px
+				text-align: right
+		.phone
+			display: inline-flex
+			flex-direction: column
+			margin-left: 32px
+			+media-breakpoint-down(xxl)
+				margin-left: 24px
+			+media-breakpoint-down(sm)
+				margin-left: 0
+			&-number
+				color: $purple
+				font-size: 18px
+				font-weight: $w-medium
+				white-space: nowrap
+				+media-breakpoint-down(xxl)
+					font-size: 16px
+				&:hover
+					color: $dark
+			&-hours
+				color: #858585
+				font-size: 14px
+				text-align: right
+		.social
+			display: inline-flex
+			align-items: center
+			margin-left: 32px
+			+media-breakpoint-down(xxl)
+				margin-left: 24px
+			+media-breakpoint-down(sm)
+				margin-top: 24px
+				margin-left: 0
+			&-link
+				display: inline-flex
+				align-items: center
+				justify-content: center
+				width: 48px
+				height: 48px
+				background-color: $purple
+				color: $white
+				+media-breakpoint-down(lg)
+					width: 40px
+					height: 40px
+				&:not(:last-child)
+					margin-right: 12px
+				.icon
+					width: 20px
+					height: 20px
+					+media-breakpoint-down(xs)
+						width: 16px
+						height: 16px
+				&:hover
+					background-color: $yellow
+					color: $dark
+	&-bottom
+		display: flex
+		justify-content: space-between
+		padding-top: 32px
+		padding-bottom: 32px
+		border-top: 1px solid #CECECE
+		+media-breakpoint-down(lg)
+			flex-direction: column
+			align-items: center
+			text-align: center
+		.copyright
+			font-size: 14px
+			a
+				color: $purple
+				&:hover
+					color: $dark
+		.madeby
+			font-size: 14px
+			+media-breakpoint-down(lg)
+				margin-top: 24px
+			a > span
+				color: red
