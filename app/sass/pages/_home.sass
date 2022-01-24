@@ -29,8 +29,6 @@
 		position: relative
 		z-index: 1
 		height: 100%
-	&-slider
-		transform: translateY(-50px)
 	&-slide
 		display: flex
 		align-items: center
@@ -610,6 +608,8 @@
 		.heading
 			margin-bottom: 48px
 			text-align: center
+			+media-breakpoint-down(sm)
+				margin-bottom: 32px
 			&-suptitle
 				display: block
 				margin-bottom: 8px
@@ -639,6 +639,8 @@
 			margin-top: auto
 			padding-top: 48px
 			text-align: center
+			+media-breakpoint-down(sm)
+				padding-top: 32px
 			&-price
 				color: $purple
 				font-size: 12px
@@ -651,3 +653,5 @@
 			&-btn
 				margin-top: 24px
 				background-color: $white
+				+media-breakpoint-down(sm)
+					margin-top: 16px

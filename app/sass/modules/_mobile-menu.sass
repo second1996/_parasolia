@@ -1,0 +1,88 @@
+.m-menu
+	position: fixed
+	top: 112px
+	left: 0
+	right: 0
+	bottom: 0
+	z-index: 99
+	visibility: hidden
+	opacity: 0
+	+media-breakpoint-up(xxl)
+		display: none
+	+media-breakpoint-down(lg)
+		top: 78px
+	+media-breakpoint-down(md)
+		top: 70px
+	&._is-shown
+		visibility: visible
+		opacity: 1
+		.m-menu-nav-list-link,
+		.m-menu-contacts
+			animation-name: fadeInUp
+			animation-fill-mode: both
+			animation-duration: 1s
+			animation-timing-function: ease
+
+	&-inner
+		position: relative
+		overflow-y: auto
+		height: 100%
+		background-color: $white
+
+	&-container
+		position: relative
+		z-index: 3
+		padding-top: 16px
+		padding-bottom: 32px
+		+media-breakpoint-down(md)
+			padding-top: 32px
+		+media-breakpoint-down(sm)
+			padding-top: 16px
+
+	&-nav
+		@for $i from 1 through 10
+			&-list-link:nth-child(#{$i})
+				animation-delay: $i*0.1s
+		&-list
+			display: flex
+			flex-direction: column
+			&-link
+				align-self: flex-start
+				font-family: $font-secondary
+				font-size: 24px
+				font-weight: $w-bold
+				+media-breakpoint-down(sm)
+					font-size: 20px
+				&:not(:last-child)
+					margin-bottom: 5px
+
+	&-contacts
+		display: flex
+		flex-direction: column
+		margin-top: 32px
+		animation-delay: 0.6s
+		+media-breakpoint-up(lg)
+			display: none
+		.phone
+			align-self: flex-start
+			display: inline-flex
+			flex-direction: column
+			&-number
+				color: $purple
+				font-family: $font-secondary
+				font-size: 20px
+				font-weight: $w-medium
+				&:hover
+					color: $dark
+			&-hours
+				color: $text
+		.callback
+			margin-top: 16px
+
+@keyframes fadeInUp
+	from
+		opacity: 0
+		transform: translateY(6px)
+	to
+		opacity: 1
+		transform: none

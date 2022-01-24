@@ -1,9 +1,55 @@
 .header
-	position: relative
+	position: absolute
+	top: 0
+	left: 0
+	right: 0
 	z-index: 10
 	padding-top: 40px
-	+media-breakpoint-down(md)
+	padding-bottom: 40px
+	border-bottom: 1px solid $trsp
+	+media-breakpoint-down(xxl)
 		padding-top: 24px
+		padding-bottom: 24px
+	+media-breakpoint-down(sm)
+		padding-top: 16px
+		padding-bottom: 16px
+	&::before
+		content: ''
+		position: absolute
+		top: 0
+		left: 0
+		right: 0
+		bottom: 0
+		z-index: -1
+		background-color: $white
+		visibility: hidden
+		opacity: 0
+	&._is-sticky
+		padding-top: 24px
+		padding-bottom: 24px
+		border-bottom-color: $border
+		transition: transform $trs
+		+media-breakpoint-down(sm)
+			padding-top: 16px
+			padding-bottom: 16px
+		&._is-hidden
+			transform: translateY(-100%)
+		&._is-active
+			border-bottom-color: $trsp
+			transform: none
+	&._is-sticky,
+	&._is-active
+		position: fixed
+		top: 0
+		left: 0
+		right: 0
+		z-index: 999
+		&::before
+			visibility: visible
+			opacity: 1
+		.header-contacts
+			.callback-btn.btn
+				background-color: $white
 	&-inner
 		display: flex
 		align-items: center
@@ -18,7 +64,18 @@
 			text-align: center
 			margin-right: 0
 		&-link
-			display: inline-block
+			display: flex
+			align-items: center
+			justify-content: center
+		.logo-desktop
+			display: none
+			+media-breakpoint-up(md)
+				display: block
+		.logo-mobile
+			display: none
+			+media-breakpoint-down(md)
+				display: block
+
 	&-menu
 		flex: 1 1 auto
 		display: flex
@@ -83,19 +140,16 @@
 				+media-breakpoint-down(lg)
 					width: auto
 					height: auto
-					color: $dark
 					&:not(:last-child)
 						margin-right: 12px
 				.icon
 					width: 20px
 					height: 20px
-					+media-breakpoint-down(xs)
-						width: 16px
-						height: 16px
+					+media-breakpoint-down(sm)
+						width: 18px
+						height: 18px
 				&:hover
 					color: $dark
-					+media-breakpoint-down(lg)
-						color: $purple
 		.callback
 			margin-left: 32px
 			+media-breakpoint-down(xxl)

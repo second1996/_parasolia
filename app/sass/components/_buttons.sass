@@ -1,5 +1,6 @@
 // Base customize
 .btn, button
+	position: relative
 	display: inline-flex
 	align-items: center
 	border-radius: 0
@@ -38,21 +39,26 @@
 	&.btn-burger
 		flex-direction: column
 		justify-content: space-between
-		width: 32px
-		height: 32px
-		padding: 4px 0
+		width: 26px
+		height: 38px
+		padding: 10px 0
 		background-color: $trsp
-		+media-breakpoint-down(xs)
-			width: 28px
-			height: 28px
-		&:hover
-			> span
-				background-color: $purple
 		> span
 			width: 100%
 			height: 2px
-			background-color: $dark
-			transition: background-color $trs
+			background-color: $purple
+			will-change: transform
+			transition: transform $trs, opacity .15s ease
+		&._is-opened
+			> span
+				transform-origin: 50%
+				&:nth-child(1)
+					transform: translateY(8px) rotate(45deg)
+				&:nth-child(2)
+					opacity: 0
+					transform: scaleX(0)
+				&:nth-child(3)
+					transform: translateY(-8px) rotate(-45deg)
 
 	// Purple outline button
 	&.btn-outline-purple
