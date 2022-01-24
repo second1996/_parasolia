@@ -2,11 +2,6 @@
 <p>Бухгалтерська компанія</p>
 
 <h2>How to use</h2>
-
-<p>Clone into the current folder and remove all unnecessary (one command):</p>
-
-<pre>git clone https://github.com/agragregra/oh5 .; rm -rf trunk .gitignore readme.md .git</pre>
-
 <ol>
 	<li>Clone repository</li>
 	<li>Install Node Modules: <strong>npm i</strong></li>
@@ -41,7 +36,7 @@
 
 <pre>&lt;!--#include virtual="/parts/header.html" --&gt;</pre>
 
-<p>Variables? No problem:</p>
+<p>Variables:</p>
 
 <pre>
 &lt;!--#set var="title" value="Page title" --&gt;
