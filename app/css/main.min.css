@@ -2270,26 +2270,14 @@ article a:hover {
   color: red
 }
 .header {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   right: 0;
-  z-index: 10;
+  z-index: 99;
   padding-top: 40px;
   padding-bottom: 40px;
   border-bottom: 1px solid transparent
-}
-.header::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: -1;
-  background-color: #fff;
-  visibility: hidden;
-  opacity: 0
 }
 .header._is-sticky {
   padding-top: 24px;
@@ -2314,16 +2302,7 @@ article a:hover {
 }
 .header._is-active,
 .header._is-sticky {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 999
-}
-.header._is-active::before,
-.header._is-sticky::before {
-  visibility: visible;
-  opacity: 1
+  background-color: #fff
 }
 .header._is-active .header-contacts .callback-btn.btn,
 .header._is-sticky .header-contacts .callback-btn.btn {
@@ -2455,8 +2434,7 @@ article a:hover {
 .header-contacts .callback-btn.btn {
   height: 64px;
   padding-left: 32px;
-  padding-right: 32px;
-  background-color: #ffc640
+  padding-right: 32px
 }
 .m-menu {
   position: fixed;
@@ -3002,7 +2980,7 @@ textarea:required:valid {
 }
 .h-heroes {
   overflow: hidden;
-  z-index: 1;
+  z-index: 2;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -3015,7 +2993,7 @@ textarea:required:valid {
   max-height: 1200px;
   background-color: #ffc640
 }
-.h-heroes::before {
+.h-heroes::after {
   pointer-events: none;
   -webkit-user-select: none;
   -moz-user-select: none;

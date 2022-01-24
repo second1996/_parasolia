@@ -1,7 +1,7 @@
 // Section: Heroes
 .h-heroes
 	overflow: hidden
-	z-index: 1
+	z-index: 2
 	display: flex
 	flex-direction: column
 	height: 100vh
@@ -10,7 +10,7 @@
 	background-color: $yellow
 	+media-breakpoint-down(sm)
 		min-height: 640px
-	&::before
+	&::after
 		pointer-events: none
 		user-select: none
 		content: ''

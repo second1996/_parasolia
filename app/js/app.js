@@ -33,8 +33,11 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // Sticky header
-  const heroesSection = document.querySelector('.h-heroes');
-  const headerOffset = heroesSection.clientHeight || headerEl.offsetTop;
+  const headerOffset = headerEl.clientHeight / 2;
+
+  window.addEventListener('load', function () {
+    stickyHeader();
+  });
 
   window.addEventListener('scroll', function () {
     stickyHeader();
