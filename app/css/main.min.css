@@ -1399,6 +1399,10 @@ progress {
   -o-transition: width .35s ease;
   transition: width .35s ease
 }
+.row-items-60 > .col,
+.row-items-60 > [class*=col-] {
+  margin-bottom: 60px
+}
 @font-face {
   font-family: swiper-icons;
   src: url("data:application/font-woff;charset=utf-8;base64, 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") format("woff");
@@ -1867,6 +1871,43 @@ button.swiper-pagination-bullet {
   background-color: #654ea3;
   opacity: 1
 }
+.swiper-button-next,
+.swiper-button-prev {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  margin-top: -24px;
+  border: 1px solid #e0e0e0;
+  background-color: #fff;
+  color: #1d1d1b;
+  font-size: 12px;
+  -webkit-transition: .3s ease;
+  -o-transition: .3s ease;
+  transition: .3s ease
+}
+.swiper-button-next::after,
+.swiper-button-prev::after {
+  display: none
+}
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+  border-color: #654ea3;
+  background-color: #654ea3;
+  color: #fff
+}
+.swiper-button-prev .icon-arrow {
+  -webkit-transform: scaleX(-1);
+  -ms-transform: scaleX(-1);
+  transform: scaleX(-1)
+}
 @font-face {
   font-family: Stolzl;
   font-style: normal;
@@ -2064,6 +2105,9 @@ hr {
 }
 .text-main {
   color: #454545
+}
+.text-lg {
+  font-size: 48px
 }
 .text-md {
   font-size: 36px
@@ -2594,6 +2638,14 @@ article a:hover {
     transform: none
   }
 }
+.page-heading {
+  margin-top: 200px;
+  margin-bottom: 48px
+}
+.page-heading .page-title {
+  margin-top: 16px;
+  margin-bottom: 0
+}
 .section {
   position: relative
 }
@@ -2692,10 +2744,10 @@ article a:hover {
   max-width: 720px;
   margin-bottom: 30px
 }
-.breadcrumbs {
+.page-breadcrumbs {
   margin-top: 8px
 }
-.breadcrumbs-list {
+.page-breadcrumbs-list {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -2705,44 +2757,25 @@ article a:hover {
   -ms-flex-align: center;
   align-items: center
 }
-.breadcrumbs-list > li {
+.page-breadcrumbs-list > li {
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
   display: inline-flex;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  font-size: 14px;
   line-height: 1.5
 }
-.breadcrumbs-list > li:not(:last-child)::after {
+.page-breadcrumbs-list > li:not(:last-child)::after {
   content: "";
-  display: inline-block;
-  vertical-align: middle;
-  width: 15px;
-  height: 1px;
-  margin: 0 10px;
-  background-color: #bbb
+  width: 12px;
+  height: 12px;
+  margin: -2px 12px 0;
+  background: url(../images/symbol-yellow.svg) no-repeat center/contain
 }
-.breadcrumbs-list > li > a {
-  color: #8c8c8c;
-  font-size: 15px;
-  font-weight: 200
-}
-.breadcrumbs-list > li > a.home {
-  width: 16px;
-  height: 16px;
-  background: url(#) no-repeat center/16px
-}
-.breadcrumbs-list > li > a.home:hover {
-  opacity: .75
-}
-.breadcrumbs-list > li > a:hover {
-  color: #654ea3
-}
-.breadcrumbs-list > li > span {
-  color: #8c8c8c;
-  font-size: 15px;
-  font-weight: 200
+.page-breadcrumbs-list > li > span {
+  color: #858585
 }
 .btn,
 button {
@@ -2863,6 +2896,24 @@ button > svg ~ span {
   position: relative;
   height: 100%
 }
+.card.card-team .card-photo {
+  height: 360px
+}
+.card.card-team .card-body {
+  padding: 24px 0
+}
+.card.card-team .card-body .post {
+  color: #b2b2b2;
+  font-family: "Stolzl Display",sans-serif;
+  font-size: 14px;
+  text-transform: lowercase
+}
+.card.card-team .card-body .name {
+  margin-top: 8px;
+  margin-bottom: 0;
+  font-size: 20px;
+  font-weight: 500
+}
 ::-webkit-input-placeholder {
   color: #454545
 }
@@ -2977,6 +3028,228 @@ textarea:required:valid {
   -webkit-transform: none;
   -ms-transform: none;
   transform: none
+}
+.page-about .intro-photo {
+  height: 100%
+}
+.page-about .intro-content {
+  padding: 60px 0 60px 60px
+}
+.page-about .intro-content .title {
+  margin-bottom: 0
+}
+.page-about .intro-content .description {
+  margin-top: 32px
+}
+.page-about .intro-content .description > p:last-child {
+  margin-bottom: 0
+}
+.page-about .achievements-list [class*=col-]:nth-child(3n+2) {
+  border-left: 1px solid #e0e0e0;
+  border-right: 1px solid #e0e0e0
+}
+.page-about .achievements-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  text-align: center
+}
+.page-about .achievements-item .number {
+  color: #654ea3;
+  font-family: "Stolzl Display",sans-serif;
+  font-size: 56px;
+  font-weight: 700;
+  line-height: 1.3
+}
+.page-about .achievements-item .description {
+  max-width: 300px;
+  margin-top: 20px;
+  margin-bottom: 0
+}
+.page-about .manifest-content {
+  padding-right: 60px
+}
+.page-about .manifest-content .title {
+  margin-bottom: 0
+}
+.page-about .manifest-content .description {
+  margin-top: 24px
+}
+.page-about .manifest-content .description > p:last-child {
+  margin-bottom: 0
+}
+.page-about .manifest-card {
+  position: relative;
+  z-index: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  min-height: 380px;
+  padding: 48px;
+  border-radius: 16px;
+  background-color: #654ea3
+}
+.page-about .manifest-card::after {
+  pointer-events: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  content: "";
+  position: absolute;
+  right: 32px;
+  bottom: 32px;
+  z-index: -1;
+  display: block;
+  width: 265px;
+  height: 153px;
+  background: url(../images/moon-yellow.svg) no-repeat center/contain
+}
+.page-about .manifest-card .title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-bottom: 32px;
+  font-size: 32px
+}
+.page-about .manifest-card .title::before {
+  content: "*";
+  -webkit-box-flex: 0;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  margin-right: 12px
+}
+.page-about .manifest-card .author {
+  margin-top: auto;
+  font-family: "Stolzl Display",sans-serif
+}
+.page-about .manifest-card .author-name {
+  font-size: 20px
+}
+.page-about .manifest-card .author-descr {
+  font-size: 14px
+}
+.page-about .partners-list {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex
+}
+.page-about .partners-list::after {
+  pointer-events: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 2;
+  -webkit-box-shadow: inset 0 0 0 1px #e0e0e0;
+  box-shadow: inset 0 0 0 1px #e0e0e0
+}
+.page-about .partners-main {
+  position: relative;
+  -webkit-box-flex: 0;
+  -ms-flex: 0 0 380px;
+  flex: 0 0 380px
+}
+.page-about .partners-main .partners-item::before {
+  display: none
+}
+.page-about .partners-other {
+  -webkit-box-flex: 1;
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+  width: 100%;
+  height: auto
+}
+.page-about .partners-other .swiper-wrapper {
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap
+}
+.page-about .partners-other .swiper-slide {
+  height: 208px
+}
+.page-about .partners-other .swiper-button-prev {
+  left: 0
+}
+.page-about .partners-other .swiper-button-next {
+  right: 0
+}
+.page-about .partners-other .swiper-button-next.swiper-button-disabled,
+.page-about .partners-other .swiper-button-prev.swiper-button-disabled {
+  opacity: 0
+}
+.page-about .partners-item {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  height: 100%;
+  padding: 48px;
+  -webkit-box-shadow: inset 1px 1px 1px #e0e0e0;
+  box-shadow: inset 1px 1px 1px #e0e0e0;
+  background-color: #fff
+}
+.page-about .partners-item::after,
+.page-about .partners-item::before {
+  pointer-events: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  content: "";
+  position: absolute;
+  z-index: 2;
+  background-color: #e0e0e0
+}
+.page-about .partners-item::before {
+  left: 0;
+  right: 0;
+  bottom: -1px;
+  height: 1px
+}
+.page-about .partners-item::after {
+  top: 0;
+  right: -1px;
+  bottom: 0;
+  width: 1px
+}
+.page-about .partners-item .logo > img {
+  max-width: 200px;
+  max-height: 60px
+}
+.page-about .partners-item .description {
+  margin-top: 16px;
+  margin-bottom: 0;
+  color: #1d1d1b;
+  font-size: 14px;
+  text-align: center
 }
 .h-heroes {
   overflow: hidden;
@@ -8370,6 +8643,9 @@ textarea:required:valid {
   .modal-fullscreen-xxl-down .modal-footer {
     border-radius: 0
   }
+  .text-lg {
+    font-size: 42px
+  }
   .footer-nav-list-link:not(:last-child) {
     margin-right: 24px
   }
@@ -8426,6 +8702,25 @@ textarea:required:valid {
   }
   .s-cta-symbols .icon-euro {
     left: 10%
+  }
+  .card.card-team .card-photo {
+    height: 320px
+  }
+  .page-about .intro-content {
+    padding-left: 30px
+  }
+  .page-about .achievements-item .number {
+    font-size: 52px
+  }
+  .page-about .manifest-card .title {
+    font-size: 26px
+  }
+  .page-about .partners-main {
+    -ms-flex-preferred-size: 320px;
+    flex-basis: 320px
+  }
+  .page-about .partners-item {
+    padding: 32px
   }
   .h-heroes-content .title {
     font-size: 52px
@@ -8486,6 +8781,16 @@ textarea:required:valid {
   .modal-fullscreen-xl-down .modal-footer {
     border-radius: 0
   }
+  .row-items-60 > .col,
+  .row-items-60 > [class*=col-] {
+    margin-bottom: 48px
+  }
+  .text-lg {
+    font-size: 36px
+  }
+  .page-heading {
+    margin-top: 160px
+  }
   .section-heading .title {
     font-size: 36px
   }
@@ -8497,6 +8802,26 @@ textarea:required:valid {
   }
   .s-cta-symbols .icon-euro {
     left: 3%
+  }
+  .page-about .achievements-item .number {
+    font-size: 46px
+  }
+  .page-about .achievements-item .description {
+    margin-top: 12px
+  }
+  .page-about .manifest-content {
+    padding-right: 30px
+  }
+  .page-about .manifest-card {
+    padding: 32px
+  }
+  .page-about .manifest-card::after {
+    width: 195px;
+    height: 110px
+  }
+  .page-about .partners-main {
+    -ms-flex-preferred-size: 280px;
+    flex-basis: 280px
   }
   .h-heroes-content {
     max-width: 640px
@@ -8577,6 +8902,9 @@ textarea:required:valid {
   }
   .pb-120 {
     padding-bottom: 100px
+  }
+  .text-lg {
+    font-size: 32px
   }
   .text-md {
     font-size: 32px
@@ -8667,6 +8995,9 @@ textarea:required:valid {
   .m-menu {
     top: 78px
   }
+  .page-heading {
+    margin-top: 120px
+  }
   .section-heading .title {
     font-size: 32px
   }
@@ -8676,6 +9007,21 @@ textarea:required:valid {
   .btn {
     height: 72px;
     padding: 12px 36px
+  }
+  .page-about .intro-content {
+    padding-top: 48px;
+    padding-left: 0;
+    padding-bottom: 0
+  }
+  .page-about .intro-content .description {
+    margin-top: 24px
+  }
+  .page-about .achievements-item .number {
+    font-size: 42px
+  }
+  .page-about .manifest-card {
+    min-height: 320px;
+    margin-top: 32px
   }
   .h-heroes-content {
     max-width: 80%
@@ -8747,14 +9093,21 @@ textarea:required:valid {
   .modal-fullscreen-md-down .modal-footer {
     border-radius: 0
   }
+  .row-items-60 > .col,
+  .row-items-60 > [class*=col-] {
+    margin-bottom: 32px
+  }
   .mt-64 {
     margin-top: 32px
   }
   .mb-64 {
     margin-bottom: 32px
   }
+  .text-lg {
+    font-size: 28px
+  }
   .text-md {
-    font-size: 26px
+    font-size: 24px
   }
   .text-sm {
     font-size: 20px
@@ -8767,6 +9120,12 @@ textarea:required:valid {
   }
   .m-menu-container {
     padding-top: 32px
+  }
+  .page-heading {
+    margin-bottom: 32px
+  }
+  .page-heading .page-title {
+    margin-top: 8px
   }
   .s-cta-inner {
     padding: 48px 16px
@@ -8787,9 +9146,36 @@ textarea:required:valid {
     height: 64px;
     padding: 12px 32px
   }
+  .card.card-team .card-photo {
+    height: 260px
+  }
   .form-control {
     height: 56px;
     line-height: 56px
+  }
+  .page-about .intro-content {
+    padding-top: 24px
+  }
+  .page-about .intro-content .description {
+    margin-top: 16px
+  }
+  .page-about .achievements-list [class*=col-]:nth-child(3n+2) {
+    border-left: 0;
+    border-right: 0;
+    padding-top: 32px;
+    padding-bottom: 32px
+  }
+  .page-about .partners-list {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column
+  }
+  .page-about .partners-main .partners-item::before {
+    display: block
+  }
+  .page-about .partners-main .partners-item::after {
+    display: none
   }
   .h-heroes-content {
     margin-left: 0
@@ -8947,6 +9333,44 @@ textarea:required:valid {
   .btn {
     padding: 12px 24px
   }
+  .card.card-team .card-photo {
+    height: 220px
+  }
+  .card.card-team .card-body .name {
+    font-size: 18px
+  }
+  .page-about .manifest-card {
+    min-height: 280px
+  }
+  .page-about .manifest-card::after {
+    right: 16px;
+    bottom: 24px;
+    width: 130px;
+    height: 75px
+  }
+  .page-about .manifest-card .title {
+    font-size: 20px
+  }
+  .page-about .manifest-card .author-name {
+    font-size: 16px
+  }
+  .page-about .partners-main {
+    -ms-flex-preferred-size: 240px;
+    flex-basis: 240px
+  }
+  .page-about .partners-other .swiper-slide {
+    height: 180px
+  }
+  .page-about .partners-item {
+    padding: 16px
+  }
+  .page-about .partners-item .logo > img {
+    max-width: 130px
+  }
+  .page-about .partners-item .description {
+    font-size: 13px;
+    line-height: 1.4
+  }
   .h-heroes {
     min-height: 640px
   }
@@ -9011,6 +9435,9 @@ textarea:required:valid {
   .modal-fullscreen-xs-down .modal-footer {
     border-radius: 0
   }
+  .text-lg {
+    font-size: 24px
+  }
   article p,
   article ul > li,
   article ul > li > a {
@@ -9022,6 +9449,13 @@ textarea:required:valid {
   }
   .section-heading .title {
     font-size: 24px
+  }
+  .card.card-team .card-photo {
+    height: auto
+  }
+  .page-about .manifest-card {
+    min-height: 240px;
+    padding: 24px
   }
 }
 @media (prefers-reduced-motion:no-preference) {

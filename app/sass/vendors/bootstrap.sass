@@ -5,3 +5,13 @@
 @import 'node_modules/bootstrap/scss/bootstrap-grid.scss'
 @import 'node_modules/bootstrap/scss/_modal.scss'
 @import 'node_modules/bootstrap/scss/_transitions.scss'
+
+// Bootstrap grid
+.row-items-60
+	> .col,
+	> [class*="col-"]
+		margin-bottom: 60px
+		+media-breakpoint-down(xl)
+			margin-bottom: 48px
+		+media-breakpoint-down(md)
+			margin-bottom: 32px

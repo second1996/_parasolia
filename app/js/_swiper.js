@@ -1,7 +1,8 @@
-import Swiper, { Pagination, Navigation, EffectFade, Autoplay } from 'swiper';
+import Swiper, { Pagination, Navigation, EffectFade, Autoplay, Grid } from 'swiper';
 
-Swiper.use([Pagination, EffectFade, Autoplay]);
+Swiper.use([Pagination, Navigation, EffectFade, Autoplay, Grid]);
 
+// Home page: Heroes slider
 const heroesSwiper = new Swiper('.h-heroes-slider', {
   speed: 1000,
   autoplay: {
@@ -25,7 +26,9 @@ const heroesSwiper = new Swiper('.h-heroes-slider', {
 const sliderNavItem = document.querySelectorAll('.h-heroes-slider-nav-item');
 const sliderDelay = heroesSwiper.params.autoplay.delay + heroesSwiper.params.speed;
 
-sliderNavItem[0].classList.add('_is-active');
+if (sliderNavItem.length) {
+  sliderNavItem[0].classList.add('_is-active');
+}
 
 sliderNavItem.forEach((el) => {
   el.querySelector('.progress-line').setAttribute('style', `animation-duration: ${sliderDelay}ms`);
@@ -69,4 +72,22 @@ heroesSwiper.on('slideChangeTransitionEnd', () => {
     el.classList.remove('_is-hidden');
     el.classList.add('_is-shown');
   });
+});
+
+// Page About: Partners slider
+const partnersSwiper = new Swiper('.partners-slider', {
+  slidesPerView: 2,
+  grid: {
+    fill: 'column',
+    rows: 2,
+  },
+  navigation: {
+    prevEl: '.partners-slider-nav .swiper-button-prev',
+    nextEl: '.partners-slider-nav .swiper-button-next',
+  },
+  breakpoints: {
+    992: {
+      slidesPerView: 3,
+    },
+  },
 });

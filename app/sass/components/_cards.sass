@@ -4,3 +4,30 @@
 .card
 	position: relative
 	height: 100%
+
+// Team card
+.card.card-team
+	.card-photo
+		height: 360px
+		+media-breakpoint-down(xxl)
+			height: 320px
+		+media-breakpoint-down(md)
+			height: 260px
+		+media-breakpoint-down(sm)
+			height: 220px
+		+media-breakpoint-down(xs)
+			height: auto
+	.card-body
+		padding: 24px 0
+		.post
+			color: #B2B2B2
+			font-family: $font-secondary
+			font-size: 14px
+			text-transform: lowercase
+		.name
+			margin-top: 8px
+			margin-bottom: 0
+			font-size: 20px
+			font-weight: $w-medium
+			+media-breakpoint-down(sm)
+				font-size: 18px

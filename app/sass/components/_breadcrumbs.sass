@@ -1,6 +1,6 @@
 @import '../helpers/helpers'
 
-.breadcrumbs
+.page-breadcrumbs
 	margin-top: 8px
 	&-list
 		display: flex
@@ -9,29 +9,14 @@
 		> li
 			display: inline-flex
 			align-items: center
+			font-size: 14px
 			line-height: 1.5
 			&:not(:last-child)
 				&::after
 					content: ''
-					display: inline-block
-					vertical-align: middle
-					width: 15px
-					height: 1px
-					margin: 0 10px
-					background-color: #bbb
-			> a
-				color: #8c8c8c
-				font-size: 15px
-				font-weight: 200
-				&.home
-					width: 16px
-					height: 16px
-					background: url('#') no-repeat center/16px
-					&:hover
-						opacity: 0.75
-				&:hover
-					color: $purple
+					width: 12px
+					height: 12px
+					margin: -2px 12px 0
+					background: url('../images/symbol-yellow.svg') no-repeat center/contain
 			> span
-				color: #8c8c8c
-				font-size: 15px
-				font-weight: 200
+				color: #858585
