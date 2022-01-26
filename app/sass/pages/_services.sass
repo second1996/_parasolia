@@ -1,0 +1,164 @@
+.page-services
+
+	// Section: Subscribers
+	.subscribers
+		&-list
+			display: flex
+			flex-wrap: wrap
+		&-item
+			flex: 0 0 33.33333%
+			overflow: hidden
+			position: relative
+			z-index: 1
+			display: flex
+			flex-direction: column
+			justify-content: space-between
+			max-width: 33.33333%
+			margin-left: -1px
+			margin-bottom: -1px
+			min-height: 356px
+			padding: 32px
+			box-shadow: inset 0 0 0 1px $border
+			background-color: $white
+			transition: box-shadow $trs, background-color $trs
+			+media-breakpoint-down(xxl)
+				min-height: 324px
+			+media-breakpoint-down(xl)
+				flex-basis: 33.33333%
+				max-width: 33.33333%
+			+media-breakpoint-down(lg)
+				flex-basis: 50%
+				max-width: 50%
+			+media-breakpoint-down(md)
+				padding: 24px
+			+media-breakpoint-down(sm)
+				flex-basis: 100%
+				max-width: 100%
+				min-height: auto
+			&::after
+				pointer-events: none
+				user-select: none
+				content: ''
+				position: absolute
+				right: -56px
+				bottom: -48px
+				z-index: -1
+				width: 192px
+				height: 192px
+				background: url('../images/symbol-yellow.svg') no-repeat center/contain
+				opacity: 0
+				transform: rotate(45deg)
+				transition: opacity $trs, transform $trs
+				+media-breakpoint-down(md)
+					right: -32px
+					bottom: -32px
+			&:hover
+				box-shadow: inset 0 0 0 1px $purple
+				background-color: $purple
+				&::after
+					opacity: 1
+					transform: none
+				.heading
+					&-title,
+					&-list > li
+						color: $white
+				.order
+					&-btn
+						color: $yellow
+						&:hover
+							color: $white
+			.heading
+				&-title
+					margin-bottom: 24px
+					font-size: 20px
+					transition: color $trs
+				&-list
+					> li
+						font-size: 14px
+						font-weight: $w-book
+						transition: color $trs
+						&:not(:last-child)
+							margin-bottom: 4px
+			.order
+				margin-top: 32px
+				&-btn
+					padding: 0
+					background-color: $trsp
+					color: $purple
+					.icon-arrow-corner
+						transition: transform $trs
+					&:hover
+						color: $purple
+						.icon-arrow-corner
+							transform: rotate(-45deg)
+
+	// Section: Other services
+	.other
+		&-list
+			display: flex
+			flex-direction: column
+		&-item
+			overflow: hidden
+			position: relative
+			z-index: 1
+			display: flex
+			align-items: center
+			justify-content: space-between
+			margin-bottom: -1px
+			padding: 24px 32px
+			box-shadow: inset 0 0 0 1px $border
+			background-color: $white
+			transition: box-shadow $trs, background-color $trs
+			&::after
+				pointer-events: none
+				user-select: none
+				content: ''
+				position: absolute
+				right: -32px
+				bottom: -30px
+				z-index: -1
+				width: 96px
+				height: 96px
+				background: url('../images/symbol-yellow.svg') no-repeat center/contain
+				opacity: 0
+				transform: rotate(45deg)
+				transition: opacity $trs, transform $trs
+			&:hover
+				box-shadow: inset 0 0 0 1px $purple
+				background-color: $purple
+				&::after
+					opacity: 1
+					transform: none
+				.title
+					color: $white
+				.order
+					transform: translateX(-64px)
+					&-btn
+						color: $white
+						> span
+							opacity: 1
+						&:hover
+							color: $yellow
+			.title
+				margin-bottom: 0
+				color: $dark
+				font-size: 16px
+				font-weight: $w-book
+				transition: color $trs
+			.order
+				transition: transform $trs
+				&-btn
+					padding: 0
+					background-color: $trsp
+					color: $dark
+					> span
+						opacity: 0
+						transition: opacity $trs
+					.icon-arrow-corner
+						width: 18px
+						height: 18px
+						transition: transform $trs
+					&:hover
+						color: $purple
+						.icon-arrow-corner
+							transform: rotate(-45deg)
