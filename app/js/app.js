@@ -1,12 +1,5 @@
-// // Import jQuery module (npm i jquery)
-// import $ from 'jquery'
-// window.jQuery = $
-// window.$ = $
-
+import { Tab } from 'bootstrap';
 import IMask from 'imask'; // Import Input mask
-
-// // Import vendor jQuery plugin example (not module)
-// require('~/app/libs/mmenu/dist/mmenu.js')
 
 document.addEventListener('DOMContentLoaded', () => {
   require('./_swiper.js'); // Import Swiper
