@@ -1,0 +1,173 @@
+<!--#set var="title" value="Калькулятор вартості" -->
+<!--#include virtual="/parts/head.html" -->
+<!--#include virtual="/parts/header.html" -->
+
+<!-- Section: Page heading -->
+<section class="page-heading">
+	<div class="container">
+		<!-- Breadcrumbs -->
+		<div class="page-breadcrumbs">
+			<ul class="page-breadcrumbs-list">
+				<li><a href="/" rel="home">Головна</a></li>
+				<li><span>Калькулятор вартості</span></li>
+			</ul>
+		</div>
+		<!-- Page title -->
+		<h1 class="page-title text-lg">Калькулятор вартості</h1>
+		<div class="page-descr">
+			<p>Ми візьмемо ці всі справи на себе та забезпечимо результат: організуємо роботу, оптимізуємо видатки, здамо звіти за вас, додамо впевненості та гарантуємо свою відповідальність.</p>
+		</div>
+	</div>
+	<!-- /.container -->
+</section>
+
+<main class="page-calculator">
+
+	<!-- Section: Calculator -->
+	<section class="calculator section mt-96">
+		<div class="container">
+			<form class="calculator-form form" id="calc-form">
+				<div class="calculator-section" id="calc-organization">
+					<div class="heading">
+						<h3 class="heading-title text-lg">Оберіть організаційно-правову форму</h3>
+						<div class="heading-descr">
+							<p>Щоб перейти до наступного кроку, оберіть хто Ви за організаційно-правовою формою.</p>
+						</div>
+					</div>
+					<div class="options">
+						<label class="options-check_inline">
+							<input class="options-check_inline-input" type="radio" name="calc-organization[]" data-organization="individual">
+							<span class="options-check_inline-box"></span>
+							Фізична особа підприємця (ФОП)
+						</label>
+						<label class="options-check_inline">
+							<input class="options-check_inline-input" type="radio" name="calc-organization[]" data-organization="legal">
+							<span class="options-check_inline-box"></span>
+							Юридичина особа (ЮО)
+						</label>
+					</div>
+				</div>
+				<!-- /.calculator-section -->
+
+				<!-- ФОП -->
+				<div class="calculator-tree d-none" id="individual">
+					<div class="calculator-section">
+						<div class="heading">
+							<h3 class="heading-title text-lg">На якій ви системі оподаткування?</h3>
+							<div class="heading-descr">
+								<p>Оберіть систему оподаткування вашого ФОП чи ТОВ.</p>
+							</div>
+						</div>
+						<div class="options">
+							<label class="options-check">
+								<input class="options-check-input" type="radio" name="calc-individual-tax-system[]" data-id="simple-system">
+								<span class="options-check-box"></span>
+								Спрощена система
+							</label>
+							<label class="options-check">
+								<input class="options-check-input" type="radio" name="calc-individual-tax-system[]" data-id="main-system">
+								<span class="options-check-box"></span>
+								Загальна система
+							</label>
+						</div>
+					</div>
+					<!-- /.calculator-section -->
+					<div class="calculator-section d-none" data-section-id="simple-system">
+						<div class="heading">
+							<h3 class="heading-title text-lg">Яка у вас група єдиного податку?</h3>
+							<div class="heading-descr">
+								<p>Оберіть систему оподаткування вашого ФОП чи ТОВ.</p>
+							</div>
+						</div>
+						<div class="options">
+							<label class="options-check">
+								<input class="options-check-input" type="radio" name="calc-individual-tax-group[]">
+								<span class="options-check-box"></span>
+								2 група
+							</label>
+							<label class="options-check">
+								<input class="options-check-input" type="radio" name="calc-individual-tax-group[]">
+								<span class="options-check-box"></span>
+								3 група
+							</label>
+						</div>
+					</div>
+					<!-- /.calculator-section -->
+					<div class="calculator-section d-none" data-section-id="main-system">
+						<div class="heading">
+							<h3 class="heading-title text-lg">Чи є ви платником ПДВ</h3>
+							<div class="heading-descr">
+								<p>Оберіть систему оподаткування вашого ФОП чи ТОВ.</p>
+							</div>
+						</div>
+						<div class="options">
+							<label class="options-check">
+								<input class="options-check-input" type="radio" name="calc-individual-tax-group[]">
+								<span class="options-check-box"></span>
+								Ні
+							</label>
+							<label class="options-check">
+								<input class="options-check-input" type="radio" name="calc-individual-tax-group[]">
+								<span class="options-check-box"></span>
+								Так
+							</label>
+						</div>
+					</div>
+					<!-- /.calculator-section -->
+				</div>
+
+				<!-- ЮО -->
+				<div class="calculator-tree d-none" id="legal">
+					<div class="calculator-section" id="calc-legal-tax-group">
+						<div class="heading">
+							<h3 class="heading-title text-lg">Яка у вас група єдиного податку?</h3>
+							<div class="heading-descr">
+								<p>Оберіть систему оподаткування вашого ФОП чи ТОВ.</p>
+							</div>
+						</div>
+						<div class="options">
+							<label class="options-check">
+								<input class="options-check-input" type="radio" name="calc-legal-tax-group[]">
+								<span class="options-check-box"></span>
+								2 група
+							</label>
+							<label class="options-check">
+								<input class="options-check-input" type="radio" name="calc-legal-tax-group[]">
+								<span class="options-check-box"></span>
+								3 група
+							</label>
+						</div>
+					</div>
+					<!-- /.calculator-section -->
+					<div class="calculator-section d-none" id="calc-legal-tax-system">
+						<div class="heading">
+							<h3 class="heading-title text-lg">На якій ви системі оподаткування?</h3>
+							<div class="heading-descr">
+								<p>Оберіть систему оподаткування вашого ФОП чи ТОВ.</p>
+							</div>
+						</div>
+						<div class="options">
+							<label class="options-check">
+								<input class="options-check-input" type="radio" name="calc-legal-tax-system[]">
+								<span class="options-check-box"></span>
+								Спрощена система
+							</label>
+							<label class="options-check">
+								<input class="options-check-input" type="radio" name="calc-legal-tax-system[]">
+								<span class="options-check-box"></span>
+								Загальна система
+							</label>
+						</div>
+					</div>
+					<!-- /.calculator-section -->
+				</div>
+
+			</form>
+			<!-- /.calculator-form -->
+		</div>
+		<!-- /.container -->
+	</section>
+
+</main>
+
+<!--#include virtual="/parts/footer.html" -->

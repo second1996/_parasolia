@@ -3,6 +3,7 @@ import IMask from 'imask'; // Import Input mask
 
 document.addEventListener('DOMContentLoaded', () => {
   require('./_swiper.js'); // Import Swiper
+  require('./_calculator.js'); // Import Calculator
 
   // Apply phone mask for inputs
   const phoneInputs = document.querySelectorAll('input[type="phone"]');

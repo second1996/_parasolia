@@ -1,0 +1,79 @@
+.page-calculator
+
+	// Section: Calculator
+	.calculator
+		&-section
+			padding: 64px
+			border: 1px solid $border
+			background-color: #FAFAFA
+			&:not(:last-child)
+				margin-bottom: 32px
+			.heading
+				&-title
+					margin-bottom: 0
+				&-descr
+					margin-top: 16px
+					> p:last-child
+						margin-bottom: 0
+			.options
+				display: flex
+				flex-wrap: wrap
+				margin-top: 32px
+				&-check
+					flex: 0 0 33.33333%
+					position: relative
+					z-index: 1
+					display: flex
+					max-width: 33.33333%
+					cursor: pointer
+					&-input
+						overflow: hidden
+						position: absolute
+						width: 1px
+						height: 1px
+						clip-path: rect(0 0 0 0)
+						opacity: 0
+						&:checked + .options-check-box
+							border-color: $purple
+							background: $purple url('../images/checked.svg') no-repeat center/16px
+					&-box
+						flex: 0 0 auto
+						align-self: center
+						width: 24px
+						height: 24px
+						margin-right: 12px
+						border: 1px solid $border
+						background-color: $white
+						transition: border $trs, background-color $trs
+				&-check_inline
+					flex: 0 0 50%
+					position: relative
+					z-index: 1
+					display: flex
+					max-width: 50%
+					margin-left: -1px
+					padding: 16px
+					color: $dark
+					font-family: $font-secondary
+					font-size: 14px
+					font-weight: $w-regular
+					cursor: pointer
+					&-input
+						overflow: hidden
+						position: absolute
+						width: 1px
+						height: 1px
+						clip-path: rect(0 0 0 0)
+						opacity: 0
+						&:checked + .options-check_inline-box
+							background-color: $yellow
+					&-box
+						position: absolute
+						top: 0
+						left: 0
+						right: 0
+						bottom: 0
+						z-index: -1
+						border: 1px solid $text
+						background-color: $white
+						transition: background-color $trs
