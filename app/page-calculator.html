@@ -15,7 +15,8 @@
 		<!-- Page title -->
 		<h1 class="page-title text-lg">Калькулятор вартості</h1>
 		<div class="page-descr">
-			<p>Ми візьмемо ці всі справи на себе та забезпечимо результат: організуємо роботу, оптимізуємо видатки, здамо звіти за вас, додамо впевненості та гарантуємо свою відповідальність.</p>
+			<p>Ми візьмемо ці всі справи на себе та забезпечимо результат: організуємо роботу, оптимізуємо видатки, здамо
+				звіти за вас, додамо впевненості та гарантуємо свою відповідальність.</p>
 		</div>
 	</div>
 	<!-- /.container -->
@@ -36,12 +37,14 @@
 					</div>
 					<div class="options">
 						<label class="options-check_inline">
-							<input class="options-check_inline-input" type="radio" name="calc-organization[]" data-organization="individual">
+							<input class="options-check_inline-input" type="radio" name="calc-organization[]"
+								data-organization="individual">
 							<span class="options-check_inline-box"></span>
 							Фізична особа підприємця (ФОП)
 						</label>
 						<label class="options-check_inline">
-							<input class="options-check_inline-input" type="radio" name="calc-organization[]" data-organization="legal">
+							<input class="options-check_inline-input" type="radio" name="calc-organization[]"
+								data-organization="legal">
 							<span class="options-check_inline-box"></span>
 							Юридичина особа (ЮО)
 						</label>
@@ -55,6 +58,47 @@
 				<!-- ЮО -->
 				<div class="calculator-tree d-none" id="legal"></div>
 
+				<!-- Total -->
+				<div class="calculator-total d-none" id="calculator-total">
+					<div class="calculator-total-content">
+						<h2 class="title text-white">Загальна сума</h2>
+						<p class="descr text-white">* приблизна вартість послуги</p>
+					</div>
+					<div class="calculator-total-summary">
+						<div class="value text-white text-lg w-bold">0</div>
+						<div class="currency text-white text-lg w-bold">грн *</div>
+					</div>
+				</div>
+				<!-- /.calculator-total -->
+
+				<!-- Apply form -->
+				<div class="calculator-apply-form calculator-section d-none" id="calculator-apply-form">
+					<div class="calculator-apply-form-heading">
+						<h3 class="title text-lg">Залишити заявку</h3>
+						<div class="descr">
+							<p>Заповніть форму, щоб отримати безкоштовну консультацію та відповіді на всі питання, пов'язані конкретно
+								з Вашим бізнесом.</p>
+						</div>
+					</div>
+					<div class="calculator-apply-form-wrapper">
+						<div class="row">
+							<div class="col-lg-4">
+								<input class="form-control" type="text" placeholder="Ваше ім’я" required>
+							</div>
+							<div class="col-lg-4">
+								<input type="phone" class="form-control" placeholder="Номер телефону" required>
+							</div>
+							<div class="col-lg-4">
+								<input class="form-control" type="email" placeholder="E-mail" required>
+							</div>
+							<div class="col">
+								<button type="submit" class="form-submit btn btn-solid-yellow">Надіслати заявку</button>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- /.calculator-apply-form -->
+
 			</form>
 			<!-- /.calculator-form -->
 		</div>
@@ -62,5 +106,7 @@
 	</section>
 
 </main>
+
+<script src="./js/calculator.js"></script>
 
 <!--#include virtual="/parts/footer.html" -->

@@ -33,7 +33,7 @@ function browsersync() {
 }
 
 function scripts() {
-  return src(['app/js/*.js', '!app/js/*.min.js'])
+  return src('app/js/app.js')
     .pipe(
       webpack({
         mode: 'production',

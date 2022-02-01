@@ -3,7 +3,7 @@
 	// Section: Calculator
 	.calculator
 		&-section
-			padding: 64px
+			padding: 48px 64px
 			border: 1px solid $border
 			background-color: #FAFAFA
 			&:not(:last-child)
@@ -15,6 +15,8 @@
 					margin-top: 16px
 					> p:last-child
 						margin-bottom: 0
+
+			// Options
 			.options
 				display: flex
 				flex-wrap: wrap
@@ -77,3 +79,65 @@
 						border: 1px solid $text
 						background-color: $white
 						transition: background-color $trs
+
+			// Additional field
+			.additional
+				margin-top: 48px
+				&-title
+					margin-bottom: 0
+					font-size: 18px
+				&-descr
+					margin-top: 8px
+					margin-bottom: 0
+				&-field
+					max-width: 480px
+					margin-top: 24px
+					margin-bottom: 0
+					&::placeholder
+						opacity: 0.5
+
+		// Total
+		&-total
+			position: relative
+			z-index: 1
+			display: flex
+			align-items: center
+			justify-content: space-between
+			margin-top: 32px
+			padding: 48px 64px
+			background-color: $purple
+			&::before
+				pointer-events: none
+				user-select: none
+				content: ''
+				position: absolute
+				top: 0
+				left: 0
+				right: 0
+				bottom: 0
+				z-index: -1
+				background-image: url('../images/pattern-white.svg')
+				opacity: 0.1
+			&-content
+				flex: 0 0 auto
+				padding-right: 48px
+				.title
+					margin-bottom: 0
+				.descr
+					margin-top: 12px
+					margin-bottom: 0
+			&-summary
+				flex: 0 1 auto
+				display: flex
+				align-items: flex-end
+				.value
+					word-break: break-all
+				.currency
+					margin-left: 12px
+					white-space: nowrap
+
+		// Apply form
+		&-apply-form
+			margin-top: 32px
+			&-wrapper
+				margin-top: 32px
