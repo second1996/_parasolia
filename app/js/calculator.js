@@ -1,4 +1,3 @@
-// Individual data
 const individualData = [
   {
     id: 0,
@@ -7,12 +6,12 @@ const individualData = [
     descr: 'Оберіть систему оподаткування вашого ФОП чи ТОВ.',
     answers: [
       {
-        text: 'Спрощена система',
+        text: 'Спрощена',
         nextNode: 'tax-simple',
       },
 
       {
-        text: 'Загальна система',
+        text: 'Загальна',
         nextNode: 'tax-general',
       },
     ],
@@ -155,22 +154,6 @@ const individualData = [
   },
   {
     id: 8,
-    node: 'tax-general-yes',
-    question: 'Чи є ви платником АП?',
-    descr: 'Оберіть систему оподаткування вашого ФОП чи ТОВ.',
-    answers: [
-      {
-        text: 'Ні',
-        nextNode: 'tax-general-yes-ap-no',
-      },
-      {
-        text: 'Так',
-        nextNode: 'tax-general-yes-ap-yes',
-      },
-    ],
-  },
-  {
-    id: 9,
     node: 'tax-general-no-ap-no',
     question: 'Чи є у вас наймані працівники?',
     descr: 'Оберіть систему оподаткування вашого ФОП чи ТОВ.',
@@ -194,31 +177,7 @@ const individualData = [
     ],
   },
   {
-    id: 10,
-    node: 'tax-general-yes-ap-no',
-    question: 'Чи є у вас наймані працівники?',
-    descr: 'Оберіть систему оподаткування вашого ФОП чи ТОВ.',
-    answers: [
-      {
-        text: 'Ні',
-        nextNode: null,
-        value: 3000,
-      },
-      {
-        text: 'Так',
-        nextNode: null,
-        value: 3000,
-        multiplier: 700,
-        additional: {
-          question: 'Скільки чоловік?',
-          descr: 'Введіть числове значення к-ті працівників у вашій компанії.',
-          field: 'Кількість працівників',
-        },
-      },
-    ],
-  },
-  {
-    id: 11,
+    id: 9,
     node: 'tax-general-no-ap-yes',
     question: 'Чи є у вас наймані працівники?',
     descr: 'Оберіть систему оподаткування вашого ФОП чи ТОВ.',
@@ -232,6 +191,46 @@ const individualData = [
         text: 'Так',
         nextNode: null,
         value: 4000,
+        multiplier: 700,
+        additional: {
+          question: 'Скільки чоловік?',
+          descr: 'Введіть числове значення к-ті працівників у вашій компанії.',
+          field: 'Кількість працівників',
+        },
+      },
+    ],
+  },
+  {
+    id: 10,
+    node: 'tax-general-yes',
+    question: 'Чи є ви платником АП?',
+    descr: 'Оберіть систему оподаткування вашого ФОП чи ТОВ.',
+    answers: [
+      {
+        text: 'Ні',
+        nextNode: 'tax-general-yes-ap-no',
+      },
+      {
+        text: 'Так',
+        nextNode: 'tax-general-yes-ap-yes',
+      },
+    ],
+  },
+  {
+    id: 11,
+    node: 'tax-general-yes-ap-no',
+    question: 'Чи є у вас наймані працівники?',
+    descr: 'Оберіть систему оподаткування вашого ФОП чи ТОВ.',
+    answers: [
+      {
+        text: 'Ні',
+        nextNode: null,
+        value: 4500,
+      },
+      {
+        text: 'Так',
+        nextNode: null,
+        value: 4500,
         multiplier: 700,
         additional: {
           question: 'Скільки чоловік?',
@@ -266,19 +265,133 @@ const individualData = [
     ],
   },
 ];
+const legalData = [
+  {
+    id: 0,
+    node: 'tax-system',
+    question: 'На якій ви системі оподаткування?',
+    descr: 'Оберіть систему оподаткування вашого ФОП чи ТОВ.',
+    answers: [
+      {
+        text: 'Спрощена 3 група',
+        nextNode: 'tax-simple',
+      },
 
-let totalSum = {
-  value: 0,
-  multiplier: 0,
-};
+      {
+        text: 'Загальна',
+        nextNode: 'tax-general',
+      },
+    ],
+  },
+  {
+    id: 1,
+    node: 'tax-simple',
+    question: 'Чи є ви платником ПДВ?',
+    descr: 'Оберіть систему оподаткування вашого ФОП чи ТОВ.',
+    answers: [
+      {
+        text: 'Ні',
+        nextNode: null,
+        value: 6000,
+      },
+      {
+        text: 'Так',
+        nextNode: null,
+        value: 6000,
+        multiplier: 80,
+        additional: {
+          question: 'Яка кількість ПН за місяць (вх/вих)?',
+          descr: 'Введіть числове значення к-ті податкових накладних за місяць.',
+          field: 'Кількість ПН',
+        },
+      },
+    ],
+  },
+  {
+    id: 2,
+    node: 'tax-general',
+    question: 'Чи є ви платником ПДВ?',
+    descr: 'Оберіть систему оподаткування вашого ФОП чи ТОВ.',
+    answers: [
+      {
+        text: 'Ні',
+        nextNode: 'tax-general-no-ap',
+      },
+      {
+        text: 'Так',
+        nextNode: 'tax-general-yes-ap',
+      },
+    ],
+  },
+  {
+    id: 3,
+    node: 'tax-general-no-ap',
+    question: 'Чи є ви платником АП?',
+    descr: 'Оберіть систему оподаткування вашого ФОП чи ТОВ.',
+    answers: [
+      {
+        text: 'Ні',
+        nextNode: null,
+        value: 7000,
+      },
+      {
+        text: 'Так',
+        nextNode: null,
+        value: 8500,
+      },
+    ],
+  },
+  {
+    id: 4,
+    node: 'tax-general-yes-ap',
+    question: 'Чи є ви платником АП?',
+    descr: 'Оберіть систему оподаткування вашого ФОП чи ТОВ.',
+    answers: [
+      {
+        text: 'Ні',
+        nextNode: null,
+        value: 8500,
+        multiplier: 80,
+        additional: {
+          question: 'Яка кількість ПН за місяць (вх/вих)?',
+          descr: 'Введіть числове значення к-ті податкових накладних за місяць.',
+          field: 'Кількість ПН',
+        },
+      },
+      {
+        text: 'Так',
+        nextNode: null,
+        value: 10000,
+        multiplier: 80,
+        additional: {
+          question: 'Яка кількість ПН за місяць (вх/вих)?',
+          descr: 'Введіть числове значення к-ті податкових накладних за місяць.',
+          field: 'Кількість ПН',
+        },
+      },
+    ],
+  },
+];
 
 const calcForm = document.querySelector('#calc-form');
 const calcOrganizationInputs = document.querySelectorAll('input[name*="calc-organization"]');
+const calcTree = document.querySelectorAll('.calculator-tree');
 const calcIndividual = document.querySelector('#individual');
 const calcLegal = document.querySelector('#legal');
 const calcTotal = document.querySelector('#calculator-total');
 const calcTotalValue = calcTotal.querySelector('.calculator-total-summary .value');
 const calcApplyForm = document.querySelector('#calculator-apply-form');
+
+
+let currentOrganization = {
+  data: null,
+  section: calcIndividual,
+};
+let totalSum = {
+  value: 0,
+  multiplier: 0,
+};
+
 
 // Tabs
 calcOrganizationInputs.forEach((el) => {
@@ -291,82 +404,91 @@ calcOrganizationInputs.forEach((el) => {
     calcTotal.classList.remove('d-none');
 
     if (organization === 'individual') {
+      currentOrganization.data = individualData;
+      currentOrganization.section = calcIndividual;
+      
       calcIndividual.classList.remove('d-none');
       calcLegal.classList.add('d-none');
-
+      
       calcLegal.innerHTML = '';
-      calcIndividual.insertAdjacentHTML('afterbegin', renderSection(individualData[0]));
+      calcIndividual.insertAdjacentHTML('afterbegin', renderSection(currentOrganization.data[0]));
     }
-
+    
     if (organization === 'legal') {
-      calcIndividual.innerHTML = '';
-
+      currentOrganization.data = legalData;
+      currentOrganization.section = calcLegal;
+      
       calcLegal.classList.remove('d-none');
       calcIndividual.classList.add('d-none');
+
+      calcIndividual.innerHTML = '';
+      calcLegal.insertAdjacentHTML('afterbegin', renderSection(currentOrganization.data[0]));
     }
   });
 });
 
-// Individual logic
-calcIndividual.addEventListener('click', (e) => {
-  const additionalInputs = document.querySelectorAll('.calculator-section .additional-field');
+// Calculator logic
+calcTree.forEach((section) => {
+  section.addEventListener('click', (e) => {
+    const additionalInputs = document.querySelectorAll('.calculator-section .additional-field');
 
-  if (e.target.className === 'options-check-input') {
-    e.target.onchange = (el) => {
-      const nextNodeId= el.target.dataset.nextNodeId;
-      const cardObj = individualData.find((obj) => obj.node === nextNodeId);
-      const currentIndex = +el.target.closest('.calculator-section').dataset.sectionIndex;
-      const sections = el.target.closest('.calculator-tree').querySelectorAll('.calculator-section');
-      const inputs = el.target.closest('.calculator-tree').querySelectorAll('.options-check-input');
-      const additionalEl = el.target.closest('.calculator-section').querySelector('.additional');
+    if (e.target.className === 'options-check-input') {
+      e.target.onchange = (el) => {
+        const nextNodeId= el.target.dataset.nextNodeId;
+        const cardObj = currentOrganization.data.find((obj) => obj.node === nextNodeId);
+        const currentIndex = +el.target.closest('.calculator-section').dataset.sectionIndex;
+        const sections = el.target.closest('.calculator-tree').querySelectorAll('.calculator-section');
+        const inputs = el.target.closest('.calculator-tree').querySelectorAll('.options-check-input');
+        const additionalEl = el.target.closest('.calculator-section').querySelector('.additional');
 
-      totalSum.value = 0;
-      totalSum.multiplier = 0;
+        totalSum.value = 0;
+        totalSum.multiplier = 0;
 
-      // Render card
-      if (nextNodeId !== 'null') {
-        calcIndividual.insertAdjacentHTML('beforeend', renderSection(cardObj));
-      } else {
-        calcApplyForm.classList.remove('d-none');
-      }
-
-      // Removes sections that section index bigger than current section index
-      for (const section of sections) {
-        const sectionIndex = +section.dataset.sectionIndex;
-        if (sectionIndex > currentIndex) {
-          section.remove();
-          calcApplyForm.classList.add('d-none');
-        }
-      }
-
-      // Toggle additional field if element has attribute "has-additional"
-      if (additionalEl) {
-        const additionalElField = additionalEl.querySelector('.additional-field')
-        if (e.target.dataset.hasAdditional) {
-          additionalEl.classList.remove('d-none');
-          additionalElField.setAttribute('required', '');
+        // Render card
+        if (nextNodeId !== 'null') {
+          currentOrganization.section.insertAdjacentHTML('beforeend', renderSection(cardObj));
         } else {
-          totalSum.multiplier = 0;
-          additionalEl.classList.add('d-none');
-          additionalElField.removeAttribute('required', '');
-          additionalElField.value = '';
+          calcApplyForm.classList.remove('d-none');
         }
-      }
 
-      additionalInputs.forEach(el => {
-        el.oninput = (e) => {
-          totalSum.multiplier = +e.target.dataset.multiplier * +e.target.value;
-
-          inputsTotal(inputs);
-          calcTotalSum();
+        // Removes sections that section index bigger than current section index
+        for (const section of sections) {
+          const sectionIndex = +section.dataset.sectionIndex;
+          if (sectionIndex > currentIndex) {
+            section.remove();
+            calcApplyForm.classList.add('d-none');
+          }
         }
-      });
 
-      // Calculate
-      inputsTotal(inputs);
-      calcTotalSum();
-    };
-  }
+        // Toggle additional field if element has attribute "has-additional"
+        if (additionalEl) {
+          const additionalElField = additionalEl.querySelector('.additional-field')
+          if (e.target.dataset.hasAdditional) {
+            additionalEl.classList.remove('d-none');
+            additionalElField.setAttribute('required', '');
+          } else {
+            totalSum.multiplier = 0;
+            additionalEl.classList.add('d-none');
+            additionalElField.removeAttribute('required', '');
+          }
+        }
+
+        additionalInputs.forEach(el => {
+          el.value = '';
+          el.oninput = (e) => {
+            totalSum.multiplier = +e.target.dataset.multiplier * +e.target.value;
+
+            inputsTotal(inputs);
+            calcTotalSum();
+          }
+        });
+
+        // Calculate
+        inputsTotal(inputs);
+        calcTotalSum();
+      };
+    }
+  });
 });
 
 function renderSection(obj) {
