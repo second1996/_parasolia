@@ -3136,6 +3136,11 @@ textarea:required:valid {
   z-index: 1;
   border-bottom: 0
 }
+.nav-tabs--center {
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center
+}
 .nav-tabs .nav-link {
   padding: 16px;
   border: 0;
@@ -4350,9 +4355,9 @@ textarea:required:valid {
   flex-wrap: wrap
 }
 .h-packages-item {
-  -webkit-box-flex: 0;
-  -ms-flex: 0 0 25%;
-  flex: 0 0 25%;
+  -webkit-box-flex: 1;
+  -ms-flex: 1 0 25%;
+  flex: 1 0 25%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -4360,7 +4365,6 @@ textarea:required:valid {
   -webkit-box-direction: normal;
   -ms-flex-direction: column;
   flex-direction: column;
-  max-width: 25%;
   margin-left: -1px;
   margin-bottom: -1px;
   padding: 48px 32px;
@@ -10035,6 +10039,12 @@ textarea:required:valid {
   .h-experience-item-main .icon-heart {
     width: 240px;
     height: 192px
+  }
+  .h-packages-tabs.nav-tabs {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row
   }
   .h-packages-item {
     padding: 24px

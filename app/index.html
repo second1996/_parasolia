@@ -362,129 +362,240 @@
 				<!-- /.col -->
 			</div>
 			<!-- /.row -->
-			<div class="h-packages-list mt-64">
-				<div class="h-packages-item">
-					<h5 class="heading">
-						<span class="heading-suptitle">Тарифний пакет</span>
-						<span class="heading-title text-sm w-medium text-uppercase">Базовий</span>
-					</h5>
-					<ul class="includes">
-						<li class="includes-item">
-							<svg class="icon icon-symbol"><use xlink:href="./images/symbol-defs.svg#symbol"></use></svg>
-							<span>До 50 операцій на місяць</span>
-						</li>
-						<li class="includes-item">
-							<svg class="icon icon-symbol"><use xlink:href="./images/symbol-defs.svg#symbol"></use></svg>
-							<span>Річний оборот до 10 млн грн</span>
-						</li>
-						<li class="includes-item">
-							<svg class="icon icon-symbol"><use xlink:href="./images/symbol-defs.svg#symbol"></use></svg>
-							<span>Безкоштовне ведення до 5-х співробітників</span>
-						</li>
-						<li class="includes-item">
-							<svg class="icon icon-symbol"><use xlink:href="./images/symbol-defs.svg#symbol"></use></svg>
-							<span>Ведення ПДВ</span>
-						</li>
-					</ul>
-					<div class="order">
-						<div class="order-price"><span>8 900</span> грн/міс</div>
-						<button class="order-btn btn btn-outline-purple">Залишити заявку</button>
+			<div class="h-packages-wrapper mt-64">
+				<ul class="h-packages-tabs nav nav-tabs nav-tabs--center" id="packagesTabs" role="tablist">
+					<li class="nav-item" role="presentation">
+						<button class="nav-link active" id="packages-1-tab" data-bs-toggle="tab" data-bs-target="#packages-1" type="button" role="tab" aria-controls="packages-1" aria-selected="true">ФОП</button>
+					</li>
+					<li class="nav-item" role="presentation">
+						<button class="nav-link" id="packages-2-tab" data-bs-toggle="tab" data-bs-target="#packages-2" type="button" role="tab" aria-controls="packages-2" aria-selected="false">ЮО</button>
+					</li>
+				</ul>
+				<!-- /.h-packages-tabs -->
+				<div class="h-packages-content tab-content mt-64" id="packagesTabsContent">
+					<div class="tab-pane fade show active" id="packages-1" role="tabpanel" aria-labelledby="packages-1-tab">
+						<div class="h-packages-list">
+							<div class="h-packages-item">
+								<h5 class="heading">
+									<span class="heading-suptitle">Тарифний пакет</span>
+									<span class="heading-title text-sm w-medium text-uppercase">Базовий</span>
+								</h5>
+								<ul class="includes">
+									<li class="includes-item">
+										<svg class="icon icon-symbol"><use xlink:href="./images/symbol-defs.svg#symbol"></use></svg>
+										<span>До 50 операцій на місяць</span>
+									</li>
+									<li class="includes-item">
+										<svg class="icon icon-symbol"><use xlink:href="./images/symbol-defs.svg#symbol"></use></svg>
+										<span>Річний оборот до 10 млн грн</span>
+									</li>
+									<li class="includes-item">
+										<svg class="icon icon-symbol"><use xlink:href="./images/symbol-defs.svg#symbol"></use></svg>
+										<span>Безкоштовне ведення до 5-х співробітників</span>
+									</li>
+									<li class="includes-item">
+										<svg class="icon icon-symbol"><use xlink:href="./images/symbol-defs.svg#symbol"></use></svg>
+										<span>Ведення ПДВ</span>
+									</li>
+								</ul>
+								<div class="order">
+									<div class="order-price"><span>8 900</span> грн/міс</div>
+									<button class="order-btn btn btn-outline-purple">Залишити заявку</button>
+								</div>
+							</div>
+							<!-- /.h-packages-item -->
+							<div class="h-packages-item">
+								<h5 class="heading">
+									<span class="heading-suptitle">Тарифний пакет</span>
+									<span class="heading-title text-sm w-medium text-uppercase">Стандартний</span>
+								</h5>
+								<ul class="includes">
+									<li class="includes-item">
+										<svg class="icon icon-symbol"><use xlink:href="./images/symbol-defs.svg#symbol"></use></svg>
+										<span>До 100 операцій на місяць</span>
+									</li>
+									<li class="includes-item">
+										<svg class="icon icon-symbol"><use xlink:href="./images/symbol-defs.svg#symbol"></use></svg>
+										<span>Річний оборот до 20 млн грн</span>
+									</li>
+									<li class="includes-item">
+										<svg class="icon icon-symbol"><use xlink:href="./images/symbol-defs.svg#symbol"></use></svg>
+										<span>Безкоштовне ведення до 7-ми співробітників</span>
+									</li>
+									<li class="includes-item">
+										<svg class="icon icon-symbol"><use xlink:href="./images/symbol-defs.svg#symbol"></use></svg>
+										<span>Ведення ПДВ</span>
+									</li>
+								</ul>
+								<div class="order">
+									<div class="order-price"><span>11 200</span> грн/міс</div>
+									<button class="order-btn btn btn-outline-purple">Залишити заявку</button>
+								</div>
+							</div>
+							<!-- /.h-packages-item -->
+							<div class="h-packages-item">
+								<h5 class="heading">
+									<span class="heading-suptitle">Тарифний пакет</span>
+									<span class="heading-title text-sm w-medium text-uppercase">Професійний</span>
+								</h5>
+								<ul class="includes">
+									<li class="includes-item">
+										<svg class="icon icon-symbol"><use xlink:href="./images/symbol-defs.svg#symbol"></use></svg>
+										<span>До 150 операцій на місяць</span>
+									</li>
+									<li class="includes-item">
+										<svg class="icon icon-symbol"><use xlink:href="./images/symbol-defs.svg#symbol"></use></svg>
+										<span>Річний оборот до 35 млн грн</span>
+									</li>
+									<li class="includes-item">
+										<svg class="icon icon-symbol"><use xlink:href="./images/symbol-defs.svg#symbol"></use></svg>
+										<span>Безкоштовне ведення до 10-ти співробітників</span>
+									</li>
+									<li class="includes-item">
+										<svg class="icon icon-symbol"><use xlink:href="./images/symbol-defs.svg#symbol"></use></svg>
+										<span>Ведення ПДВ</span>
+									</li>
+									<li class="includes-item">
+										<svg class="icon icon-symbol"><use xlink:href="./images/symbol-defs.svg#symbol"></use></svg>
+										<span>Супровід зовнішньоекономічної діяльності</span>
+									</li>
+								</ul>
+								<div class="order">
+									<div class="order-price"><span>16 500</span> грн/міс</div>
+									<button class="order-btn btn btn-outline-purple">Залишити заявку</button>
+								</div>
+							</div>
+							<!-- /.h-packages-item -->
+							<div class="h-packages-item h-packages-item--individual">
+								<h5 class="heading">
+									<span class="heading-suptitle">Тарифний пакет</span>
+									<span class="heading-title text-sm w-medium text-uppercase">Індивідуальний</span>
+								</h5>
+								<ul class="includes">
+									<li class="includes-item">
+										<svg class="icon icon-symbol"><use xlink:href="./images/symbol-defs.svg#symbol"></use></svg>
+										<span>До 50 операцій на місяць</span>
+									</li>
+									<li class="includes-item">
+										<svg class="icon icon-symbol"><use xlink:href="./images/symbol-defs.svg#symbol"></use></svg>
+										<span>Річний оборот до 10 млн грн</span>
+									</li>
+									<li class="includes-item">
+										<svg class="icon icon-symbol"><use xlink:href="./images/symbol-defs.svg#symbol"></use></svg>
+										<span>Безкоштовне ведення до 5-х співробітників</span>
+									</li>
+									<li class="includes-item">
+										<svg class="icon icon-symbol"><use xlink:href="./images/symbol-defs.svg#symbol"></use></svg>
+										<span>Ведення ПДВ</span>
+									</li>
+								</ul>
+								<div class="order">
+									<div class="order-price">Індивідуальна ціна</div>
+									<button class="order-btn btn btn-outline-purple">Залишити заявку</button>
+								</div>
+							</div>
+							<!-- /.h-packages-item -->
+						</div>
+						<!-- /.h-packages-list -->
 					</div>
-				</div>
-				<!-- /.h-packages-item -->
-				<div class="h-packages-item">
-					<h5 class="heading">
-						<span class="heading-suptitle">Тарифний пакет</span>
-						<span class="heading-title text-sm w-medium text-uppercase">Стандартний</span>
-					</h5>
-					<ul class="includes">
-						<li class="includes-item">
-							<svg class="icon icon-symbol"><use xlink:href="./images/symbol-defs.svg#symbol"></use></svg>
-							<span>До 100 операцій на місяць</span>
-						</li>
-						<li class="includes-item">
-							<svg class="icon icon-symbol"><use xlink:href="./images/symbol-defs.svg#symbol"></use></svg>
-							<span>Річний оборот до 20 млн грн</span>
-						</li>
-						<li class="includes-item">
-							<svg class="icon icon-symbol"><use xlink:href="./images/symbol-defs.svg#symbol"></use></svg>
-							<span>Безкоштовне ведення до 7-ми співробітників</span>
-						</li>
-						<li class="includes-item">
-							<svg class="icon icon-symbol"><use xlink:href="./images/symbol-defs.svg#symbol"></use></svg>
-							<span>Ведення ПДВ</span>
-						</li>
-					</ul>
-					<div class="order">
-						<div class="order-price"><span>11 200</span> грн/міс</div>
-						<button class="order-btn btn btn-outline-purple">Залишити заявку</button>
+					<!-- /.tab-pane -->
+					<div class="tab-pane fade" id="packages-2" role="tabpanel" aria-labelledby="packages-2-tab">
+						<div class="h-packages-list">
+							<div class="h-packages-item">
+								<h5 class="heading">
+									<span class="heading-suptitle">Тарифний пакет</span>
+									<span class="heading-title text-sm w-medium text-uppercase">Базовий</span>
+								</h5>
+								<ul class="includes">
+									<li class="includes-item">
+										<svg class="icon icon-symbol"><use xlink:href="./images/symbol-defs.svg#symbol"></use></svg>
+										<span>До 50 операцій на місяць</span>
+									</li>
+									<li class="includes-item">
+										<svg class="icon icon-symbol"><use xlink:href="./images/symbol-defs.svg#symbol"></use></svg>
+										<span>Річний оборот до 10 млн грн</span>
+									</li>
+									<li class="includes-item">
+										<svg class="icon icon-symbol"><use xlink:href="./images/symbol-defs.svg#symbol"></use></svg>
+										<span>Безкоштовне ведення до 5-х співробітників</span>
+									</li>
+									<li class="includes-item">
+										<svg class="icon icon-symbol"><use xlink:href="./images/symbol-defs.svg#symbol"></use></svg>
+										<span>Ведення ПДВ</span>
+									</li>
+								</ul>
+								<div class="order">
+									<div class="order-price"><span>8 900</span> грн/міс</div>
+									<button class="order-btn btn btn-outline-purple">Залишити заявку</button>
+								</div>
+							</div>
+							<!-- /.h-packages-item -->
+							<div class="h-packages-item">
+								<h5 class="heading">
+									<span class="heading-suptitle">Тарифний пакет</span>
+									<span class="heading-title text-sm w-medium text-uppercase">Стандартний</span>
+								</h5>
+								<ul class="includes">
+									<li class="includes-item">
+										<svg class="icon icon-symbol"><use xlink:href="./images/symbol-defs.svg#symbol"></use></svg>
+										<span>До 100 операцій на місяць</span>
+									</li>
+									<li class="includes-item">
+										<svg class="icon icon-symbol"><use xlink:href="./images/symbol-defs.svg#symbol"></use></svg>
+										<span>Річний оборот до 20 млн грн</span>
+									</li>
+									<li class="includes-item">
+										<svg class="icon icon-symbol"><use xlink:href="./images/symbol-defs.svg#symbol"></use></svg>
+										<span>Безкоштовне ведення до 7-ми співробітників</span>
+									</li>
+									<li class="includes-item">
+										<svg class="icon icon-symbol"><use xlink:href="./images/symbol-defs.svg#symbol"></use></svg>
+										<span>Ведення ПДВ</span>
+									</li>
+								</ul>
+								<div class="order">
+									<div class="order-price"><span>11 200</span> грн/міс</div>
+									<button class="order-btn btn btn-outline-purple">Залишити заявку</button>
+								</div>
+							</div>
+							<!-- /.h-packages-item -->
+							<div class="h-packages-item h-packages-item--individual">
+								<h5 class="heading">
+									<span class="heading-suptitle">Тарифний пакет</span>
+									<span class="heading-title text-sm w-medium text-uppercase">Індивідуальний</span>
+								</h5>
+								<ul class="includes">
+									<li class="includes-item">
+										<svg class="icon icon-symbol"><use xlink:href="./images/symbol-defs.svg#symbol"></use></svg>
+										<span>До 50 операцій на місяць</span>
+									</li>
+									<li class="includes-item">
+										<svg class="icon icon-symbol"><use xlink:href="./images/symbol-defs.svg#symbol"></use></svg>
+										<span>Річний оборот до 10 млн грн</span>
+									</li>
+									<li class="includes-item">
+										<svg class="icon icon-symbol"><use xlink:href="./images/symbol-defs.svg#symbol"></use></svg>
+										<span>Безкоштовне ведення до 5-х співробітників</span>
+									</li>
+									<li class="includes-item">
+										<svg class="icon icon-symbol"><use xlink:href="./images/symbol-defs.svg#symbol"></use></svg>
+										<span>Ведення ПДВ</span>
+									</li>
+								</ul>
+								<div class="order">
+									<div class="order-price">Індивідуальна ціна</div>
+									<button class="order-btn btn btn-outline-purple">Залишити заявку</button>
+								</div>
+							</div>
+							<!-- /.h-packages-item -->
+						</div>
+						<!-- /.h-packages-list -->
 					</div>
+					<!-- /.tab-pane -->
 				</div>
-				<!-- /.h-packages-item -->
-				<div class="h-packages-item">
-					<h5 class="heading">
-						<span class="heading-suptitle">Тарифний пакет</span>
-						<span class="heading-title text-sm w-medium text-uppercase">Професійний</span>
-					</h5>
-					<ul class="includes">
-						<li class="includes-item">
-							<svg class="icon icon-symbol"><use xlink:href="./images/symbol-defs.svg#symbol"></use></svg>
-							<span>До 150 операцій на місяць</span>
-						</li>
-						<li class="includes-item">
-							<svg class="icon icon-symbol"><use xlink:href="./images/symbol-defs.svg#symbol"></use></svg>
-							<span>Річний оборот до 35 млн грн</span>
-						</li>
-						<li class="includes-item">
-							<svg class="icon icon-symbol"><use xlink:href="./images/symbol-defs.svg#symbol"></use></svg>
-							<span>Безкоштовне ведення до 10-ти співробітників</span>
-						</li>
-						<li class="includes-item">
-							<svg class="icon icon-symbol"><use xlink:href="./images/symbol-defs.svg#symbol"></use></svg>
-							<span>Ведення ПДВ</span>
-						</li>
-						<li class="includes-item">
-							<svg class="icon icon-symbol"><use xlink:href="./images/symbol-defs.svg#symbol"></use></svg>
-							<span>Супровід зовнішньоекономічної діяльності</span>
-						</li>
-					</ul>
-					<div class="order">
-						<div class="order-price"><span>16 500</span> грн/міс</div>
-						<button class="order-btn btn btn-outline-purple">Залишити заявку</button>
-					</div>
-				</div>
-				<!-- /.h-packages-item -->
-				<div class="h-packages-item h-packages-item--individual">
-					<h5 class="heading">
-						<span class="heading-suptitle">Тарифний пакет</span>
-						<span class="heading-title text-sm w-medium text-uppercase">Індивідуальний</span>
-					</h5>
-					<ul class="includes">
-						<li class="includes-item">
-							<svg class="icon icon-symbol"><use xlink:href="./images/symbol-defs.svg#symbol"></use></svg>
-							<span>До 50 операцій на місяць</span>
-						</li>
-						<li class="includes-item">
-							<svg class="icon icon-symbol"><use xlink:href="./images/symbol-defs.svg#symbol"></use></svg>
-							<span>Річний оборот до 10 млн грн</span>
-						</li>
-						<li class="includes-item">
-							<svg class="icon icon-symbol"><use xlink:href="./images/symbol-defs.svg#symbol"></use></svg>
-							<span>Безкоштовне ведення до 5-х співробітників</span>
-						</li>
-						<li class="includes-item">
-							<svg class="icon icon-symbol"><use xlink:href="./images/symbol-defs.svg#symbol"></use></svg>
-							<span>Ведення ПДВ</span>
-						</li>
-					</ul>
-					<div class="order">
-						<div class="order-price">Індивідуальна ціна</div>
-						<button class="order-btn btn btn-outline-purple">Залишити заявку</button>
-					</div>
-				</div>
-				<!-- /.h-packages-item -->
+				<!-- /.h-packages-content -->
 			</div>
-			<!-- /.h-packages-list -->
+			<!-- /.h-packages-wrapper -->
 		</div>
 		<!-- /.container -->
 	</section>
