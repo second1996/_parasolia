@@ -3436,6 +3436,7 @@ textarea:required:valid {
   display: -ms-flexbox;
   display: flex;
   max-width: 33.33333%;
+  padding-right: 24px;
   cursor: pointer
 }
 .page-calculator .calculator-section .options-check-input {
@@ -3476,6 +3477,9 @@ textarea:required:valid {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   max-width: 50%;
   margin-left: -1px;
   padding: 16px;
@@ -9408,6 +9412,12 @@ textarea:required:valid {
   .page-about .partners-item {
     padding: 32px
   }
+  .page-calculator .calculator-section {
+    padding: 48px
+  }
+  .page-calculator .calculator-total {
+    padding: 48px
+  }
   .page-contacts .regions-item {
     -ms-flex-wrap: wrap;
     flex-wrap: wrap;
@@ -9593,6 +9603,12 @@ textarea:required:valid {
   .mb-64 {
     margin-bottom: 48px
   }
+  .mt-96 {
+    margin-top: 64px
+  }
+  .mb-96 {
+    margin-bottom: 64px
+  }
   .mt-120 {
     margin-top: 100px
   }
@@ -9724,6 +9740,21 @@ textarea:required:valid {
   .page-about .manifest-card {
     min-height: 320px;
     margin-top: 32px
+  }
+  .page-calculator .calculator-section {
+    padding: 32px
+  }
+  .page-calculator .calculator-section .heading-title {
+    font-size: 24px
+  }
+  .page-calculator .calculator-section .options-check {
+    -ms-flex-preferred-size: 50%;
+    flex-basis: 50%;
+    max-width: 50%;
+    font-size: 15px
+  }
+  .page-calculator .calculator-total {
+    padding: 32px
   }
   .page-contacts .regions-item-section {
     -ms-flex-preferred-size: 100%;
@@ -9896,6 +9927,44 @@ textarea:required:valid {
   .page-about .partners-main .partners-item::after {
     display: none
   }
+  .page-calculator .calculator-section .heading-title {
+    font-size: 20px
+  }
+  .page-calculator .calculator-section .heading-descr {
+    font-size: 14px
+  }
+  .page-calculator .calculator-section .options {
+    margin-top: 24px
+  }
+  .page-calculator .calculator-section .options-check_inline {
+    -ms-flex-preferred-size: 100%;
+    flex-basis: 100%;
+    max-width: 100%;
+    margin-left: 0;
+    margin-bottom: -1px
+  }
+  .page-calculator .calculator-section .additional-descr {
+    font-size: 14px
+  }
+  .page-calculator .calculator-total {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-align: start;
+    -ms-flex-align: start;
+    align-items: flex-start;
+    -webkit-box-pack: start;
+    -ms-flex-pack: start;
+    justify-content: flex-start
+  }
+  .page-calculator .calculator-total-content {
+    margin-bottom: 8px;
+    padding-right: 0
+  }
+  .page-calculator .calculator-total-content .descr {
+    font-size: 14px
+  }
   .page-contacts .regions-map iframe {
     min-height: 320px
   }
@@ -9998,12 +10067,6 @@ textarea:required:valid {
   }
   .modal-fullscreen-sm-down .modal-footer {
     border-radius: 0
-  }
-  .mt-96 {
-    margin-top: 64px
-  }
-  .mb-96 {
-    margin-bottom: 64px
   }
   .mt-120 {
     margin-top: 80px
@@ -10117,6 +10180,21 @@ textarea:required:valid {
   .page-about .partners-item .description {
     font-size: 13px;
     line-height: 1.4
+  }
+  .page-calculator .calculator-section {
+    padding: 24px
+  }
+  .page-calculator .calculator-section .options-check {
+    -ms-flex-preferred-size: 100%;
+    flex-basis: 100%;
+    max-width: 100%;
+    padding-right: 0
+  }
+  .page-calculator .calculator-section .options-check:not(:last-child) {
+    margin-bottom: 12px
+  }
+  .page-calculator .calculator-total {
+    padding: 24px
   }
   .page-contacts .regions-item {
     padding: 24px

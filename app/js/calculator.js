@@ -382,7 +382,6 @@ const calcTotal = document.querySelector('#calculator-total');
 const calcTotalValue = calcTotal.querySelector('.calculator-total-summary .value');
 const calcApplyForm = document.querySelector('#calculator-apply-form');
 
-
 let currentOrganization = {
   data: null,
   section: calcIndividual,
@@ -391,7 +390,6 @@ let totalSum = {
   value: 0,
   multiplier: 0,
 };
-
 
 // Tabs
 calcOrganizationInputs.forEach((el) => {
@@ -406,18 +404,18 @@ calcOrganizationInputs.forEach((el) => {
     if (organization === 'individual') {
       currentOrganization.data = individualData;
       currentOrganization.section = calcIndividual;
-      
+
       calcIndividual.classList.remove('d-none');
       calcLegal.classList.add('d-none');
-      
+
       calcLegal.innerHTML = '';
       calcIndividual.insertAdjacentHTML('afterbegin', renderSection(currentOrganization.data[0]));
     }
-    
+
     if (organization === 'legal') {
       currentOrganization.data = legalData;
       currentOrganization.section = calcLegal;
-      
+
       calcLegal.classList.remove('d-none');
       calcIndividual.classList.add('d-none');
 
@@ -434,11 +432,15 @@ calcTree.forEach((section) => {
 
     if (e.target.className === 'options-check-input') {
       e.target.onchange = (el) => {
-        const nextNodeId= el.target.dataset.nextNodeId;
+        const nextNodeId = el.target.dataset.nextNodeId;
         const cardObj = currentOrganization.data.find((obj) => obj.node === nextNodeId);
         const currentIndex = +el.target.closest('.calculator-section').dataset.sectionIndex;
-        const sections = el.target.closest('.calculator-tree').querySelectorAll('.calculator-section');
-        const inputs = el.target.closest('.calculator-tree').querySelectorAll('.options-check-input');
+        const sections = el.target
+          .closest('.calculator-tree')
+          .querySelectorAll('.calculator-section');
+        const inputs = el.target
+          .closest('.calculator-tree')
+          .querySelectorAll('.options-check-input');
         const additionalEl = el.target.closest('.calculator-section').querySelector('.additional');
 
         totalSum.value = 0;
@@ -462,7 +464,11 @@ calcTree.forEach((section) => {
 
         // Toggle additional field if element has attribute "has-additional"
         if (additionalEl) {
-          const additionalElField = additionalEl.querySelector('.additional-field')
+          const additionalElField = additionalEl.querySelector('.additional-field');
+          const maskOptions = {
+            mask: /^[1-9]\d{0,2}$/,
+          };
+
           if (e.target.dataset.hasAdditional) {
             additionalEl.classList.remove('d-none');
             additionalElField.setAttribute('required', '');
@@ -471,17 +477,18 @@ calcTree.forEach((section) => {
             additionalEl.classList.add('d-none');
             additionalElField.removeAttribute('required', '');
           }
+
+          additionalInputs.forEach((el) => {
+            const mask = IMask(el, maskOptions);
+
+            el.value = '';
+            el.oninput = (e) => {
+              totalSum.multiplier = +e.target.dataset.multiplier * +e.target.value;
+              inputsTotal(inputs);
+              calcTotalSum();
+            };
+          });
         }
-
-        additionalInputs.forEach(el => {
-          el.value = '';
-          el.oninput = (e) => {
-            totalSum.multiplier = +e.target.dataset.multiplier * +e.target.value;
-
-            inputsTotal(inputs);
-            calcTotalSum();
-          }
-        });
 
         // Calculate
         inputsTotal(inputs);
@@ -503,12 +510,12 @@ function renderSection(obj) {
       </div>
       <div class="options">
       ${answers
-        .map(answer => {
+        .map((answer) => {
           return `<label class="options-check">
             <input 
               class="options-check-input" 
               type="radio" 
-              name="calc-individual-${node}[]" 
+              name="calc-${node}[]" 
               data-next-node-id="${answer.nextNode}" 
               ${answer.value ? `data-value="${answer.value}"` : ''} 
               ${answer.additional ? 'data-has-additional="true"' : ''}>
@@ -519,7 +526,7 @@ function renderSection(obj) {
         .join('')}
       </div>
       ${answers
-        .map(answer => {
+        .map((answer) => {
           if (answer.additional) {
             const { question, descr, field } = answer.additional;
 
@@ -529,8 +536,9 @@ function renderSection(obj) {
                 <input 
                   class="additional-field form-control form-control--number" 
                   type="number" 
+                  name="calc-additional-${node}[]" 
                   min="1" 
-                  max="9999" 
+                  max="1000" 
                   maxlength="4" 
                   step="1" 
                   placeholder="${field}" 
@@ -544,7 +552,7 @@ function renderSection(obj) {
 }
 
 function calcTotalSum() {
-  const result = totalSum.value + totalSum.multiplier
+  const result = totalSum.value + totalSum.multiplier;
 
   calcTotalValue.innerHTML = result.toLocaleString();
 }
