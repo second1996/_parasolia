@@ -51,4 +51,24 @@ document.addEventListener('DOMContentLoaded', () => {
       headerEl.classList.remove('_is-sticky');
     }
   };
+
+  // Variable BS Modals
+  const servicesModal = document.querySelector('#servicesModal');
+  const packagesModal = document.querySelector('#packagesModal');
+
+  servicesModal.addEventListener('show.bs.modal', (e) => {
+    const button = e.relatedTarget;
+    const buttonValue = button.getAttribute('data-bs-services-name');
+    const servicesModalInput = servicesModal.querySelector('#servicesModalInput');
+
+    servicesModalInput.value = `Послуга: ${buttonValue}`;
+  });
+
+  packagesModal.addEventListener('show.bs.modal', (e) => {
+    const button = e.relatedTarget;
+    const buttonValue = button.getAttribute('data-bs-packages-name');
+    const packagesModalInput = packagesModal.querySelector('#packagesModalInput');
+
+    packagesModalInput.value = `Пакет: ${buttonValue}`;
+  });
 });

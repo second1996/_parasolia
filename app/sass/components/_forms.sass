@@ -11,6 +11,12 @@ input, textarea
 		border-color: $purple
 	&:required:valid
 		border-color: $purple
+	&:read-only,
+	&:disabled
+		color: $text
+		&::selection
+			background-color: $trsp
+			color: $purple
 
 .form
 	position: relative
