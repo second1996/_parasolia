@@ -53,6 +53,7 @@ document.addEventListener('DOMContentLoaded', () => {
   };
 
   // Variable BS Modals
+  const modals = document.querySelectorAll('.modal');
   const servicesModal = document.querySelector('#servicesModal');
   const packagesModal = document.querySelector('#packagesModal');
 
@@ -70,5 +71,17 @@ document.addEventListener('DOMContentLoaded', () => {
     const packagesModalInput = packagesModal.querySelector('#packagesModalInput');
 
     packagesModalInput.value = `Пакет: ${buttonValue}`;
+  });
+
+  modals.forEach((modal) => {
+    modal.addEventListener('show.bs.modal', (e) => {
+      const button = e.relatedTarget;
+      const buttonValue = button.getAttribute('data-bs-form-title');
+      const formTitleInput = servicesModal.querySelector('input[name="parasolia-form-title"]');
+
+      formTitleInput.value = `${buttonValue}`;
+
+      console.log(formTitleInput.value);
+    });
   });
 });

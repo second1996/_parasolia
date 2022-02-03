@@ -49,6 +49,7 @@ const individualData = [
         value: 1500,
         multiplier: 700,
         additional: {
+          id: 1,
           question: 'Скільки чоловік?',
           descr: 'Введіть числове значення к-ті працівників у вашій компанії.',
           field: 'Кількість працівників',
@@ -89,6 +90,7 @@ const individualData = [
         value: 1800,
         multiplier: 700,
         additional: {
+          id: 1,
           question: 'Скільки чоловік?',
           descr: 'Введіть числове значення к-ті працівників у вашій компанії.',
           field: 'Кількість працівників',
@@ -113,6 +115,7 @@ const individualData = [
         value: 3300,
         multiplier: 700,
         additional: {
+          id: 1,
           question: 'Скільки чоловік?',
           descr: 'Введіть числове значення к-ті працівників у вашій компанії.',
           field: 'Кількість працівників',
@@ -169,6 +172,7 @@ const individualData = [
         value: 3000,
         multiplier: 700,
         additional: {
+          id: 1,
           question: 'Скільки чоловік?',
           descr: 'Введіть числове значення к-ті працівників у вашій компанії.',
           field: 'Кількість працівників',
@@ -193,6 +197,7 @@ const individualData = [
         value: 4000,
         multiplier: 700,
         additional: {
+          id: 1,
           question: 'Скільки чоловік?',
           descr: 'Введіть числове значення к-ті працівників у вашій компанії.',
           field: 'Кількість працівників',
@@ -233,6 +238,7 @@ const individualData = [
         value: 4500,
         multiplier: 700,
         additional: {
+          id: 1,
           question: 'Скільки чоловік?',
           descr: 'Введіть числове значення к-ті працівників у вашій компанії.',
           field: 'Кількість працівників',
@@ -257,6 +263,7 @@ const individualData = [
         value: 5500,
         multiplier: 700,
         additional: {
+          id: 1,
           question: 'Скільки чоловік?',
           descr: 'Введіть числове значення к-ті працівників у вашій компанії.',
           field: 'Кількість працівників',
@@ -300,6 +307,7 @@ const legalData = [
         value: 6000,
         multiplier: 80,
         additional: {
+          id: 1,
           question: 'Яка кількість ПН за місяць (вх/вих)?',
           descr: 'Введіть числове значення к-ті податкових накладних за місяць.',
           field: 'Кількість ПН',
@@ -353,6 +361,7 @@ const legalData = [
         value: 8500,
         multiplier: 80,
         additional: {
+          id: 1,
           question: 'Яка кількість ПН за місяць (вх/вих)?',
           descr: 'Введіть числове значення к-ті податкових накладних за місяць.',
           field: 'Кількість ПН',
@@ -364,6 +373,7 @@ const legalData = [
         value: 10000,
         multiplier: 80,
         additional: {
+          id: 2,
           question: 'Яка кількість ПН за місяць (вх/вих)?',
           descr: 'Введіть числове значення к-ті податкових накладних за місяць.',
           field: 'Кількість ПН',
@@ -428,8 +438,6 @@ calcOrganizationInputs.forEach((el) => {
 // Calculator logic
 calcTree.forEach((section) => {
   section.addEventListener('click', (e) => {
-    const additionalInputs = document.querySelectorAll('.calculator-section .additional-field');
-
     if (e.target.className === 'options-check-input') {
       e.target.onchange = (el) => {
         const nextNodeId = el.target.dataset.nextNodeId;
@@ -441,7 +449,13 @@ calcTree.forEach((section) => {
         const inputs = el.target
           .closest('.calculator-tree')
           .querySelectorAll('.options-check-input');
-        const additionalEl = el.target.closest('.calculator-section').querySelector('.additional');
+        const additionalEl = el.target
+          .closest('.calculator-section')
+          .querySelectorAll('.additional');
+        const additionalInputs = el.target
+          .closest('.calculator-section')
+          .querySelectorAll('.additional-field');
+        let mask;
 
         totalSum.value = 0;
         totalSum.multiplier = 0;
@@ -464,24 +478,30 @@ calcTree.forEach((section) => {
 
         // Toggle additional field if element has attribute "has-additional"
         if (additionalEl) {
-          const additionalElField = additionalEl.querySelector('.additional-field');
           const maskOptions = {
             mask: /^[1-9]\d{0,2}$/,
           };
 
-          if (e.target.dataset.hasAdditional) {
-            additionalEl.classList.remove('d-none');
-            additionalElField.setAttribute('required', '');
-          } else {
-            totalSum.multiplier = 0;
-            additionalEl.classList.add('d-none');
-            additionalElField.removeAttribute('required', '');
-          }
+          additionalEl.forEach((el) => {
+            const additionalInput = el.querySelector('.additional-field');
+            const additionalInputId = +e.target.dataset.hasAdditional;
+            const additionalElId = +el.dataset.additionalId;
+
+            if (additionalInputId === additionalElId) {
+              el.classList.remove('d-none');
+              additionalInput.setAttribute('required', '');
+            } else {
+              totalSum.multiplier = 0;
+              el.classList.add('d-none');
+              additionalInput.removeAttribute('required', '');
+            }
+          });
 
           additionalInputs.forEach((el) => {
-            const mask = IMask(el, maskOptions);
+            mask = IMask(el, maskOptions);
+            mask.value = '';
+            mask.updateValue();
 
-            el.value = '';
             el.oninput = (e) => {
               totalSum.multiplier = +e.target.dataset.multiplier * +e.target.value;
               inputsTotal(inputs);
@@ -518,7 +538,7 @@ function renderSection(obj) {
               name="calc-${node}[]" 
               data-next-node-id="${answer.nextNode}" 
               ${answer.value ? `data-value="${answer.value}"` : ''} 
-              ${answer.additional ? 'data-has-additional="true"' : ''}>
+              ${answer.additional ? `data-has-additional="${answer.additional.id}"` : ''}>
             <span class="options-check-box"></span>
             ${answer.text}
           </label>`;
@@ -528,15 +548,15 @@ function renderSection(obj) {
       ${answers
         .map((answer) => {
           if (answer.additional) {
-            const { question, descr, field } = answer.additional;
+            const { id, question, descr, field } = answer.additional;
 
-            return `<div class="additional d-none">
+            return `<div class="additional d-none" data-additional-id="${id}">
                 <h4 class="additional-title">${question}</h4>
                 <p class="additional-descr">${descr}</p>
                 <input 
                   class="additional-field form-control form-control--number" 
                   type="number" 
-                  name="calc-additional-${node}[]" 
+                  name="calc-additional-${node}_${id}" 
                   min="1" 
                   max="1000" 
                   maxlength="4" 
