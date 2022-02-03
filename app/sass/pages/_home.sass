@@ -393,35 +393,38 @@
 		counter-reset: experience-list
 		display: flex
 		flex-wrap: wrap
-	&-item,
-	&-item-main
+	&-item
 		flex: 0 0 25%
-		position: relative
-		z-index: 1
-		display: flex
-		flex-direction: column
-		justify-content: space-between
 		max-width: 25%
-		margin-left: -1px
-		margin-bottom: -1px
-		min-height: 356px
-		padding: 32px
-		border: 1px solid rgba($white, 0.2)
-		background-color: $purple
-		transition: background-color $trs
-		+media-breakpoint-down(xxl)
-			min-height: 324px
 		+media-breakpoint-down(xl)
 			flex-basis: 33.33333%
 			max-width: 33.33333%
 		+media-breakpoint-down(lg)
 			flex-basis: 50%
 			max-width: 50%
-		+media-breakpoint-down(md)
-			padding: 24px
 		+media-breakpoint-down(sm)
 			flex-basis: 100%
 			max-width: 100%
+	&-item-main
+		flex: 1 0 auto
+		max-width: 100%
+	&-item,
+	&-item-main
+		position: relative
+		z-index: 1
+		display: flex
+		flex-direction: column
+		justify-content: space-between
+		min-height: 356px
+		padding: 32px
+		box-shadow: 0 0 0 1px #8471b5
+		background-color: $purple
+		transition: box-shadow $trs, background-color $trs
+		+media-breakpoint-down(xxl)
+			min-height: 324px
+		+media-breakpoint-down(md)
+			padding: 24px
+		+media-breakpoint-down(sm)
 			min-height: auto
 		&::after
 			content: counter(experience-list, decimal-leading-zero) " "
@@ -436,6 +439,7 @@
 				right: 24px
 				bottom: 24px
 		&:hover
+			box-shadow: 0 0 0 1px $yellow
 			background-color: $yellow
 			&::after
 				color: $dark
@@ -489,7 +493,6 @@
 	&-item-main
 		align-items: center
 		justify-content: center
-		background-color: $trsp
 		text-align: center
 		padding: 24px
 		+media-breakpoint-down(sm)

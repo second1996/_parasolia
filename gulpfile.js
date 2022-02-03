@@ -108,7 +108,15 @@ function svgSprite() {
 
 function buildcopy() {
   return src(
-    ['{app/js,app/css}/*.min.*', 'app/images/**/*.*', '!app/images/src/**/*', 'app/fonts/**/*'],
+    [
+      'app/js/*.js',
+      '!app/js/_*.js',
+      '!app/js/app.js',
+      'app/css/*.min.*',
+      'app/images/**/*.*',
+      '!app/images/src/**/*',
+      'app/fonts/**/*',
+    ],
     { base: 'app/' },
   ).pipe(dest('dist'));
 }
