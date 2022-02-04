@@ -272,6 +272,7 @@ const individualData = [
     ],
   },
 ];
+
 const legalData = [
   {
     id: 0,
@@ -383,145 +384,152 @@ const legalData = [
   },
 ];
 
-const calcForm = document.querySelector('#calc-form');
-const calcOrganizationInputs = document.querySelectorAll('input[name*="calc-organization"]');
-const calcTree = document.querySelectorAll('.calculator-tree');
-const calcIndividual = document.querySelector('#individual');
-const calcLegal = document.querySelector('#legal');
-const calcTotal = document.querySelector('#calculator-total');
-const calcTotalValue = calcTotal.querySelector('.calculator-total-summary .value');
-const calcApplyForm = document.querySelector('#calculator-apply-form');
+document.addEventListener('DOMContentLoaded', () => {
+  const calcForm = document.querySelector('#calc-form');
+  const calcOrganizationInputs = document.querySelectorAll('input[name*="calc-organization"]');
+  const calcTree = document.querySelectorAll('.calculator-tree');
+  const calcIndividual = document.querySelector('#individual');
+  const calcLegal = document.querySelector('#legal');
+  const calcTotal = document.querySelector('#calculator-total');
+  const calcTotalValue = calcTotal.querySelector('.calculator-total-summary .value');
+  const calcApplyForm = document.querySelector('#calculator-apply-form');
 
-let currentOrganization = {
-  data: null,
-  section: calcIndividual,
-};
-let totalSum = {
-  value: 0,
-  multiplier: 0,
-};
+  let currentOrganization = {
+    data: null,
+    section: calcIndividual,
+  };
+  let totalSum = {
+    value: 0,
+    multiplier: 0,
+  };
 
-// Tabs
-calcOrganizationInputs.forEach((el) => {
-  el.addEventListener('change', (e) => {
-    let organization = e.currentTarget.dataset.organization;
+  // Tabs
+  calcOrganizationInputs.forEach((el) => {
+    el.addEventListener('change', (e) => {
+      let organization = e.currentTarget.dataset.organization;
 
-    totalSum.value = 0;
-    totalSum.multiplier = 0;
+      totalSum.value = 0;
+      totalSum.multiplier = 0;
 
-    calcTotal.classList.remove('d-none');
+      calcTotal.classList.remove('d-none');
 
-    if (organization === 'individual') {
-      currentOrganization.data = individualData;
-      currentOrganization.section = calcIndividual;
+      if (organization === 'individual') {
+        currentOrganization.data = individualData;
+        currentOrganization.section = calcIndividual;
 
-      calcIndividual.classList.remove('d-none');
-      calcLegal.classList.add('d-none');
+        calcIndividual.classList.remove('d-none');
+        calcLegal.classList.add('d-none');
 
-      calcLegal.innerHTML = '';
-      calcIndividual.insertAdjacentHTML('afterbegin', renderSection(currentOrganization.data[0]));
-    }
+        calcLegal.innerHTML = '';
+        calcIndividual.insertAdjacentHTML('afterbegin', renderSection(currentOrganization.data[0]));
+      }
 
-    if (organization === 'legal') {
-      currentOrganization.data = legalData;
-      currentOrganization.section = calcLegal;
+      if (organization === 'legal') {
+        currentOrganization.data = legalData;
+        currentOrganization.section = calcLegal;
 
-      calcLegal.classList.remove('d-none');
-      calcIndividual.classList.add('d-none');
+        calcLegal.classList.remove('d-none');
+        calcIndividual.classList.add('d-none');
 
-      calcIndividual.innerHTML = '';
-      calcLegal.insertAdjacentHTML('afterbegin', renderSection(currentOrganization.data[0]));
-    }
+        calcIndividual.innerHTML = '';
+        calcLegal.insertAdjacentHTML('afterbegin', renderSection(currentOrganization.data[0]));
+      }
+    });
   });
-});
 
-// Calculator logic
-calcTree.forEach((section) => {
-  section.addEventListener('click', (e) => {
-    if (e.target.className === 'options-check-input') {
-      e.target.onchange = (el) => {
-        const nextNodeId = el.target.dataset.nextNodeId;
-        const cardObj = currentOrganization.data.find((obj) => obj.node === nextNodeId);
-        const currentIndex = +el.target.closest('.calculator-section').dataset.sectionIndex;
-        const sections = el.target
-          .closest('.calculator-tree')
-          .querySelectorAll('.calculator-section');
-        const inputs = el.target
-          .closest('.calculator-tree')
-          .querySelectorAll('.options-check-input');
-        const additionalEl = el.target
-          .closest('.calculator-section')
-          .querySelectorAll('.additional');
-        const additionalInputs = el.target
-          .closest('.calculator-section')
-          .querySelectorAll('.additional-field');
-        let mask;
+  // Calculator logic
+  calcTree.forEach((section) => {
+    section.addEventListener('click', (e) => {
+      if (e.target.className === 'options-check-input') {
+        e.target.onchange = (el) => {
+          const nextNodeId = el.target.dataset.nextNodeId;
+          const cardObj = currentOrganization.data.find((obj) => obj.node === nextNodeId);
+          const currentIndex = +el.target.closest('.calculator-section').dataset.sectionIndex;
+          const sections = el.target
+            .closest('.calculator-tree')
+            .querySelectorAll('.calculator-section');
+          const inputs = el.target
+            .closest('.calculator-tree')
+            .querySelectorAll('.options-check-input');
+          const additionalEl = el.target
+            .closest('.calculator-section')
+            .querySelectorAll('.additional');
+          const additionalInputs = el.target
+            .closest('.calculator-section')
+            .querySelectorAll('.additional-field');
+          let mask;
 
-        totalSum.value = 0;
-        totalSum.multiplier = 0;
+          totalSum.value = 0;
+          totalSum.multiplier = 0;
 
-        // Render card
-        if (nextNodeId !== 'null') {
-          currentOrganization.section.insertAdjacentHTML('beforeend', renderSection(cardObj));
-        } else {
-          calcApplyForm.classList.remove('d-none');
-        }
-
-        // Removes sections that section index bigger than current section index
-        for (const section of sections) {
-          const sectionIndex = +section.dataset.sectionIndex;
-          if (sectionIndex > currentIndex) {
-            section.remove();
-            calcApplyForm.classList.add('d-none');
+          // Render card
+          if (nextNodeId !== 'null') {
+            currentOrganization.section.insertAdjacentHTML('beforeend', renderSection(cardObj));
+          } else {
+            calcApplyForm.classList.remove('d-none');
           }
-        }
 
-        // Toggle additional field if element has attribute "has-additional"
-        if (additionalEl) {
-          const maskOptions = {
-            mask: /^[1-9]\d{0,2}$/,
-          };
+          // Removes sections that section index bigger than current section index
+          for (const section of sections) {
+            const sectionIndex = +section.dataset.sectionIndex;
 
-          additionalEl.forEach((el) => {
-            const additionalInput = el.querySelector('.additional-field');
-            const additionalInputId = +e.target.dataset.hasAdditional;
-            const additionalElId = +el.dataset.additionalId;
-
-            if (additionalInputId === additionalElId) {
-              el.classList.remove('d-none');
-              additionalInput.setAttribute('required', '');
-            } else {
-              totalSum.multiplier = 0;
-              el.classList.add('d-none');
-              additionalInput.removeAttribute('required', '');
+            if (sectionIndex > currentIndex) {
+              section.remove();
+              calcApplyForm.classList.add('d-none');
             }
-          });
+          }
 
-          additionalInputs.forEach((el) => {
-            mask = IMask(el, maskOptions);
-            mask.value = '';
-            mask.updateValue();
-
-            el.oninput = (e) => {
-              totalSum.multiplier = +e.target.dataset.multiplier * +e.target.value;
-              inputsTotal(inputs);
-              calcTotalSum();
+          // Toggle additional field if element has attribute "has-additional"
+          if (additionalEl) {
+            const maskOptions = {
+              mask: /^[1-9]\d{0,2}$/,
             };
-          });
-        }
 
-        // Calculate
-        inputsTotal(inputs);
-        calcTotalSum();
-      };
-    }
+            additionalEl.forEach((el) => {
+              const additionalInput = el.querySelector('.additional-field');
+              const additionalInputId = +e.target.dataset.hasAdditional;
+              const additionalElId = +el.dataset.additionalId;
+
+              if (additionalInputId === additionalElId) {
+                el.classList.remove('d-none');
+                additionalInput.setAttribute('required', '');
+              } else {
+                totalSum.multiplier = 0;
+                el.classList.add('d-none');
+                additionalInput.removeAttribute('required', '');
+              }
+            });
+
+            additionalInputs.forEach((el) => {
+              mask = IMask(el, maskOptions);
+              mask.value = '';
+              mask.updateValue();
+
+              el.oninput = (e) => {
+                totalSum.multiplier = +e.target.dataset.multiplier * +e.target.value;
+                inputsTotal(inputs);
+                calcTotalSum();
+              };
+            });
+          }
+
+          // Calculate
+          inputsTotal(inputs);
+          calcTotalSum();
+
+          // Smooth scroll to next section
+          setTimeout(() => {
+            scrollToSection(e.target);
+          }, 150);
+        };
+      }
+    });
   });
-});
 
-function renderSection(obj) {
-  const { id, question, descr, answers, node } = obj;
+  function renderSection(obj) {
+    const { id, question, descr, answers, node } = obj;
 
-  return `<div class="calculator-section" data-section-id="${node}" data-section-index="${id}">
+    return `<div class="calculator-section" data-section-id="${node}" data-section-index="${id}">
       <div class="heading">
         <h3 class="heading-title text-lg">${question}</h3>
         <div class="heading-descr">
@@ -569,20 +577,31 @@ function renderSection(obj) {
         })
         .join('')}
     </div>`;
-}
+  }
 
-function calcTotalSum() {
-  const result = totalSum.value + totalSum.multiplier;
+  function calcTotalSum() {
+    const result = totalSum.value + totalSum.multiplier;
 
-  calcTotalValue.innerHTML = result.toLocaleString();
-}
+    calcTotalValue.innerHTML = result.toLocaleString();
+  }
 
-function inputsTotal(inputs) {
-  totalSum.value = 0;
+  function inputsTotal(inputs) {
+    totalSum.value = 0;
 
-  inputs.forEach((input) => {
-    if (input.checked && input.dataset.value && calcForm.contains(input)) {
-      totalSum.value += +input.dataset.value;
+    inputs.forEach((input) => {
+      if (input.checked && input.dataset.value && calcForm.contains(input)) {
+        totalSum.value += +input.dataset.value;
+      }
+    });
+  }
+
+  function scrollToSection(e) {
+    const nextSectionNode = e.closest('.calculator-section').nextSibling;
+
+    if (nextSectionNode) {
+      nextSectionNode.scrollIntoView({
+        behavior: 'smooth',
+      });
     }
-  });
-}
+  }
+});
