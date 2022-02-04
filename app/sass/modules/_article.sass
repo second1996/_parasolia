@@ -1,6 +1,7 @@
 article
 	h1, h2, h3, h4, h5, h6
-		margin-bottom: 20px
+		margin-top: 32px
+		margin-bottom: 16px
 		font-size: 22px
 		font-weight: 500
 
@@ -8,23 +9,41 @@ article
 	img,
 	ul,
 	ol,
-	blockquote, table
-		margin-bottom: 10px
+	blockquote,
+	table
+		margin-bottom: 16px
 
 	b,
 	strong
-		font-weight: 500
-
-	p,
-	ul > li,
-	ul > li > a
-		font-size: 16px
-		+media-breakpoint-down(xs)
-			font-size: 15px
+		font-weight: $w-bold
 
 	a
-		color: $black
-		font-size: 16px
-		font-weight: 500
-		&:hover
-			color: $purple
+		font-weight: $w-regular
+
+	ul
+		li
+			display: flex
+			flex-wrap: wrap
+			align-items: baseline
+			&::before
+				content: ''
+				width: 16px
+				height: 16px
+				background: url('../images/symbol-purple.svg') no-repeat center/cover
+			> ol
+				flex: 0 0 100%
+				display: flex
+				align-items: baseline
+	ol
+		li
+			&:not(:last-child)
+				margin-bottom: 4px
+			> ol
+				margin-top: 4px
+				margin-bottom: 8px
+
+	blockquote
+		max-width: 920px
+		padding-left: 16px
+		border-left: 3px solid $purple
+		color: $purple
