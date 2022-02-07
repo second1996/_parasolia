@@ -77,11 +77,9 @@ document.addEventListener('DOMContentLoaded', () => {
     modal.addEventListener('show.bs.modal', (e) => {
       const button = e.relatedTarget;
       const buttonValue = button.getAttribute('data-bs-form-title');
-      const formTitleInput = servicesModal.querySelector('input[name="parasolia-form-title"]');
+      const formTitleInput = modal.querySelector('input[name="parasolia-form-title"]');
 
       formTitleInput.value = `${buttonValue}`;
-
-      console.log(formTitleInput.value);
     });
   });
 });

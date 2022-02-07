@@ -392,7 +392,10 @@ document.addEventListener('DOMContentLoaded', () => {
   const calcLegal = document.querySelector('#legal');
   const calcTotal = document.querySelector('#calculator-total');
   const calcTotalValue = calcTotal.querySelector('.calculator-total-summary .value');
+  const calcTotalValueInput = calcForm.querySelector('#calculator-value');
   const calcApplyForm = document.querySelector('#calculator-apply-form');
+
+  console.log(calcTotalValueInput);
 
   let currentOrganization = {
     data: null,
@@ -562,7 +565,6 @@ document.addEventListener('DOMContentLoaded', () => {
             return `<div class="additional d-none" data-additional-id="${id}">
                 <h4 class="additional-title">${question}</h4>
                 <p class="additional-descr">${descr}</p>
-                <input type="hidden" name="calc-additional-${node}[]" value="${question}">
                 <input 
                   class="additional-field form-control form-control--number" 
                   type="number" 
@@ -585,6 +587,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const result = totalSum.value + totalSum.multiplier;
 
     calcTotalValue.innerHTML = result.toLocaleString();
+    calcTotalValueInput.value = `Ціна: ${result.toLocaleString()} грн`;
   }
 
   function inputsTotal(inputs) {
