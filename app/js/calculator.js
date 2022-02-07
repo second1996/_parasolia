@@ -544,6 +544,7 @@ document.addEventListener('DOMContentLoaded', () => {
               class="options-check-input" 
               type="radio" 
               name="calc-${node}[]" 
+              value="${question}: ${answer.text}" 
               data-next-node-id="${answer.nextNode}" 
               ${answer.value ? `data-value="${answer.value}"` : ''} 
               ${answer.additional ? `data-has-additional="${answer.additional.id}"` : ''}>
@@ -561,10 +562,11 @@ document.addEventListener('DOMContentLoaded', () => {
             return `<div class="additional d-none" data-additional-id="${id}">
                 <h4 class="additional-title">${question}</h4>
                 <p class="additional-descr">${descr}</p>
+                <input type="hidden" name="calc-additional-${node}[]" value="${question}">
                 <input 
                   class="additional-field form-control form-control--number" 
                   type="number" 
-                  name="calc-additional-${node}_${id}" 
+                  name="calc-additional-${node}[]" 
                   min="1" 
                   max="1000" 
                   maxlength="4" 
