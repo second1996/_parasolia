@@ -395,8 +395,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const calcTotalValueInput = calcForm.querySelector('#calculator-value');
   const calcApplyForm = document.querySelector('#calculator-apply-form');
 
-  console.log(calcTotalValueInput);
-
   let currentOrganization = {
     data: null,
     section: calcIndividual,

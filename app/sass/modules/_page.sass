@@ -17,3 +17,59 @@
 		margin-top: 16px
 		> p:last-child
 			margin-bottom: 0
+
+// 404 & Thanks pages
+.page-404,
+.page-thanks
+	position: relative
+	z-index: 1
+	display: flex
+	flex-direction: column
+	align-items: center
+	justify-content: center
+	height: 100vh
+	min-height: 420px
+	padding-top: 96px
+	padding-bottom: 96px
+	background-color: $purple
+	&::before
+		pointer-events: none
+		user-select: none
+		content: ''
+		position: absolute
+		top: 0
+		left: 0
+		right: 0
+		bottom: 0
+		z-index: -1
+		background-image: url('../images/pattern-white.svg')
+		opacity: 0.1
+	.wrapper
+		text-align: center
+		.icon
+			width: 124px
+			height: 124px
+			margin-bottom: 16px
+			fill: $yellow
+			animation: spinner 8s linear infinite forwards
+			+media-breakpoint-down(lg)
+				width: 86px
+				height: 86px
+		.title
+			margin-bottom: 0
+			font-size: 64px
+			+media-breakpoint-down(lg)
+				font-size: 48px
+			+media-breakpoint-down(sm)
+				font-size: 36px
+		.descr
+			margin-top: 12px
+			margin-bottom: 0
+		.btn
+			margin-top: 48px
+
+@keyframes spinner
+	from
+		transform: rotate(0deg)
+	to
+		transform: rotate(360deg)

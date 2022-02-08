@@ -2782,6 +2782,93 @@ article blockquote {
 .page-heading .page-descr > p:last-child {
   margin-bottom: 0
 }
+.page-404,
+.page-thanks {
+  position: relative;
+  z-index: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  height: 100vh;
+  min-height: 420px;
+  padding-top: 96px;
+  padding-bottom: 96px;
+  background-color: #654ea3
+}
+.page-404::before,
+.page-thanks::before {
+  pointer-events: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  background-image: url(../images/pattern-white.svg);
+  opacity: .1
+}
+.page-404 .wrapper,
+.page-thanks .wrapper {
+  text-align: center
+}
+.page-404 .wrapper .icon,
+.page-thanks .wrapper .icon {
+  width: 124px;
+  height: 124px;
+  margin-bottom: 16px;
+  fill: #ffc640;
+  -webkit-animation: spinner 8s linear infinite forwards;
+  animation: spinner 8s linear infinite forwards
+}
+.page-404 .wrapper .title,
+.page-thanks .wrapper .title {
+  margin-bottom: 0;
+  font-size: 64px
+}
+.page-404 .wrapper .descr,
+.page-thanks .wrapper .descr {
+  margin-top: 12px;
+  margin-bottom: 0
+}
+.page-404 .wrapper .btn,
+.page-thanks .wrapper .btn {
+  margin-top: 48px
+}
+@-webkit-keyframes spinner {
+  from {
+    -webkit-transform: rotate(0);
+    transform: rotate(0)
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg)
+  }
+}
+@keyframes spinner {
+  from {
+    -webkit-transform: rotate(0);
+    transform: rotate(0)
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg)
+  }
+}
 .section {
   position: relative
 }
@@ -2954,6 +3041,16 @@ button > svg ~ span {
 .btn {
   height: 78px;
   padding: 12px 48px
+}
+.btn.btn-outline-dark:disabled,
+.btn.btn-outline-dark:disabled:hover,
+.btn.btn-outline-purple:disabled,
+.btn.btn-outline-purple:disabled:hover,
+.btn.btn-solid-yellow:disabled,
+.btn.btn-solid-yellow:disabled:hover {
+  border: 1px solid #828282;
+  background-color: #fff;
+  color: #828282
 }
 .btn.btn-burger {
   -webkit-box-orient: vertical;
@@ -9825,6 +9922,15 @@ textarea:read-only::selection {
   .page-heading {
     margin-top: 120px
   }
+  .page-404 .wrapper .icon,
+  .page-thanks .wrapper .icon {
+    width: 86px;
+    height: 86px
+  }
+  .page-404 .wrapper .title,
+  .page-thanks .wrapper .title {
+    font-size: 48px
+  }
   .section-heading .title {
     font-size: 32px
   }
@@ -10236,6 +10342,10 @@ textarea:read-only::selection {
   }
   .m-menu-nav-list-link {
     font-size: 20px
+  }
+  .page-404 .wrapper .title,
+  .page-thanks .wrapper .title {
+    font-size: 36px
   }
   .s-cta-symbols .icon-dollar {
     top: 45%;

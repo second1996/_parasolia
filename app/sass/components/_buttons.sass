@@ -35,6 +35,16 @@
 	+media-breakpoint-down(sm)
 		padding: 12px 24px
 
+	// Disabled state
+	&.btn-outline-dark,
+	&.btn-outline-purple,
+	&.btn-solid-yellow
+		&:disabled,
+		&:disabled:hover
+			border: 1px solid #828282
+			background-color: $white
+			color: #828282
+
 	// Burger button
 	&.btn-burger
 		flex-direction: column
