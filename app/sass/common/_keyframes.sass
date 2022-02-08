@@ -1,0 +1,43 @@
+@keyframes fade-up
+	from
+		transform: translate3d(0, 20px, 0)
+		opacity: 0
+	to
+		transform: translate3d(0, 0, 0)
+		opacity: 1
+
+@keyframes slide-progress
+	from
+		transform: scaleX(0)
+	to
+		transform: scaleX(1)
+
+@keyframes symbol-hidden
+	from
+		transform: scale(1) rotate(0)
+	to
+		transform: scale(0) rotate(-45deg)
+
+@keyframes symbol-shown
+	from
+		transform: scale(0) rotate(-45deg)
+	to
+		transform: scale(1) rotate(0)
+
+@keyframes symbol-rotate-backward
+	from
+		transform: rotate(90deg)
+	to
+		transform: rotate(0)
+
+@keyframes symbol-rotate-forward
+	from
+		transform: rotate(0)
+	to
+		transform: rotate(90deg)
+
+@keyframes spinner
+	from
+		transform: rotate(0deg)
+	to
+		transform: rotate(360deg)

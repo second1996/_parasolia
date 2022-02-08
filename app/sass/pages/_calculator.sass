@@ -60,6 +60,8 @@
 						height: 1px
 						clip-path: rect(0 0 0 0)
 						opacity: 0
+						&:active + .options-check-box
+							box-shadow: 0 0 0 3px rgba($purple, 0.15)
 						&:checked + .options-check-box
 							border-color: $purple
 							background: $purple url('../images/checked.svg') no-repeat center/16px
@@ -71,7 +73,7 @@
 						margin-right: 12px
 						border: 1px solid $border
 						background-color: $white
-						transition: border $trs, background-color $trs
+						transition: border $trs, box-shadow $trs, background-color $trs
 				&-check_inline
 					flex: 0 0 50%
 					position: relative
@@ -91,6 +93,8 @@
 						max-width: 100%
 						margin-left: 0
 						margin-bottom: -1px
+					&:active
+						z-index: 2
 					&-input
 						overflow: hidden
 						position: absolute
@@ -98,6 +102,8 @@
 						height: 1px
 						clip-path: rect(0 0 0 0)
 						opacity: 0
+						&:active + .options-check_inline-box
+							box-shadow: 0 0 0 4px rgba($text, 0.1)
 						&:checked + .options-check_inline-box
 							background-color: $yellow
 					&-box
@@ -109,7 +115,7 @@
 						z-index: -1
 						border: 1px solid $text
 						background-color: $white
-						transition: background-color $trs
+						transition: $trs
 
 			// Additional field
 			.additional

@@ -32,6 +32,12 @@
 	&-slide
 		display: flex
 		align-items: center
+		&.swiper-slide-active
+			.h-heroes-content
+				.title,
+				.description,
+				.btn
+					animation-name: fade-up
 	&-content
 		max-width: 880px
 		margin-left: 75px
@@ -43,6 +49,20 @@
 			margin-left: 0
 		+media-breakpoint-down(sm)
 			max-width: 100%
+
+		// Animations
+		.title,
+		.description,
+		.btn
+			animation-duration: 1.5s
+			animation-fill-mode: both
+			animation-timing-function: ease
+			opacity: 0
+		.description
+			animation-delay: 0.15s
+		.btn
+			animation-delay: 0.25s
+
 		.title
 			margin-bottom: 24px
 			color: $purple
@@ -237,37 +257,6 @@
 					animation-name: slide-progress
 					animation-timing-function: linear
 					animation-fill-mode: both
-
-// Animation keyframes
-@keyframes slide-progress
-	from
-		transform: scaleX(0)
-	to
-		transform: scaleX(1)
-
-@keyframes symbol-hidden
-	from
-		transform: scale(1) rotate(0)
-	to
-		transform: scale(0) rotate(-45deg)
-
-@keyframes symbol-shown
-	from
-		transform: scale(0) rotate(-45deg)
-	to
-		transform: scale(1) rotate(0)
-
-@keyframes symbol-rotate-backward
-	from
-		transform: rotate(90deg)
-	to
-		transform: rotate(0)
-
-@keyframes symbol-rotate-forward
-	from
-		transform: rotate(0)
-	to
-		transform: rotate(90deg)
 
 // Section: About
 .h-about
@@ -610,7 +599,7 @@
 					color: $dark
 					&:hover
 						border-color: $purple
-						color: $purple
+						color: $white
 		.heading
 			margin-bottom: 48px
 			text-align: center
