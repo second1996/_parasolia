@@ -19,11 +19,21 @@ document.addEventListener('DOMContentLoaded', () => {
   const burgerBtn = document.querySelector('.header-menu-burger .btn-burger');
   const mobileMenu = document.querySelector('.m-menu');
 
-  burgerBtn.addEventListener('click', (e) => {
-    e.currentTarget.classList.toggle('_is-opened');
+  burgerBtn.addEventListener('click', () => {
+    toggleMenu();
+  });
+
+  document.addEventListener('click', (e) => {
+    if (e.target.classList.contains('m-menu')) {
+      toggleMenu();
+    }
+  });
+
+  function toggleMenu() {
+    burgerBtn.classList.toggle('_is-opened');
     headerEl.classList.toggle('_is-active');
     mobileMenu.classList.toggle('_is-shown');
-  });
+  }
 
   // Sticky header
   const headerOffset = headerEl.clientHeight / 2;

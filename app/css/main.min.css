@@ -2771,6 +2771,7 @@ article blockquote {
   right: 0;
   bottom: 0;
   z-index: 99;
+  background-color: rgba(29,29,27,.85);
   visibility: hidden;
   opacity: 0
 }
@@ -2792,13 +2793,11 @@ article blockquote {
 .m-menu-inner {
   position: relative;
   overflow-y: auto;
-  height: 100%;
   background-color: #fff
 }
 .m-menu-container {
   position: relative;
   z-index: 3;
-  padding-top: 16px;
   padding-bottom: 32px
 }
 .m-menu-nav-list-link:nth-child(1) {
@@ -2845,20 +2844,17 @@ article blockquote {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: column;
-  flex-direction: column
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap
 }
 .m-menu-nav-list-link {
-  -ms-flex-item-align: start;
-  align-self: flex-start;
   font-family: "Stolzl Display",sans-serif;
-  font-size: 24px;
-  font-weight: 700
+  font-size: 18px;
+  font-weight: 500
 }
 .m-menu-nav-list-link:not(:last-child) {
-  margin-bottom: 5px
+  margin-right: 32px;
+  margin-bottom: 8px
 }
 .m-menu-contacts {
   display: -webkit-box;
@@ -2868,20 +2864,22 @@ article blockquote {
   -webkit-box-direction: normal;
   -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   margin-top: 32px;
   -webkit-animation-delay: .6s;
   animation-delay: .6s
 }
 .m-menu-contacts .phone {
-  -ms-flex-item-align: start;
-  align-self: flex-start;
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
   display: inline-flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
   -ms-flex-direction: column;
-  flex-direction: column
+  flex-direction: column;
+  text-align: center
 }
 .m-menu-contacts .phone-number {
   color: #654ea3;
@@ -3133,7 +3131,7 @@ article blockquote {
   background: url(../images/symbol-yellow.svg) no-repeat center/contain
 }
 .page-breadcrumbs-list > li > span {
-  color: #858585
+  color: #454545
 }
 .btn,
 button {
@@ -3461,13 +3459,46 @@ textarea:read-only::selection {
   z-index: 1;
   border-bottom: 0
 }
-.nav-tabs-centered {
+.nav-tabs.nav-tabs-centered {
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   justify-content: center
 }
+.nav-tabs.nav-tabs-border .nav-item {
+  margin-left: -1px;
+  margin-bottom: -1px
+}
+.nav-tabs.nav-tabs-border .nav-link {
+  min-width: 120px;
+  padding: 16px;
+  border: 1px solid #454545;
+  background-color: #fff;
+  color: #1d1d1b;
+  font-family: "Stolzl Display",sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  -webkit-transition: .3s ease;
+  -o-transition: .3s ease;
+  transition: .3s ease
+}
+.nav-tabs.nav-tabs-border .nav-link:active {
+  -webkit-box-shadow: 0 0 0 4px rgba(69,69,69,.1);
+  box-shadow: 0 0 0 4px rgba(69,69,69,.1)
+}
+.nav-tabs.nav-tabs-border .nav-link:hover {
+  background-color: #fff7e3
+}
+.nav-tabs.nav-tabs-border .nav-link::after {
+  display: none
+}
+.nav-tabs.nav-tabs-border .nav-link.active {
+  border-bottom-color: #454545;
+  background-color: #654ea3;
+  color: #fff
+}
 .nav-tabs .nav-link {
   padding: 16px;
+  border-radius: 0;
   border: 0;
   border-bottom: 2px solid #e0e0e0;
   color: #b8b8b8;
@@ -3840,6 +3871,9 @@ textarea:read-only::selection {
 .page-calculator .calculator-section .options-check_inline-input:active + .options-check_inline-box {
   -webkit-box-shadow: 0 0 0 4px rgba(69,69,69,.1);
   box-shadow: 0 0 0 4px rgba(69,69,69,.1)
+}
+.page-calculator .calculator-section .options-check_inline-input:hover + .options-check_inline-box {
+  background-color: #fff7e3
 }
 .page-calculator .calculator-section .options-check_inline-input:checked + .options-check_inline-box {
   background-color: #ffc640
@@ -4428,9 +4462,8 @@ textarea:read-only::selection {
 }
 .h-experience-item-main {
   -webkit-box-flex: 1;
-  -ms-flex: 1 0 auto;
-  flex: 1 0 auto;
-  max-width: 100%
+  -ms-flex: 1 0 25%;
+  flex: 1 0 25%
 }
 .h-experience-item,
 .h-experience-item-main {
@@ -9739,9 +9772,9 @@ textarea:read-only::selection {
     height: 192px
   }
   .h-packages-item {
-    -ms-flex-preferred-size: 50%;
-    flex-basis: 50%;
-    max-width: 50%
+    -ms-flex-preferred-size: 33.33333%;
+    flex-basis: 33.33333%;
+    max-width: 33.33333%
   }
   .page-services .subscribers-item {
     min-height: 324px
@@ -9849,6 +9882,11 @@ textarea:read-only::selection {
   .h-packages-heading {
     padding-right: 0
   }
+  .h-packages-item {
+    -ms-flex-preferred-size: 50%;
+    flex-basis: 50%;
+    max-width: 50%
+  }
   .page-services .subscribers-item {
     -ms-flex-preferred-size: 33.33333%;
     flex-basis: 33.33333%;
@@ -9921,6 +9959,9 @@ textarea:read-only::selection {
     justify-content: center
   }
   .footer-nav-list-link:not(:last-child) {
+    margin-right: 12px
+  }
+  .footer-nav-list-link {
     margin-left: 12px;
     margin-right: 12px
   }
@@ -9991,6 +10032,25 @@ textarea:read-only::selection {
   }
   .m-menu {
     top: 78px
+  }
+  .m-menu-container {
+    padding-top: 32px
+  }
+  .m-menu-nav-list {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center
+  }
+  .m-menu-nav-list-link {
+    font-size: 20px;
+    font-weight: 700
+  }
+  .m-menu-nav-list-link:not(:last-child) {
+    margin-right: 0
   }
   .page-heading {
     margin-top: 120px
@@ -10158,14 +10218,33 @@ textarea:read-only::selection {
   .text-sm {
     font-size: 20px
   }
+  .footer-contacts {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column
+  }
+  .footer-contacts .email {
+    margin-bottom: 16px
+  }
+  .footer-contacts .email-descr {
+    text-align: center
+  }
+  .footer-contacts .phone {
+    margin-left: 0
+  }
+  .footer-contacts .phone-hours {
+    text-align: center
+  }
+  .footer-contacts .social {
+    margin-top: 24px;
+    margin-left: 0
+  }
   .header-logo .logo-mobile {
     display: block
   }
   .m-menu {
     top: 70px
-  }
-  .m-menu-container {
-    padding-top: 32px
   }
   .page-heading {
     margin-bottom: 32px
@@ -10382,22 +10461,6 @@ textarea:read-only::selection {
   .pb-120 {
     padding-bottom: 80px
   }
-  .footer-contacts {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: column;
-    flex-direction: column
-  }
-  .footer-contacts .email {
-    margin-bottom: 16px
-  }
-  .footer-contacts .phone {
-    margin-left: 0
-  }
-  .footer-contacts .social {
-    margin-top: 24px;
-    margin-left: 0
-  }
   .header {
     padding-top: 16px;
     padding-bottom: 16px
@@ -10412,9 +10475,6 @@ textarea:read-only::selection {
   }
   .m-menu-container {
     padding-top: 16px
-  }
-  .m-menu-nav-list-link {
-    font-size: 20px
   }
   .page-404 .wrapper .title,
   .page-thanks .wrapper .title {

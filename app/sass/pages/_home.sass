@@ -395,8 +395,7 @@
 			flex-basis: 100%
 			max-width: 100%
 	&-item-main
-		flex: 1 0 auto
-		max-width: 100%
+		flex: 1 0 25%
 	&-item,
 	&-item-main
 		position: relative
@@ -565,6 +564,9 @@
 		border: 1px solid $border
 		background-color: $white
 		+media-breakpoint-down(xxl)
+			flex-basis: 33.33333%
+			max-width: 33.33333%
+		+media-breakpoint-down(xl)
 			flex-basis: 50%
 			max-width: 50%
 		+media-breakpoint-down(md)

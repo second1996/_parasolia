@@ -24,14 +24,16 @@
 					+media-breakpoint-down(xxl)
 						margin-right: 24px
 					+media-breakpoint-down(lg)
-						margin-left: 12px
 						margin-right: 12px
+				+media-breakpoint-down(lg)
+					margin-left: 12px
+					margin-right: 12px
 	&-contacts
 		display: flex
 		flex-wrap: wrap
 		align-items: center
 		justify-content: center
-		+media-breakpoint-down(sm)
+		+media-breakpoint-down(md)
 			flex-direction: column
 		.email
 			display: inline-flex
@@ -41,7 +43,7 @@
 				margin-left: 24px
 			+media-breakpoint-down(lg)
 				margin-left: 0
-			+media-breakpoint-down(sm)
+			+media-breakpoint-down(md)
 				margin-bottom: 16px
 			&-link
 				font-size: 18px
@@ -53,13 +55,15 @@
 				color: #858585
 				font-size: 14px
 				text-align: right
+				+media-breakpoint-down(md)
+					text-align: center
 		.phone
 			display: inline-flex
 			flex-direction: column
 			margin-left: 32px
 			+media-breakpoint-down(xxl)
 				margin-left: 24px
-			+media-breakpoint-down(sm)
+			+media-breakpoint-down(md)
 				margin-left: 0
 			&-number
 				color: $purple
@@ -74,13 +78,15 @@
 				color: #858585
 				font-size: 14px
 				text-align: right
+				+media-breakpoint-down(md)
+					text-align: center
 		.social
 			display: inline-flex
 			align-items: center
 			margin-left: 32px
 			+media-breakpoint-down(xxl)
 				margin-left: 24px
-			+media-breakpoint-down(sm)
+			+media-breakpoint-down(md)
 				margin-top: 24px
 				margin-left: 0
 			&-link

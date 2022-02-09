@@ -519,9 +519,9 @@ document.addEventListener('DOMContentLoaded', () => {
           calcTotalSum();
 
           // Smooth scroll to next section
-          setTimeout(() => {
-            scrollToSection(e.target);
-          }, 150);
+          // setTimeout(() => {
+          //   scrollToSection(e.target);
+          // }, 150);
         };
       }
     });
@@ -604,6 +604,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (nextSectionNode) {
       nextSectionNode.scrollIntoView({
         behavior: 'smooth',
+        block: 'center',
       });
     }
   }

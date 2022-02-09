@@ -9,10 +9,35 @@
 		align-items: center
 		.nav-item
 			margin-bottom: 8px
-	&-centered
+	&.nav-tabs-centered
 		justify-content: center
+	&.nav-tabs-border
+		.nav-item
+			margin-left: -1px
+			margin-bottom: -1px
+		.nav-link
+			min-width: 120px
+			padding: 16px
+			border: 1px solid $text
+			background-color: $white
+			color: $dark
+			font-family: $font-secondary
+			font-size: 14px
+			font-weight: $w-regular
+			transition: $trs
+			&:active
+				box-shadow: 0 0 0 4px rgba($text, 0.1)
+			&:hover
+				background-color: #fff7e3
+			&::after
+				display: none
+			&.active
+				border-bottom-color: $text
+				background-color: $purple
+				color: $white
 	.nav-link
 		padding: 16px
+		border-radius: 0
 		border: 0
 		border-bottom: 2px solid $border
 		color: #B8B8B8

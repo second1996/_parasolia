@@ -6,7 +6,7 @@ Swiper.use([Pagination, Navigation, EffectFade, Autoplay, Grid]);
 const heroesSwiper = new Swiper('.h-heroes-slider', {
   speed: 1000,
   autoplay: {
-    delay: 4000,
+    delay: 7500,
     pauseOnMouseEnter: false,
     disableOnInteraction: false,
   },
