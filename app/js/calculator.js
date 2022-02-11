@@ -3,7 +3,7 @@ const individualData = [
     id: 0,
     node: 'tax-system',
     question: 'На якій ви системі оподаткування?',
-    descr: 'Оберіть систему оподаткування вашого ФОП чи ТОВ.',
+    descr: 'Оберіть систему оподаткування вашого ФОП',
     answers: [
       {
         text: 'Спрощена',
@@ -20,7 +20,7 @@ const individualData = [
     id: 1,
     node: 'tax-simple',
     question: 'Яка у вас група єдиного податку?',
-    descr: 'Оберіть систему оподаткування вашого ФОП чи ТОВ.',
+    descr: 'Оберіть вашу групу',
     answers: [
       {
         text: '2 група',
@@ -36,7 +36,7 @@ const individualData = [
     id: 2,
     node: 'tax-simple-workers',
     question: 'Чи є у вас наймані працівники?',
-    descr: 'Оберіть систему оподаткування вашого ФОП чи ТОВ.',
+    descr: null,
     answers: [
       {
         text: 'Ні',
@@ -50,9 +50,9 @@ const individualData = [
         multiplier: 700,
         additional: {
           id: 1,
-          question: 'Скільки чоловік?',
-          descr: 'Введіть числове значення к-ті працівників у вашій компанії.',
-          field: 'Кількість працівників',
+          question: 'Скільки людей працює у вашій компанії?',
+          descr: null,
+          field: 'Введіть число',
         },
       },
     ],
@@ -61,7 +61,7 @@ const individualData = [
     id: 3,
     node: 'tax-simple-pdv',
     question: 'Чи є ви платником ПДВ?',
-    descr: 'Оберіть систему оподаткування вашого ФОП чи ТОВ.',
+    descr: null,
     answers: [
       {
         text: 'Ні',
@@ -77,7 +77,7 @@ const individualData = [
     id: 4,
     node: 'tax-simple-workers-pdv-no',
     question: 'Чи є у вас наймані працівники?',
-    descr: 'Оберіть систему оподаткування вашого ФОП чи ТОВ.',
+    descr: null,
     answers: [
       {
         text: 'Ні',
@@ -91,9 +91,9 @@ const individualData = [
         multiplier: 700,
         additional: {
           id: 1,
-          question: 'Скільки чоловік?',
-          descr: 'Введіть числове значення к-ті працівників у вашій компанії.',
-          field: 'Кількість працівників',
+          question: 'Скільки людей працює у вашій компанії?',
+          descr: null,
+          field: 'Введіть число',
         },
       },
     ],
@@ -102,7 +102,7 @@ const individualData = [
     id: 5,
     node: 'tax-simple-workers-pdv-yes',
     question: 'Чи є у вас наймані працівники?',
-    descr: 'Оберіть систему оподаткування вашого ФОП чи ТОВ.',
+    descr: null,
     answers: [
       {
         text: 'Ні',
@@ -116,9 +116,9 @@ const individualData = [
         multiplier: 700,
         additional: {
           id: 1,
-          question: 'Скільки чоловік?',
-          descr: 'Введіть числове значення к-ті працівників у вашій компанії.',
-          field: 'Кількість працівників',
+          question: 'Скільки людей працює у вашій компанії?',
+          descr: null,
+          field: 'Введіть число',
         },
       },
     ],
@@ -127,7 +127,7 @@ const individualData = [
     id: 6,
     node: 'tax-general',
     question: 'Чи є ви платником ПДВ?',
-    descr: 'Оберіть систему оподаткування вашого ФОП чи ТОВ.',
+    descr: null,
     answers: [
       {
         text: 'Ні',
@@ -142,8 +142,8 @@ const individualData = [
   {
     id: 7,
     node: 'tax-general-no',
-    question: 'Чи є ви платником АП?',
-    descr: 'Оберіть систему оподаткування вашого ФОП чи ТОВ.',
+    question: 'Чи є ви платником акцизного податку?',
+    descr: null,
     answers: [
       {
         text: 'Ні',
@@ -159,7 +159,7 @@ const individualData = [
     id: 8,
     node: 'tax-general-no-ap-no',
     question: 'Чи є у вас наймані працівники?',
-    descr: 'Оберіть систему оподаткування вашого ФОП чи ТОВ.',
+    descr: null,
     answers: [
       {
         text: 'Ні',
@@ -173,9 +173,9 @@ const individualData = [
         multiplier: 700,
         additional: {
           id: 1,
-          question: 'Скільки чоловік?',
-          descr: 'Введіть числове значення к-ті працівників у вашій компанії.',
-          field: 'Кількість працівників',
+          question: 'Скільки людей працює у вашій компанії?',
+          descr: null,
+          field: 'Введіть число',
         },
       },
     ],
@@ -184,7 +184,7 @@ const individualData = [
     id: 9,
     node: 'tax-general-no-ap-yes',
     question: 'Чи є у вас наймані працівники?',
-    descr: 'Оберіть систему оподаткування вашого ФОП чи ТОВ.',
+    descr: null,
     answers: [
       {
         text: 'Ні',
@@ -198,9 +198,9 @@ const individualData = [
         multiplier: 700,
         additional: {
           id: 1,
-          question: 'Скільки чоловік?',
-          descr: 'Введіть числове значення к-ті працівників у вашій компанії.',
-          field: 'Кількість працівників',
+          question: 'Скільки людей працює у вашій компанії?',
+          descr: null,
+          field: 'Введіть число',
         },
       },
     ],
@@ -208,8 +208,8 @@ const individualData = [
   {
     id: 10,
     node: 'tax-general-yes',
-    question: 'Чи є ви платником АП?',
-    descr: 'Оберіть систему оподаткування вашого ФОП чи ТОВ.',
+    question: 'Чи є ви платником акцизного податку?',
+    descr: null,
     answers: [
       {
         text: 'Ні',
@@ -225,7 +225,7 @@ const individualData = [
     id: 11,
     node: 'tax-general-yes-ap-no',
     question: 'Чи є у вас наймані працівники?',
-    descr: 'Оберіть систему оподаткування вашого ФОП чи ТОВ.',
+    descr: null,
     answers: [
       {
         text: 'Ні',
@@ -239,9 +239,9 @@ const individualData = [
         multiplier: 700,
         additional: {
           id: 1,
-          question: 'Скільки чоловік?',
-          descr: 'Введіть числове значення к-ті працівників у вашій компанії.',
-          field: 'Кількість працівників',
+          question: 'Скільки людей працює у вашій компанії?',
+          descr: null,
+          field: 'Введіть число',
         },
       },
     ],
@@ -250,7 +250,7 @@ const individualData = [
     id: 12,
     node: 'tax-general-yes-ap-yes',
     question: 'Чи є у вас наймані працівники?',
-    descr: 'Оберіть систему оподаткування вашого ФОП чи ТОВ.',
+    descr: null,
     answers: [
       {
         text: 'Ні',
@@ -264,9 +264,9 @@ const individualData = [
         multiplier: 700,
         additional: {
           id: 1,
-          question: 'Скільки чоловік?',
-          descr: 'Введіть числове значення к-ті працівників у вашій компанії.',
-          field: 'Кількість працівників',
+          question: 'Скільки людей працює у вашій компанії?',
+          descr: null,
+          field: 'Введіть число',
         },
       },
     ],
@@ -278,7 +278,7 @@ const legalData = [
     id: 0,
     node: 'tax-system',
     question: 'На якій ви системі оподаткування?',
-    descr: 'Оберіть систему оподаткування вашого ФОП чи ТОВ.',
+    descr: 'Оберіть систему оподаткування вашої ЮО',
     answers: [
       {
         text: 'Спрощена 3 група',
@@ -295,7 +295,7 @@ const legalData = [
     id: 1,
     node: 'tax-simple',
     question: 'Чи є ви платником ПДВ?',
-    descr: 'Оберіть систему оподаткування вашого ФОП чи ТОВ.',
+    descr: null,
     answers: [
       {
         text: 'Ні',
@@ -309,9 +309,9 @@ const legalData = [
         multiplier: 80,
         additional: {
           id: 1,
-          question: 'Яка кількість ПН за місяць (вх/вих)?',
-          descr: 'Введіть числове значення к-ті податкових накладних за місяць.',
-          field: 'Кількість ПН',
+          question: 'Яку кількість податкових накладних реєструєте за місяць?',
+          descr: 'Врахуйте і вхідні, і вихідні накладні',
+          field: 'Введіть загальне число',
         },
       },
     ],
@@ -320,7 +320,7 @@ const legalData = [
     id: 2,
     node: 'tax-general',
     question: 'Чи є ви платником ПДВ?',
-    descr: 'Оберіть систему оподаткування вашого ФОП чи ТОВ.',
+    descr: null,
     answers: [
       {
         text: 'Ні',
@@ -335,8 +335,8 @@ const legalData = [
   {
     id: 3,
     node: 'tax-general-no-ap',
-    question: 'Чи є ви платником АП?',
-    descr: 'Оберіть систему оподаткування вашого ФОП чи ТОВ.',
+    question: 'Чи є ви платником акцизного податку?',
+    descr: null,
     answers: [
       {
         text: 'Ні',
@@ -354,7 +354,7 @@ const legalData = [
     id: 4,
     node: 'tax-general-yes-ap',
     question: 'Чи є ви платником АП?',
-    descr: 'Оберіть систему оподаткування вашого ФОП чи ТОВ.',
+    descr: 'Оберіть систему оподаткування вашого ФОП чи ТОВ',
     answers: [
       {
         text: 'Ні',
@@ -363,9 +363,9 @@ const legalData = [
         multiplier: 80,
         additional: {
           id: 1,
-          question: 'Яка кількість ПН за місяць (вх/вих)?',
-          descr: 'Введіть числове значення к-ті податкових накладних за місяць.',
-          field: 'Кількість ПН',
+          question: 'Яку кількість податкових накладних реєструєте за місяць?',
+          descr: 'Врахуйте і вхідні, і вихідні накладні',
+          field: 'Введіть загальне число',
         },
       },
       {
@@ -375,9 +375,9 @@ const legalData = [
         multiplier: 80,
         additional: {
           id: 2,
-          question: 'Яка кількість ПН за місяць (вх/вих)?',
-          descr: 'Введіть числове значення к-ті податкових накладних за місяць.',
-          field: 'Кількість ПН',
+          question: 'Яку кількість податкових накладних реєструєте за місяць?',
+          descr: 'Врахуйте і вхідні, і вихідні накладні',
+          field: 'Введіть загальне число',
         },
       },
     ],
@@ -533,9 +533,13 @@ document.addEventListener('DOMContentLoaded', () => {
     return `<div class="calculator-section" data-section-id="${node}" data-section-index="${id}">
       <div class="heading">
         <h3 class="heading-title text-lg">${question}</h3>
-        <div class="heading-descr">
+        ${
+          descr
+            ? `<div class="heading-descr">
           <p>${descr}</p>
-        </div>
+        </div>`
+            : ''
+        }
       </div>
       <div class="options">
       ${answers
@@ -562,7 +566,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             return `<div class="additional d-none" data-additional-id="${id}">
                 <h4 class="additional-title">${question}</h4>
-                <p class="additional-descr">${descr}</p>
+                ${descr ? `<p class="additional-descr">${descr}</p>` : ''}
                 <input 
                   class="additional-field form-control form-control--number" 
                   type="number" 
