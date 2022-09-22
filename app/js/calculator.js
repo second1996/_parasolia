@@ -304,20 +304,43 @@ const legalData = [
       },
       {
         text: 'Так',
-        nextNode: null,
+        nextNode: 'tax-simple-count',
         value: 6000,
-        multiplier: 80,
-        additional: {
-          id: 1,
-          question: 'Яку кількість податкових накладних реєструєте за місяць?',
-          descr: 'Врахуйте і вхідні, і вихідні накладні',
-          field: 'Введіть загальне число',
-        },
+        // multiplier: 80,
+        // additional: {
+        //   id: 1,
+        //   question: 'Яку кількість податкових накладних реєструєте за місяць?',
+        //   descr: 'Врахуйте і вхідні, і вихідні накладні',
+        //   field: 'Введіть загальне число',
+        // },
+      },
+    ],
+  },
+	{
+    id: 2,
+    node: 'tax-simple-count',
+    question: 'Яку кількість податкових накладних реєструєте за місяць?',
+    descr: 'Врахуйте і вхідні, і вихідні накладні',
+    answers: [
+      {
+        text: 'Мінімально (0-50 накладних)',
+        nextNode: null,
+        value: 0,
+      },
+      {
+        text: 'Середню кількість (50-200 накладних)',
+        nextNode: null,
+        value: 0,
+      },
+      {
+        text: 'Велику кількість (250-500 накладних)',
+        nextNode: null,
+        value: 0,
       },
     ],
   },
   {
-    id: 2,
+    id: 3,
     node: 'tax-general',
     question: 'Чи є ви платником ПДВ?',
     descr: null,
@@ -333,7 +356,7 @@ const legalData = [
     ],
   },
   {
-    id: 3,
+    id: 4,
     node: 'tax-general-no-ap',
     question: 'Чи є ви платником акцизного податку?',
     descr: null,
@@ -351,34 +374,80 @@ const legalData = [
     ],
   },
   {
-    id: 4,
+    id: 5,
     node: 'tax-general-yes-ap',
     question: 'Чи є ви платником АП?',
     descr: 'Оберіть систему оподаткування вашого ФОП чи ТОВ',
     answers: [
       {
         text: 'Ні',
-        nextNode: null,
+        nextNode: 'tax-general-ap-no-count',
         value: 8500,
-        multiplier: 80,
-        additional: {
-          id: 1,
-          question: 'Яку кількість податкових накладних реєструєте за місяць?',
-          descr: 'Врахуйте і вхідні, і вихідні накладні',
-          field: 'Введіть загальне число',
-        },
+        // multiplier: 80,
+        // additional: {
+        //   id: 1,
+        //   question: 'Яку кількість податкових накладних реєструєте за місяць?',
+        //   descr: 'Врахуйте і вхідні, і вихідні накладні',
+        //   field: 'Введіть загальне число',
+        // },
       },
       {
         text: 'Так',
-        nextNode: null,
+        nextNode: 'tax-general-ap-yes-count',
         value: 10000,
-        multiplier: 80,
-        additional: {
-          id: 2,
-          question: 'Яку кількість податкових накладних реєструєте за місяць?',
-          descr: 'Врахуйте і вхідні, і вихідні накладні',
-          field: 'Введіть загальне число',
-        },
+        // multiplier: 80,
+        // additional: {
+        //   id: 2,
+        //   question: 'Яку кількість податкових накладних реєструєте за місяць?',
+        //   descr: 'Врахуйте і вхідні, і вихідні накладні',
+        //   field: 'Введіть загальне число',
+        // },
+      },
+    ],
+  },
+  {
+    id: 6,
+    node: 'tax-general-ap-no-count',
+    question: 'Яку кількість податкових накладних реєструєте за місяць?',
+    descr: 'Врахуйте і вхідні, і вихідні накладні',
+    answers: [
+      {
+        text: 'Мінімально (0-50 накладних)',
+        nextNode: null,
+        value: 0,
+      },
+      {
+        text: 'Середню кількість (50-200 накладних)',
+        nextNode: null,
+        value: 0,
+      },
+      {
+        text: 'Велику кількість (250-500 накладних)',
+        nextNode: null,
+        value: 0,
+      },
+    ],
+  },
+  {
+    id: 7,
+    node: 'tax-general-ap-yes-count',
+    question: 'Яку кількість податкових накладних реєструєте за місяць?',
+    descr: 'Врахуйте і вхідні, і вихідні накладні',
+    answers: [
+      {
+        text: 'Мінімально (0-50 накладних)',
+        nextNode: null,
+        value: 0,
+      },
+      {
+        text: 'Середню кількість (50-200 накладних)',
+        nextNode: null,
+        value: 0,
+      },
+      {
+        text: 'Велику кількість (250-500 накладних)',
+        nextNode: null,
+        value: 0,
       },
     ],
   },
@@ -411,6 +480,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
       totalSum.value = 0;
       totalSum.multiplier = 0;
+			calcTotalSum();
 
       calcTotal.classList.remove('d-none');
 
@@ -532,7 +602,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     return `<div class="calculator-section" data-section-id="${node}" data-section-index="${id}">
       <div class="heading">
-        <h3 class="heading-title text-lg">${question}</h3>
+        <h3 class="heading-title text-md">${question}</h3>
         ${
           descr
             ? `<div class="heading-descr">

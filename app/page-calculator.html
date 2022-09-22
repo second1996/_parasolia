@@ -28,7 +28,7 @@
 	<section class="calculator section mt-96">
 		<div class="container">
 			<form class="calculator-form form" id="calc-form">
-				<div class="calculator-section" id="calc-organization">
+				<div class="calculator-section calculator-section-main" id="calc-organization">
 					<div class="heading">
 						<h3 class="heading-title text-lg">Оберіть організаційно-правову форму</h3>
 						<div class="heading-descr">
@@ -37,16 +37,16 @@
 					</div>
 					<div class="options">
 						<label class="options-check_inline">
-							<input class="options-check_inline-input" type="radio" name="calc-organization[]" value="Фізична особа підприємця (ФОП)"
+							<input class="options-check_inline-input" type="radio" name="calc-organization[]" value="Фізична особа-підприємець"
 								data-organization="individual">
 							<span class="options-check_inline-box"></span>
-							Фізична особа підприємця (ФОП)
+							<span class="options-check_inline-text">Фізична особа-підприємець</span>
 						</label>
 						<label class="options-check_inline">
-							<input class="options-check_inline-input" type="radio" name="calc-organization[]" value="Юридичина особа (ЮО)"
+							<input class="options-check_inline-input" type="radio" name="calc-organization[]" value="Юридична особа"
 								data-organization="legal">
 							<span class="options-check_inline-box"></span>
-							Юридичина особа (ЮО)
+							<span class="options-check_inline-text">Юридична особа</span>
 						</label>
 					</div>
 				</div>
@@ -61,12 +61,13 @@
 				<!-- Total -->
 				<div class="calculator-total d-none" id="calculator-total">
 					<div class="calculator-total-content">
-						<h2 class="title text-white">Загальна сума</h2>
-						<p class="descr text-white">* приблизна вартість послуги</p>
+						<h2 class="title text-dark">Загальна сума</h2>
+						<p class="descr text-dark">* приблизна вартість послуги</p>
 					</div>
 					<div class="calculator-total-summary">
-						<div class="value text-white text-lg w-bold">0</div>
-						<div class="currency text-white text-lg w-bold">грн *</div>
+						<div class="prefix text-dark text-lg w-bold">від</div>
+						<div class="value text-dark text-lg w-bold">0</div>
+						<div class="currency text-dark text-lg w-bold">грн *</div>
 					</div>
 				</div>
 				<!-- /.calculator-total -->

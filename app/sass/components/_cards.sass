@@ -8,15 +8,19 @@
 // Team card
 .card.card-team
 	.card-photo
-		height: 360px
-		+media-breakpoint-down(xxl)
-			height: 320px
+		height: 420px
+		+media-breakpoint-down(xl)
+			height: 480px
+		+media-breakpoint-down(lg)
+			height: 360px
 		+media-breakpoint-down(md)
-			height: 260px
+			height: 320px
 		+media-breakpoint-down(sm)
-			height: 220px
+			height: 420px
 		+media-breakpoint-down(xs)
-			height: auto
+			height: 320px
+		img
+			object-position: top
 	.card-body
 		padding: 24px 0
 		.post

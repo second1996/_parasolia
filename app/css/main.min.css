@@ -2112,7 +2112,7 @@ h4,
 h5,
 h6 {
   color: #1d1d1b;
-  font-family: "Stolzl Display",sans-serif;
+  font-family: Stolzl,sans-serif;
   font-weight: 700;
   line-height: 1.3
 }
@@ -2848,7 +2848,7 @@ article blockquote {
   flex-wrap: wrap
 }
 .m-menu-nav-list-link {
-  font-family: "Stolzl Display",sans-serif;
+  font-family: Stolzl,sans-serif;
   font-size: 18px;
   font-weight: 500
 }
@@ -2883,7 +2883,7 @@ article blockquote {
 }
 .m-menu-contacts .phone-number {
   color: #654ea3;
-  font-family: "Stolzl Display",sans-serif;
+  font-family: Stolzl,sans-serif;
   font-size: 20px;
   font-weight: 500
 }
@@ -3016,7 +3016,7 @@ article blockquote {
 .section-heading .suptitle {
   margin-bottom: 0;
   color: #b2b2b2;
-  font-family: "Stolzl Display",sans-serif;
+  font-family: Stolzl,sans-serif;
   font-size: 14px;
   font-weight: 300;
   line-height: 1.75;
@@ -3269,14 +3269,18 @@ button > svg ~ span {
   height: 100%
 }
 .card.card-team .card-photo {
-  height: 360px
+  height: 420px
+}
+.card.card-team .card-photo img {
+  -o-object-position: top;
+  object-position: top
 }
 .card.card-team .card-body {
   padding: 24px 0
 }
 .card.card-team .card-body .post {
   color: #b2b2b2;
-  font-family: "Stolzl Display",sans-serif;
+  font-family: Stolzl,sans-serif;
   font-size: 14px;
   text-transform: lowercase
 }
@@ -3287,19 +3291,19 @@ button > svg ~ span {
   font-weight: 500
 }
 ::-webkit-input-placeholder {
-  color: #454545
+  color: rgba(69,69,69,.65)
 }
 ::-moz-placeholder {
-  color: #454545
+  color: rgba(69,69,69,.65)
 }
 :-ms-input-placeholder {
-  color: #454545
+  color: rgba(69,69,69,.65)
 }
 ::-ms-input-placeholder {
-  color: #454545
+  color: rgba(69,69,69,.65)
 }
 ::placeholder {
-  color: #454545
+  color: rgba(69,69,69,.65)
 }
 input,
 textarea {
@@ -3353,7 +3357,7 @@ textarea:read-only::selection {
   width: 100%;
   margin-bottom: 20px;
   color: #654ea3;
-  font-family: "Stolzl Display",sans-serif;
+  font-family: Stolzl,sans-serif;
   font-size: 14px;
   font-weight: 400;
   border-radius: 0;
@@ -3474,7 +3478,7 @@ textarea:read-only::selection {
   border: 1px solid #454545;
   background-color: #fff;
   color: #1d1d1b;
-  font-family: "Stolzl Display",sans-serif;
+  font-family: Stolzl,sans-serif;
   font-size: 14px;
   font-weight: 400;
   -webkit-transition: .3s ease;
@@ -3574,7 +3578,7 @@ textarea:read-only::selection {
 }
 .page-about .achievements-item .number {
   color: #654ea3;
-  font-family: "Stolzl Display",sans-serif;
+  font-family: Stolzl,sans-serif;
   font-size: 56px;
   font-weight: 700;
   line-height: 1.3
@@ -3643,7 +3647,7 @@ textarea:read-only::selection {
 }
 .page-about .manifest-card .author {
   margin-top: auto;
-  font-family: "Stolzl Display",sans-serif
+  font-family: Stolzl,sans-serif
 }
 .page-about .manifest-card .author-name {
   font-size: 20px
@@ -3770,6 +3774,13 @@ textarea:read-only::selection {
 .page-calculator .calculator-section:not(:last-child) {
   margin-bottom: 32px
 }
+.page-calculator .calculator-section-main {
+  background-color: #654ea3
+}
+.page-calculator .calculator-section-main .heading-descr,
+.page-calculator .calculator-section-main .heading-title {
+  color: #fff
+}
 .page-calculator .calculator-section .heading-title {
   margin-bottom: 0
 }
@@ -3850,8 +3861,8 @@ textarea:read-only::selection {
   max-width: 50%;
   margin-left: -1px;
   padding: 16px;
-  color: #1d1d1b;
-  font-family: "Stolzl Display",sans-serif;
+  color: #fff;
+  font-family: Stolzl,sans-serif;
   font-size: 14px;
   font-weight: 400;
   cursor: pointer
@@ -3869,14 +3880,19 @@ textarea:read-only::selection {
   opacity: 0
 }
 .page-calculator .calculator-section .options-check_inline-input:active + .options-check_inline-box {
-  -webkit-box-shadow: 0 0 0 4px rgba(69,69,69,.1);
-  box-shadow: 0 0 0 4px rgba(69,69,69,.1)
+  -webkit-box-shadow: 0 0 0 4px rgba(255,255,255,.15);
+  box-shadow: 0 0 0 4px rgba(255,255,255,.15);
+  background-color: transparent
 }
 .page-calculator .calculator-section .options-check_inline-input:hover + .options-check_inline-box {
-  background-color: #fff7e3
+  background-color: rgba(255,255,255,.1)
 }
 .page-calculator .calculator-section .options-check_inline-input:checked + .options-check_inline-box {
+  border-color: #ffc640;
   background-color: #ffc640
+}
+.page-calculator .calculator-section .options-check_inline-input:checked + .options-check_inline-box + .options-check_inline-text {
+  color: #1d1d1b
 }
 .page-calculator .calculator-section .options-check_inline-box {
   position: absolute;
@@ -3885,8 +3901,8 @@ textarea:read-only::selection {
   right: 0;
   bottom: 0;
   z-index: -1;
-  border: 1px solid #454545;
-  background-color: #fff;
+  border: 1px solid #8471b5;
+  background-color: transparent;
   -webkit-transition: .3s ease;
   -o-transition: .3s ease;
   transition: .3s ease
@@ -3936,7 +3952,7 @@ textarea:read-only::selection {
   justify-content: space-between;
   margin-top: 32px;
   padding: 48px 64px;
-  background-color: #654ea3
+  background-color: #ffc640
 }
 .page-calculator .calculator-total::before {
   pointer-events: none;
@@ -3951,7 +3967,7 @@ textarea:read-only::selection {
   right: 0;
   bottom: 0;
   z-index: -1;
-  background-image: url(../images/pattern-white.svg);
+  background-image: url(../images/pattern-purple.svg);
   opacity: .1
 }
 .page-calculator .calculator-total-content {
@@ -3977,6 +3993,9 @@ textarea:read-only::selection {
   -webkit-box-align: end;
   -ms-flex-align: end;
   align-items: flex-end
+}
+.page-calculator .calculator-total-summary .prefix {
+  margin-right: 12px
 }
 .page-calculator .calculator-total-summary .value {
   word-break: break-all
@@ -4024,7 +4043,7 @@ textarea:read-only::selection {
   -ms-flex-align: center;
   align-items: center;
   color: #654ea3;
-  font-family: "Stolzl Display",sans-serif
+  font-family: Stolzl,sans-serif
 }
 .page-contacts .regions-item-section .content-heading > .icon {
   -webkit-box-flex: 0;
@@ -4140,7 +4159,7 @@ textarea:read-only::selection {
 .h-heroes-content .title {
   margin-bottom: 24px;
   color: #654ea3;
-  font-family: "Stolzl Display",sans-serif;
+  font-family: Stolzl,sans-serif;
   font-size: 64px;
   line-height: 1.15
 }
@@ -4281,7 +4300,7 @@ textarea:read-only::selection {
   -ms-flex-direction: column;
   flex-direction: column;
   color: rgba(29,29,27,.5);
-  font-family: "Stolzl Display",sans-serif;
+  font-family: Stolzl,sans-serif;
   font-size: 14px;
   font-weight: 400;
   line-height: 1;
@@ -4341,7 +4360,7 @@ textarea:read-only::selection {
 .h-about-advantages-item .number {
   position: relative;
   margin-bottom: 12px;
-  font-family: "Stolzl Display",sans-serif;
+  font-family: Stolzl,sans-serif;
   font-size: 48px;
   line-height: 1.3
 }
@@ -4365,7 +4384,6 @@ textarea:read-only::selection {
 }
 .h-about-photo {
   overflow: hidden;
-  height: 600px;
   margin-top: 16px;
   border-radius: 6px
 }
@@ -4610,7 +4628,7 @@ textarea:read-only::selection {
   padding: 0;
   background-color: transparent;
   color: #fff;
-  font-family: "Stolzl Display",sans-serif;
+  font-family: Stolzl,sans-serif;
   font-weight: 300;
   -webkit-transition: color .3s ease;
   -o-transition: color .3s ease;
@@ -4719,7 +4737,7 @@ textarea:read-only::selection {
   display: block;
   margin-bottom: 8px;
   color: #b2b2b2;
-  font-family: "Stolzl Display",sans-serif;
+  font-family: Stolzl,sans-serif;
   font-size: 14px;
   font-weight: 300;
   line-height: 1.75;
@@ -4763,7 +4781,7 @@ textarea:read-only::selection {
   text-transform: uppercase
 }
 .h-packages-item .order-price > span {
-  font-family: "Stolzl Display",sans-serif;
+  font-family: Stolzl,sans-serif;
   font-size: 28px;
   font-weight: 700
 }
@@ -4823,7 +4841,7 @@ textarea:read-only::selection {
   width: 192px;
   height: 192px;
   background: url(../images/symbol-yellow.svg) no-repeat center/contain;
-  opacity: 0;
+  opacity: 1;
   -webkit-transform: rotate(45deg);
   -ms-transform: rotate(45deg);
   transform: rotate(45deg);
@@ -4860,6 +4878,9 @@ textarea:read-only::selection {
   -webkit-transition: color .3s ease;
   -o-transition: color .3s ease;
   transition: color .3s ease
+}
+.page-services .subscribers-item .heading-list {
+  padding-right: 64px
 }
 .page-services .subscribers-item .heading-list > li {
   font-size: 14px;
@@ -4913,9 +4934,6 @@ textarea:read-only::selection {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
   margin-bottom: -1px;
   padding: 24px 32px;
   -webkit-box-shadow: inset 0 0 0 1px #e0e0e0;
@@ -4962,6 +4980,12 @@ textarea:read-only::selection {
   -ms-transform: none;
   transform: none
 }
+.page-services .other-item:hover .icon-symbol {
+  fill: #ffc640;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg)
+}
 .page-services .other-item:hover .title {
   color: #fff
 }
@@ -4979,16 +5003,42 @@ textarea:read-only::selection {
 .page-services .other-item:hover .order-btn:hover {
   color: #ffc640
 }
+.page-services .other-item .icon-symbol {
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  margin-right: 16px;
+  fill: #654ea3;
+  -webkit-transition: fill .3s ease,-webkit-transform .3s ease;
+  transition: fill .3s ease,-webkit-transform .3s ease;
+  -o-transition: fill .3s ease,transform .3s ease;
+  transition: fill .3s ease,transform .3s ease;
+  transition: fill .3s ease,transform .3s ease,-webkit-transform .3s ease
+}
 .page-services .other-item .title {
+  -webkit-box-flex: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
   margin-bottom: 0;
+  padding-right: 96px;
   color: #1d1d1b;
   font-size: 16px;
   font-weight: 300;
+  word-break: break-word;
   -webkit-transition: color .3s ease;
   -o-transition: color .3s ease;
   transition: color .3s ease
 }
 .page-services .other-item .order {
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   -webkit-transition: -webkit-transform .3s ease;
   transition: -webkit-transform .3s ease;
   -o-transition: transform .3s ease;
@@ -9706,9 +9756,6 @@ textarea:read-only::selection {
   .s-cta-symbols .icon-euro {
     left: 10%
   }
-  .card.card-team .card-photo {
-    height: 320px
-  }
   .page-about .intro-content {
     padding-left: 30px
   }
@@ -9779,6 +9826,9 @@ textarea:read-only::selection {
   .page-services .subscribers-item {
     min-height: 324px
   }
+  .page-services .subscribers-item .heading-list {
+    padding-right: 48px
+  }
 }
 @media (max-width:1199.98px) {
   .modal-fullscreen-xl-down {
@@ -9823,6 +9873,9 @@ textarea:read-only::selection {
   .s-cta-symbols .icon-euro {
     left: 3%
   }
+  .card.card-team .card-photo {
+    height: 480px
+  }
   .page-about .achievements-item .number {
     font-size: 46px
   }
@@ -9864,9 +9917,6 @@ textarea:read-only::selection {
     width: 120px;
     height: 120px
   }
-  .h-about-photo {
-    height: 540px
-  }
   .h-solve-heading {
     padding-right: 0
   }
@@ -9888,9 +9938,9 @@ textarea:read-only::selection {
     max-width: 50%
   }
   .page-services .subscribers-item {
-    -ms-flex-preferred-size: 33.33333%;
-    flex-basis: 33.33333%;
-    max-width: 33.33333%
+    -ms-flex-preferred-size: 50%;
+    flex-basis: 50%;
+    max-width: 50%
   }
 }
 @media (max-width:991.98px) {
@@ -10074,6 +10124,9 @@ textarea:read-only::selection {
     height: 72px;
     padding: 12px 36px
   }
+  .card.card-team .card-photo {
+    height: 360px
+  }
   .modal .modal-header {
     padding: 24px 32px
   }
@@ -10164,18 +10217,16 @@ textarea:read-only::selection {
   .h-about-advantages-item .number {
     font-size: 32px
   }
-  .h-about-photo {
-    height: 420px
-  }
   .h-experience-item {
     -ms-flex-preferred-size: 50%;
     flex-basis: 50%;
     max-width: 50%
   }
-  .page-services .subscribers-item {
-    -ms-flex-preferred-size: 50%;
-    flex-basis: 50%;
-    max-width: 50%
+  .page-services .subscribers-item::after {
+    right: -32px;
+    bottom: -32px;
+    width: 164px;
+    height: 164px
   }
 }
 @media (max-width:767.98px) {
@@ -10272,7 +10323,7 @@ textarea:read-only::selection {
     padding: 12px 32px
   }
   .card.card-team .card-photo {
-    height: 260px
+    height: 320px
   }
   .form-control {
     height: 56px;
@@ -10374,9 +10425,6 @@ textarea:read-only::selection {
     margin-left: auto;
     margin-right: auto
   }
-  .h-about-photo {
-    height: 360px
-  }
   .h-experience-item,
   .h-experience-item-main {
     padding: 24px
@@ -10421,11 +10469,25 @@ textarea:read-only::selection {
     padding: 24px
   }
   .page-services .subscribers-item {
+    -ms-flex-preferred-size: 100%;
+    flex-basis: 100%;
+    max-width: 100%;
+    min-height: 280px;
     padding: 24px
   }
-  .page-services .subscribers-item::after {
-    right: -32px;
-    bottom: -32px
+  .page-services .other-item {
+    padding: 20px 24px
+  }
+  .page-services .other-item:hover .order {
+    -webkit-transform: translateX(-56px);
+    -ms-transform: translateX(-56px);
+    transform: translateX(-56px)
+  }
+  .page-services .other-item .title {
+    padding-right: 64px
+  }
+  .page-services .other-item .order-btn > span {
+    display: none
   }
 }
 @media (max-width:575.98px) {
@@ -10492,7 +10554,7 @@ textarea:read-only::selection {
     padding: 12px 24px
   }
   .card.card-team .card-photo {
-    height: 220px
+    height: 420px
   }
   .card.card-team .card-body .name {
     font-size: 18px
@@ -10599,9 +10661,6 @@ textarea:read-only::selection {
   .h-about-advantages {
     margin-top: 48px
   }
-  .h-about-photo {
-    height: 280px
-  }
   .h-experience-item {
     -ms-flex-preferred-size: 100%;
     flex-basis: 100%;
@@ -10631,11 +10690,29 @@ textarea:read-only::selection {
   .h-packages-item .order-btn {
     margin-top: 16px
   }
-  .page-services .subscribers-item {
-    -ms-flex-preferred-size: 100%;
-    flex-basis: 100%;
-    max-width: 100%;
-    min-height: auto
+  .page-services .subscribers-item .order {
+    margin-top: 48px
+  }
+  .page-services .other-item {
+    padding-left: 16px;
+    padding-right: 16px
+  }
+  .page-services .other-item::after {
+    width: 84px;
+    height: 84px
+  }
+  .page-services .other-item:hover .order {
+    -webkit-transform: translateX(-48px);
+    -ms-transform: translateX(-48px);
+    transform: translateX(-48px)
+  }
+  .page-services .other-item .icon-symbol {
+    width: 20px;
+    height: 20px
+  }
+  .page-services .other-item .title {
+    padding-right: 48px;
+    font-size: 15px
   }
 }
 @media (max-width:374.98px) {
@@ -10670,7 +10747,7 @@ textarea:read-only::selection {
     font-size: 24px
   }
   .card.card-team .card-photo {
-    height: auto
+    height: 320px
   }
   .nav-tabs .nav-link {
     width: 100%
@@ -10678,6 +10755,26 @@ textarea:read-only::selection {
   .page-about .manifest-card {
     min-height: 240px;
     padding: 24px
+  }
+  .page-services .subscribers-item::after {
+    width: 128px;
+    height: 128px
+  }
+  .page-services .subscribers-item .heading-list {
+    padding-right: 0
+  }
+  .page-services .other-item::after {
+    width: 72px;
+    height: 72px
+  }
+  .page-services .other-item:hover .order {
+    -webkit-transform: translateX(-32px);
+    -ms-transform: translateX(-32px);
+    transform: translateX(-32px)
+  }
+  .page-services .other-item .title {
+    padding-right: 32px;
+    font-size: 14px
   }
 }
 @media (prefers-reduced-motion:no-preference) {

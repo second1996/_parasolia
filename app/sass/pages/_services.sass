@@ -24,17 +24,13 @@
 			+media-breakpoint-down(xxl)
 				min-height: 324px
 			+media-breakpoint-down(xl)
-				flex-basis: 33.33333%
-				max-width: 33.33333%
-			+media-breakpoint-down(lg)
 				flex-basis: 50%
 				max-width: 50%
 			+media-breakpoint-down(md)
-				padding: 24px
-			+media-breakpoint-down(sm)
 				flex-basis: 100%
 				max-width: 100%
-				min-height: auto
+				min-height: 280px
+				padding: 24px
 			&::after
 				pointer-events: none
 				user-select: none
@@ -46,12 +42,17 @@
 				width: 192px
 				height: 192px
 				background: url('../images/symbol-yellow.svg') no-repeat center/contain
-				opacity: 0
+				opacity: 1
 				transform: rotate(45deg)
 				transition: opacity $trs, transform $trs
-				+media-breakpoint-down(md)
+				+media-breakpoint-down(lg)
 					right: -32px
 					bottom: -32px
+					width: 164px
+					height: 164px
+				+media-breakpoint-down(xs)
+					width: 128px
+					height: 128px
 			&:hover
 				box-shadow: inset 0 0 0 1px $purple
 				background-color: $purple
@@ -73,6 +74,11 @@
 					font-size: 20px
 					transition: color $trs
 				&-list
+					padding-right: 64px
+					+media-breakpoint-down(xxl)
+						padding-right: 48px
+					+media-breakpoint-down(xs)
+						padding-right: 0
 					> li
 						font-size: 14px
 						font-weight: $w-book
@@ -81,6 +87,8 @@
 							margin-bottom: 4px
 			.order
 				margin-top: 32px
+				+media-breakpoint-down(sm)
+					margin-top: 48px
 				&-btn
 					padding: 0
 					background-color: $trsp
@@ -103,12 +111,16 @@
 			z-index: 1
 			display: flex
 			align-items: center
-			justify-content: space-between
 			margin-bottom: -1px
 			padding: 24px 32px
 			box-shadow: inset 0 0 0 1px $border
 			background-color: $white
 			transition: box-shadow $trs, background-color $trs
+			+media-breakpoint-down(md)
+				padding: 20px 24px
+			+media-breakpoint-down(sm)
+				padding-left: 16px
+				padding-right: 16px
 			&::after
 				pointer-events: none
 				user-select: none
@@ -123,29 +135,68 @@
 				opacity: 0
 				transform: rotate(45deg)
 				transition: opacity $trs, transform $trs
+				+media-breakpoint-down(sm)
+					width: 84px
+					height: 84px
+				+media-breakpoint-down(xs)
+					width: 72px
+					height: 72px
 			&:hover
 				box-shadow: inset 0 0 0 1px $purple
 				background-color: $purple
 				&::after
 					opacity: 1
 					transform: none
+				.icon-symbol
+					fill: $yellow
+					transform: rotate(45deg)
 				.title
 					color: $white
 				.order
 					transform: translateX(-64px)
+					+media-breakpoint-down(md)
+						transform: translateX(-56px)
+					+media-breakpoint-down(sm)
+						transform: translateX(-48px)
+					+media-breakpoint-down(xs)
+						transform: translateX(-32px)
 					&-btn
 						color: $white
 						> span
 							opacity: 1
 						&:hover
 							color: $yellow
+			.icon-symbol
+				flex-shrink: 0
+				width: 24px
+				height: 24px
+				margin-right: 16px
+				fill: $purple
+				transition: fill $trs, transform $trs
+				+media-breakpoint-down(sm)
+					width: 20px
+					height: 20px
 			.title
+				flex-grow: 1
 				margin-bottom: 0
+				padding-right: 96px
 				color: $dark
 				font-size: 16px
 				font-weight: $w-book
+				word-break: break-word
 				transition: color $trs
+				+media-breakpoint-down(md)
+					padding-right: 64px
+				+media-breakpoint-down(sm)
+					padding-right: 48px
+					font-size: 15px
+				+media-breakpoint-down(xs)
+					padding-right: 32px
+					font-size: 14px
 			.order
+				flex-shrink: 0
+				display: flex
+				align-items: center
 				transition: transform $trs
 				&-btn
 					padding: 0
@@ -154,6 +205,8 @@
 					> span
 						opacity: 0
 						transition: opacity $trs
+						+media-breakpoint-down(md)
+							display: none
 					.icon-arrow-corner
 						width: 18px
 						height: 18px

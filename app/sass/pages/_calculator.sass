@@ -14,6 +14,12 @@
 				padding: 24px
 			&:not(:last-child)
 				margin-bottom: 32px
+			&-main
+				background-color: $purple
+				.heading
+					&-title,
+					&-descr
+						color: $white
 			.heading
 				&-title
 					margin-bottom: 0
@@ -83,7 +89,7 @@
 					max-width: 50%
 					margin-left: -1px
 					padding: 16px
-					color: $dark
+					color: $white
 					font-family: $font-secondary
 					font-size: 14px
 					font-weight: $w-regular
@@ -103,11 +109,16 @@
 						clip-path: rect(0 0 0 0)
 						opacity: 0
 						&:active + .options-check_inline-box
-							box-shadow: 0 0 0 4px rgba($text, 0.1)
+							box-shadow: 0 0 0 4px rgba($white, 0.15)
+							background-color: $trsp
 						&:hover + .options-check_inline-box
-							background-color: #fff7e3
-						&:checked + .options-check_inline-box
-							background-color: $yellow
+							background-color: rgba($white, 0.1)
+						&:checked 
+							+ .options-check_inline-box
+								border-color: $yellow
+								background-color: $yellow
+								+ .options-check_inline-text
+									color: $dark
 					&-box
 						position: absolute
 						top: 0
@@ -115,8 +126,8 @@
 						right: 0
 						bottom: 0
 						z-index: -1
-						border: 1px solid $text
-						background-color: $white
+						border: 1px solid #8471b5
+						background-color: $trsp
 						transition: $trs
 
 			// Additional field
@@ -146,7 +157,7 @@
 			justify-content: space-between
 			margin-top: 32px
 			padding: 48px 64px
-			background-color: $purple
+			background-color: $yellow
 			+media-breakpoint-down(xxl)
 				padding: 48px
 			+media-breakpoint-down(lg)
@@ -167,7 +178,7 @@
 				right: 0
 				bottom: 0
 				z-index: -1
-				background-image: url('../images/pattern-white.svg')
+				background-image: url('../images/pattern-purple.svg')
 				opacity: 0.1
 			&-content
 				flex: 0 0 auto
@@ -186,6 +197,8 @@
 				flex: 0 1 auto
 				display: flex
 				align-items: flex-end
+				.prefix
+					margin-right: 12px
 				.value
 					word-break: break-all
 				.currency
