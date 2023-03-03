@@ -538,10 +538,6 @@
 			width: 175px
 			height: 180px
 			background: url('../images/thumbs-up.svg') no-repeat center/contain
-	&-tabs
-		&.nav-tabs
-			+media-breakpoint-down(md)
-				flex-direction: row
 	&-list
 		display: flex
 		flex-wrap: wrap
@@ -599,16 +595,20 @@
 			+media-breakpoint-down(sm)
 				margin-bottom: 32px
 			&-suptitle
-				display: block
-				margin-bottom: 8px
-				color: #B2B2B2
+				display: inline-block
+				padding: 4px 8px
+				margin-bottom: 16px
+				color: $white
 				font-family: $font-secondary
+				background-color: $purple
 				font-size: 14px
-				font-weight: $w-book
+				font-weight: $w-regular
 				line-height: 1.75
-				text-transform: lowercase
 			&-title
 				display: block
+				> mark
+					background-color: $purple
+					color: $white
 		.includes
 			&-item
 				display: flex
