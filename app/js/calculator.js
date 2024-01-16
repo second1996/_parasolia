@@ -41,13 +41,13 @@ const individualData = [
 			{
 				text: 'Ні',
 				nextNode: null,
-				value: 2000,
+				value: 3000,
 			},
 			{
 				text: 'Так',
 				nextNode: null,
-				value: 2000,
-				multiplier: 1000,
+				value: 3000,
+				multiplier: 1500,
 				additional: {
 					id: 1,
 					question: 'Скільки людей працює у вашій компанії?',
@@ -70,7 +70,7 @@ const individualData = [
 			{
 				text: 'Так',
 				nextNode: 'tax-simple-workers-pdv-yes',
-				value: 5000,
+				value: 6000,
 			},
 		],
 	},
@@ -83,13 +83,13 @@ const individualData = [
 			{
 				text: 'Ні',
 				nextNode: null,
-				value: 3000,
+				value: 4000,
 			},
 			{
 				text: 'Так',
 				nextNode: null,
-				value: 3000,
-				multiplier: 1000,
+				value: 4000,
+				multiplier: 1500,
 				additional: {
 					id: 1,
 					question: 'Скільки людей працює у вашій компанії?',
@@ -108,13 +108,13 @@ const individualData = [
 			{
 				text: 'Ні',
 				nextNode: null,
-				value: 5000,
+				value: 6000,
 			},
 			{
 				text: 'Так',
 				nextNode: null,
-				value: 5000,
-				multiplier: 1000,
+				value: 6000,
+				multiplier: 1500,
 				additional: {
 					id: 1,
 					question: 'Скільки людей працює у вашій компанії?',
@@ -137,7 +137,7 @@ const individualData = [
 			{
 				text: 'Так',
 				nextNode: 'tax-general-yes',
-				value: 7000	,
+				value: 8000,
 			},
 		],
 	},
@@ -166,13 +166,13 @@ const individualData = [
 			{
 				text: 'Ні',
 				nextNode: null,
-				value: 5000,
+				value: 6000,
 			},
 			{
 				text: 'Так',
 				nextNode: null,
-				value: 5000,
-				multiplier: 1000,
+				value: 6000,
+				multiplier: 1500,
 				additional: {
 					id: 1,
 					question: 'Скільки людей працює у вашій компанії?',
@@ -191,13 +191,13 @@ const individualData = [
 			{
 				text: 'Ні',
 				nextNode: null,
-				value: 6000,
+				value: 8000,
 			},
 			{
 				text: 'Так',
 				nextNode: null,
-				value: 6000,
-				multiplier: 1000,
+				value: 8000,
+				multiplier: 1500,
 				additional: {
 					id: 1,
 					question: 'Скільки людей працює у вашій компанії?',
@@ -232,13 +232,13 @@ const individualData = [
 			{
 				text: 'Ні',
 				nextNode: null,
-				value: 7000,
+				value: 8000,
 			},
 			{
 				text: 'Так',
 				nextNode: null,
-				value: 7000,
-				multiplier: 1000,
+				value: 8000,
+				multiplier: 1500,
 				additional: {
 					id: 1,
 					question: 'Скільки людей працює у вашій компанії?',
@@ -257,13 +257,13 @@ const individualData = [
 			{
 				text: 'Ні',
 				nextNode: null,
-				value: 8000,
+				value: 10000,
 			},
 			{
 				text: 'Так',
 				nextNode: null,
-				value: 8000,
-				multiplier: 1000,
+				value: 10000,
+				multiplier: 1500,
 				additional: {
 					id: 1,
 					question: 'Скільки людей працює у вашій компанії?',
@@ -302,13 +302,13 @@ const legalData = [
 			{
 				text: 'Ні',
 				nextNode: null,
-				value: 6000,
+				value: 8000,
 			},
 			{
 				text: 'Так',
 				nextNode: null,
-				value: 6000,
-				multiplier: 80,
+				value: 13000,
+				multiplier: 120,
 				additional: {
 					id: 1,
 					question: 'Яку кількість податкових накладних реєструєте за місяць?',
@@ -342,12 +342,12 @@ const legalData = [
 		answers: [
 			{
 				text: 'Ні',
-				value: 7000,
+				value: 10000,
 				nextNode: null,
 			},
 			{
 				text: 'Так',
-				value: 8500,
+				value: 13000,
 				nextNode: null,
 			},
 		],
@@ -360,9 +360,9 @@ const legalData = [
 		answers: [
 			{
 				text: 'Ні',
-				value: 8500,
+				value: 13000,
 				nextNode: null,
-				multiplier: 80,
+				multiplier: 120,
 				additional: {
 					id: 1,
 					question: 'Яку кількість податкових накладних реєструєте за місяць?',
@@ -372,9 +372,9 @@ const legalData = [
 			},
 			{
 				text: 'Так',
-				value: 10000,
+				value: 16000,
 				nextNode: null,
-				multiplier: 80,
+				multiplier: 120,
 				additional: {
 					id: 2,
 					question: 'Яку кількість податкових накладних реєструєте за місяць?',
